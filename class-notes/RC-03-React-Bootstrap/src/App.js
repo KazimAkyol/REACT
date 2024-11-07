@@ -1,9 +1,12 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
+import MyNavbar from './components/MyNavbar';
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+    <MyNavbar/>
+    </div>
   )
 }
 
