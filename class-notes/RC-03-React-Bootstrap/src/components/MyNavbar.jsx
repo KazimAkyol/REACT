@@ -6,6 +6,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
+// import {NavDropdown, Navbar, Nav, Form, Container, Button} from "react-bootstrap";
+
 import logo from "../img/logo.png";
 
 const MyNavbar = () => {
@@ -14,7 +16,7 @@ const MyNavbar = () => {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
         <Navbar.Brand href="#">
-            <img src={logo} alt="" />
+          <img src={logo} alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -27,13 +29,9 @@ const MyNavbar = () => {
             <Nav.Link href="#action2">People</Nav.Link>
             <NavDropdown title="Courses" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Full-Stack</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Data-Science
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Data-Science</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
+              <NavDropdown.Item href="#action5">DevOps</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Form className="d-flex">
