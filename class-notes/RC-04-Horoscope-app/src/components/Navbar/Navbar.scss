@@ -10,28 +10,29 @@
   width: 100%;
   z-index: 4;
 
-  img {
-    width: 100px;
-    height: 90px;
-  }
-
   .link {
     display: flex;
     font-size: 1.5rem;
     gap: 10px;
-
-    font-family: "Rubik Distressed", cursive;
 
     a {
       color: $secondaryColor;
       text-decoration: none;
       padding: 0.5rem;
       text-transform: uppercase;
+
       &:hover {
         background-color: $secondaryColor;
         color: $cardNavBgColor;
         border-radius: 5px;
       }
+    }
+  }
+
+  .logo {
+    img {
+      width: 100px;
+      height: 100px;
     }
   }
 }
