@@ -1,9 +1,9 @@
 
-import "./Header.scss"
+import "./Header.scss";
 const Header = () => {
   return (
     <div className="header">
-     header
+     <span className="title">Who Are You?</span>
     </div>
   );
 };

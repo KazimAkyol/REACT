@@ -1,0 +1,21 @@
+@import "../../scss/variable";
+
+.header {
+  text-align: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  margin-top: 10rem;
+
+  .title {
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    color: $cardNavBgColor;
+
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
+  }
+}
