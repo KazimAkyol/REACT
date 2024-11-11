@@ -19,7 +19,7 @@
 import resim from "../assets/tree.webp";
 import resim2 from "../assets/winter1.jpg";
 
-//! external css importu  
+//! external css importu
 import "./Msg.css";
 
 const Msg = () => {
