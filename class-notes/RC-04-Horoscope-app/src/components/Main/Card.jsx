@@ -7,12 +7,12 @@ import React from "react";
 
 const Card = ({ id, title, image, date, desc }) => {
   return (
-    <div>
-      <div>
+    <div className="card">
+      <div className="title">
         <h1>{title}</h1>
       </div>
 
-      <div>
+      <div className="date">
         <h1>{date}</h1>
       </div>
 
@@ -20,7 +20,7 @@ const Card = ({ id, title, image, date, desc }) => {
         <img src={image} alt="" />
       </div>
 
-      <div>
+      <div className="desc">
         <p>{desc}</p>
       </div>
     </div>

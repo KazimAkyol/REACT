@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Main.scss";
+
 import { data } from "../../helper/data";
 import Card from "./Card";
 
