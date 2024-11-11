@@ -1,9 +1,16 @@
 import React from 'react'
 
+import {data} from "../../helper/data";
+import Card from "./Card";
+
+// export default ile değil de her dizinin kendine özel export u varsa, import yaparken dest {} kullanılır.
+
 const Main = () => {
   return (
-    <div className='main'>
+    <div className='card-container'>
 
+    {data.map((burc) => <Card burc={burc} />
+    )}
     </div>
   )
 }
