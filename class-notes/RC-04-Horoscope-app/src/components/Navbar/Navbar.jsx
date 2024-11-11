@@ -1,13 +1,12 @@
 import React from "react";
-import "./Navbar.scss";
-
 import logo from "../../helper/logo.png";
+import "./Navbar.scss";
 
 const Navbar = () => {
   return (
-    <div className="nav">
-      <div>
-        <img src={logo} width="100px" alt="" />
+    <div className="navbar">
+      <div className="logo">
+        <img src={logo} alt="" />
       </div>
 
       <div className="link">
