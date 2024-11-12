@@ -20,10 +20,23 @@ const Hooks = () => {
   const [sayac, setSayac] = useState(0);
   // let sayac = 0;
 
+  const [kisi, setKisi] = useState({
+    isim: "kazim",
+    meslek: "developer",
+    yas: 34,
+    renk: "red",
+  });
+
   const arttir = () => {
     setSayac(sayac + 1);
     // sayac = sayac + 1;
   };
+
+  const degistir = () => {
+    setKisi({
+        
+    })
+  }
 
   return (
     <div>
@@ -37,17 +50,27 @@ const Hooks = () => {
         ARTTIR
       </button>
 
-      <button className="btn btn-info">AZALT</button>
+      <button
+        onClick={() => sayac > 0 && setSayac(sayac - 1)}
+        className="btn btn-info"
+      >
+        AZALT
+      </button>
 
       <h1>**********************************</h1>
 
-      <div>
+      <div className="text-center">
         <h1>OBJECT İLE USESTATE KULLANIMI </h1>
-        <h2 className="text-danger"> </h2>
-        <h3 className="text-primary"></h3>
-        <h5 className="text-success"></h5>
+        <h2 className="text-danger">{kisi.isim}</h2>
+        <h3 className="text-primary">{kisi.meslek}</h3>
+        <h5 className="text-success">{kisi.yas}</h5>
 
-        <button className="btn m-4 p-4">ToggleDEĞİŞTİR</button>
+        <button onClick={degistir}
+          style={{ backgroundColor: kisi.renk, color: "yellow" }}
+          className="btn m-4 p-4"
+        >
+          ToggleDEĞİŞTİR
+        </button>
         <button className="btn m-4 p-4">İsimDEĞİŞTİR</button>
       </div>
     </div>
