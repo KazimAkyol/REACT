@@ -25,6 +25,11 @@ const Events = () => {
     document.querySelector(".btn-danger").textContent = "TIKLANDI";
   };
 
+  //? Bir componentin return kismi 3 farkli yöntem ile yeniden render edilir.
+  //? 1- Herhangi bir state degisirse
+  //? 2- Props degisirse
+  //? 3- Refresh force edilirse (tercih edilen bir durum olmaz)
+
   return (
     //! jsx(react) alani
 
@@ -51,11 +56,11 @@ const Events = () => {
 export default Events;
 
 //?-------------------------------------------------------------------
-//! Konsolda, güncellenen değişen count u görebiliriz ancak web sayfasında (biz görüntüle demeden) görüntülenmiyor..
-//* Çünkü, REACT herhangi bir element i default olarak static sayar
-//* DOM manipülasyonunu en aza indirmek için bunu yapar
+//! Konsolda, güncellenen değişen count'u görebiliriz ancak web sayfasında (biz görüntüle demeden) görüntülenmiyor!!!
+//* Çünkü, REACT herhangi bir elementi default olarak static sayar.
+//* DOM manipülasyonunu en aza indirmek için bunu yapar.
 //* Hangi elementin interactive olduğu konusunda React'e bilgi vermeliyiz.
-//! REACT'i interactive elements hakkında bilgilendirmek için iki yöntem kullanıyoruz
+//! REACT'i interactive elements hakkında bilgilendirmek için iki yöntem kullanıyoruz:
 //* 1. Statefull Classes. State-based inform (Class Components)
 //* 2. Hooks (Functional Components)
 //?--------------------------------------------------------------------

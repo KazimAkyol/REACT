@@ -5,7 +5,7 @@ import Events from "../1-events-hooksintro/Events";
 //! Hook'lar fonksiyonel component'ler icerisinde state'leri kullanmamiza olanak saglayan özel fonksiyonlardir.
 //! React 16.8 versiyonu ile gelmistir ve geldikten sonra Class-componentler'in kullanimini cok azaltmistir.
 
-//? React'ta useState(), useEffect(), useContext() gibi bir cok built-in Hook bulunmaktadir. Ayrica custom hook tanimlamak da mumkundur.
+//? React'ta useState(), useEffect(), useContext() gibi bir cok built-in Hook bulunmaktadir. Ayrica custom hook tanimlamak da mümkündür.
 
 //* Hook Kullanim Kurallari:
 //* 1. İlk olarak import edilmeliler. import { useState } from "react";
