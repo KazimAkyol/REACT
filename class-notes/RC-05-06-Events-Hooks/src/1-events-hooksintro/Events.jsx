@@ -21,6 +21,10 @@ const Events = () => {
     document.querySelector("h1").textContent = title;
   };
 
+  const click = () => {
+    document.querySelector(".btn-danger").textContent = "TIKLANDI";
+  };
+
   return (
     //! jsx(react) alani
 
@@ -37,9 +41,21 @@ const Events = () => {
       <button onClick={() => changeBaslik("HALLO")} className="btn btn-info">
         BASLIK DEGISTIR
       </button>
-      <button className="btn btn-danger">TIKLANDI</button>
+      <button onClick={click} className="btn btn-danger">
+        TIKLA
+      </button>
     </div>
   );
 };
 
 export default Events;
+
+//?-------------------------------------------------------------------
+//! Konsolda, güncellenen değişen count u görebiliriz ancak web sayfasında (biz görüntüle demeden) görüntülenmiyor..
+//* Çünkü, REACT herhangi bir element i default olarak static sayar
+//* DOM manipülasyonunu en aza indirmek için bunu yapar
+//* Hangi elementin interactive olduğu konusunda React'e bilgi vermeliyiz.
+//! REACT'i interactive elements hakkında bilgilendirmek için iki yöntem kullanıyoruz
+//* 1. Statefull Classes. State-based inform (Class Components)
+//* 2. Hooks (Functional Components)
+//?--------------------------------------------------------------------
