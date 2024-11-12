@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Events from "../1-events-hooksintro/Events";
 
 //* ==================== HOOKS ===============================
 //! Hook'lar fonksiyonel component'ler icerisinde state'leri kullanmamiza olanak saglayan özel fonksiyonlardir.
@@ -33,10 +34,22 @@ const Hooks = () => {
   };
 
   const degistir = () => {
-    setKisi({
-        
-    })
-  }
+    if (kisi.isim === "kazim") {
+      setKisi({
+        isim: "gökhan",
+        meslek: "cevirmen",
+        yas: 35,
+        renk: "blue",
+      });
+    } else {
+      setKisi({
+        isim: "kazim",
+        meslek: "developer",
+        yas: 34,
+        renk: "red",
+      });
+    }
+  };
 
   return (
     <div>
@@ -65,12 +78,17 @@ const Hooks = () => {
         <h3 className="text-primary">{kisi.meslek}</h3>
         <h5 className="text-success">{kisi.yas}</h5>
 
-        <button onClick={degistir}
+        <button
+          onClick={degistir}
           style={{ backgroundColor: kisi.renk, color: "yellow" }}
           className="btn m-4 p-4"
         >
           ToggleDEĞİŞTİR
         </button>
+
+        {kisi.renk === "blue" && <Events />}
+        {/* kisi.renk===blue iken Events comp basılsın dedim. bunu yapmak istiyorsam App.js deki Events a yoruma almalıyım */}
+
         <button className="btn m-4 p-4">İsimDEĞİŞTİR</button>
       </div>
     </div>
