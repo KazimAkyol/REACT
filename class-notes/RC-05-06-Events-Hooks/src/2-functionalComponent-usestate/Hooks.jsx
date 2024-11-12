@@ -9,9 +9,8 @@ import Events from "../1-events-hooksintro/Events";
 
 //* Hook Kullanim Kurallari:
 //* 1. İlk olarak import edilmeliler. import { useState } from "react";
-//* 2. Hook'lar ust seviyede tanimlanmalidir. Yani Hook'lar bir döngünün, kosul cumleciginin ve icice fonksiyonlarin icerisinde kullanilmamalidir.
-//* 3. Hook'lar sadece React Fonksiyonel componentleri icerisinde cagrilmalidir.
-//*    Normal Javascript fonksiyonlari icerisinde cagrilmamalidir
+//* 2. Hook'lar üst seviyede tanimlanmalidir. Yani Hook'lar bir döngünün, kosul cümleciginin ve ic ice fonksiyonlarin icerisinde kullanilmamalidir.
+//* 3. Hook'lar sadece React Fonksiyonel componentleri icerisinde cagrilmalidir. Normal Javascript fonksiyonlari icerisinde cagrilmamalidir
 //*    (Custom hook'lar icerisinde bir hook cagrilabilir)
 //?    https://react.dev/reference/react/hooks#state-hooks
 //* =============================================================
@@ -89,7 +88,35 @@ const Hooks = () => {
         {kisi.renk === "blue" && <Events />}
         {/* kisi.renk===blue iken Events comp basılsın dedim. bunu yapmak istiyorsam App.js deki Events a yoruma almalıyım */}
 
-        <button className="btn m-4 p-4">İsimDEĞİŞTİR</button>
+        {/* <button
+          onClick={() =>
+            setKisi({
+              isim: "fatma",
+              meslek: "developer",
+              yas: 34,
+              renk: "red",
+            })
+          }
+          style={{ backgroundColor: kisi.renk }}
+          className="btn m-4 p-4"
+        >
+          İsimDEĞİŞTİR
+        </button> */}
+
+        <button
+          onClick={() => setKisi({ ...kisi, isim: "fatma", renk: "aqua" })}
+          style={{ backgroundColor: kisi.renk }}
+          className="btn m-4 p-4"
+        >
+          İsimDEĞİŞTİR
+        </button>
+
+        <button
+          onClick={() => setKisi({ ...kisi, yas: 50 })}
+          className="btn btn-secondary"
+        >
+          yasDegistir
+        </button>
       </div>
     </div>
   );
