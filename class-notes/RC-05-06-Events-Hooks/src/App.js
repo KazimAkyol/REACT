@@ -1,5 +1,4 @@
-import Counter from "./2-classComponent-state/Counter";
-import Form from "./3-form/Form";
+import MouseKeyboard from "./4-mouse-keyboard/MouseKeyboard";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -12,7 +11,9 @@ function App() {
 
       {/* <Counter /> */}
 
-      <Form />
+      {/* <Form /> */}
+
+      <MouseKeyboard />
     </div>
   );
 }

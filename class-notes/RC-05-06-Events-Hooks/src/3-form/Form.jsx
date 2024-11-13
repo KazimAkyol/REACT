@@ -18,6 +18,12 @@ const Form = () => {
     //? ileride bir submit islemin neticesinde verilerin nasıl post edilebileceğini gostermek adina eklenmistir.
     //? const res = axios.post("url", { isim, pass, country })
     alert(`name:${isim}  password: ${pass} country : ${country}`);
+
+    //!database'e yollandıktan sonra değişkenlerin içini temizledik, bunu ekranda da temiz görmek için inputlarda value değişkenleri tanımladık.
+
+    setIsim("");
+    setPass("");
+    setCountry("");
   };
 
   return (
