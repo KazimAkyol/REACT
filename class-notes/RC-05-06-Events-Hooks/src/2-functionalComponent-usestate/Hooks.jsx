@@ -86,7 +86,7 @@ const Hooks = () => {
         </button>
 
         {kisi.renk === "blue" && <Events />}
-        {/* kisi.renk===blue iken Events comp basılsın dedim. bunu yapmak istiyorsam App.js deki Events a yoruma almalıyım */}
+        {/* kisi.renk===blue iken Events comp basılsın dedim. bunu yapmak istiyorsam App.js deki Events'i yoruma almalıyım. */}
 
         {/* <button
           onClick={() =>
