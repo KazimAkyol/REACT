@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-//! JSX ile HTML arasında çok fazla fark olmamakla birlikte bazı önemli farklar da mevcut elbette.
+//! JSX ile HTML arasında çok fazla fark olmamakla birlikte bazı önemli farklar da mevcuttur.
 //! HTML'de class olarak tanımlanan nitelik JSX'de className olarak tanımlanmalı.
 //! HTML'de tek kelime olmayan tabindex gibi nitelikler JSX'de camelCase yapısına uygun olarak tabIndex şeklinde dönüştürülür.
 //! HTML'de onclick, onchange gibi nitelikler yukarıdaki camelCase örneğine göre onClick, onChange şeklinde dönüştürülür.
-//! HTML'de label etiketinde belirtilen for attribute ü JSX'de htmlFor olarak tanımlanmalı.
+//! HTML'de label etiketinde belirtilen for attribute'ü JSX'de htmlFor olarak tanımlanmalı.
 //! HTML'de value niteliği JSX'de defaultValue olarak tanımlanmalı.
-//! Ayrıca JSX'de  javascript ifadeleri {} içinde çalıştırılabilir. Buna map, && gibi yapılarda dahil.
+//! Ayrıca JSX'de JavaScript ifadeleri {} içinde çalıştırılabilir. Buna map, && gibi yapılar da dahil.
 
 const Form = () => {
   const [isim, setIsim] = useState("");
@@ -15,8 +15,9 @@ const Form = () => {
 
   const gonderDatabase = (e) => {
     e.preventDefault();
-    //? ileride bir submit islemin neticesinde verilerin nasıl post edilebileceğini gostermek adina eklenmistir.
+    //? ileride bir submit islemin neticesinde verilerin nasıl post edilebileceğini göstermek adina eklenmistir.
     //? const res = axios.post("url", { isim, pass, country })
+
     alert(`name:${isim}  password: ${pass} country : ${country}`);
 
     //!database'e yollandıktan sonra değişkenlerin içini temizledik, bunu ekranda da temiz görmek için inputlarda value değişkenleri tanımladık.

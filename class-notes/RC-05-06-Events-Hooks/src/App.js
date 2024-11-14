@@ -1,4 +1,4 @@
-import MouseKeyboard from "./4-mouse-keyboard/MouseKeyboard";
+import Form from "./3-form/Form";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,9 +11,7 @@ function App() {
 
       {/* <Counter /> */}
 
-      {/* <Form /> */}
-
-      <MouseKeyboard />
+      <Form />
     </div>
   );
 }
