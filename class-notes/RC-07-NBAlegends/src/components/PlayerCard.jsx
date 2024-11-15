@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 const PlayerCard = ({ name, img, statistics }) => {
   const [showResim, setShow] = useState(true);
 
-  console.log(statistics);
+  // console.log(statistics);
   return (
     <Card
       style={{ width: "18rem" }}
