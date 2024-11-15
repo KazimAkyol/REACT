@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import { Container } from "react-bootstrap";
 import CardContainer from "./components/CardContainer";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
