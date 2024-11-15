@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import CardContainer from "./components/CardContainer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import PlayerCard from "./components/PlayerCard";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <Header />
 
       <CardContainer />
+
+      <PlayerCard />
     </Container>
   );
 }
