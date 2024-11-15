@@ -26,3 +26,10 @@ body {
 .player-kart:hover .player-resim {
   transform: scale(0.95);
 }
+
+ul {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
