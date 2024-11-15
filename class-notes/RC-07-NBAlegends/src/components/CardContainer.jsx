@@ -1,30 +1,28 @@
 import React from "react";
+import { Container, Form, Row, Col } from "react-bootstrap";
 import { data } from "../helpers/data";
-
 import PlayerCard from "./PlayerCard";
-import { Row, Col, Container, Form } from "react-bootstrap";
 
 const CardContainer = () => {
+  console.log(data);
+
   return (
-    <>
-      <div>
-        <Form.Control
-          placeholder="Search Player..."
-          aria-label="search"
-          aria-describedby="basic-addon1"
-          className="w-50"
-        />
-        <Container className="my-2 card-container">
-          <Row>
-            {data.map((player) => {
-              <Col className="my-2 key={player.name} ">
-                <PlayerCard {...player} />
-              </Col>;
-            })}
-          </Row>
-        </Container>
-      </div>
-    </>
+    <div>
+      <Form.Control
+        placeholder="Search Player.."
+        aria-label="search"
+        aria-describedby="basic-addon1"
+      />
+      <Container className="my-2 kartContainer">
+        <Row xs={1} md={2} lg={4}>
+          {data.map((player) => (
+            <Col className="my-2" key={player.name}>
+              <PlayerCard {...player} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </div>
   );
 };
 
