@@ -11,7 +11,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../img/logo.png";
 
 const MyNavbar = () => {
-  //!navbar scrolling   expand="lg"=>yazılar, lg ekranlarda görünmeye başlar. navbarScroll=hamburger açılınca sığmayan linkler için scrollbar
+  //!navbar scrolling   expand="lg"=>yazılar, lg ekranlarda görünmeye başlar. navbarScroll=hamburger açılınca sığmayan linkler için scrollbar.
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -30,7 +31,6 @@ const MyNavbar = () => {
             <NavDropdown title="Courses" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Full-Stack</NavDropdown.Item>
               <NavDropdown.Item href="#action4">Data-Science</NavDropdown.Item>
-              <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">DevOps</NavDropdown.Item>
             </NavDropdown>
           </Nav>
