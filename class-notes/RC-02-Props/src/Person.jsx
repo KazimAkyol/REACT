@@ -7,13 +7,16 @@ const Person = (props) => {
 
   // destructuring
   const { name, img, tel } = props.kisi;
+
   return (
     <div>
       <h1> {name} </h1>
+
       <img src={img} alt="" />
 
       <p> {tel} </p>
 
+      {/* <Message isim="Osman Kara" /> */}
       <Message isim={name} telefon={tel} />
     </div>
   );
