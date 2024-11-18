@@ -1,18 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './Pages/Home';
-
+import logo from "./logo.svg";
+import "./App.css";
+import Home from "./Pages/Home";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div>
-    <Home />
+      <Home />
     </div>
   );
 }
 
 export default App;
-
 
 // e target kullanacagiz, input'un icindeki textContent'e ulasmak icin
 

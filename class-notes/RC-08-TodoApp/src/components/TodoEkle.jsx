@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Form from "react-bootstrap";
 
 const TodoEkle = ({ datam, setDatam }) => {
   const [yapilacakIs, setYapilacakIs] = useState("");
@@ -17,10 +18,11 @@ const TodoEkle = ({ datam, setDatam }) => {
   };
 
   return <div>
-    <form>
-        <input className="" type="text" />
-        <button className=""></button>
-    </form>
+      <Form.Control
+        placeholder="Search Player.."
+        className="w-50 m-auto"
+        onChange={(e) => setYapilacakIs(e.target.value)}
+      />
   </div>;
 };
 

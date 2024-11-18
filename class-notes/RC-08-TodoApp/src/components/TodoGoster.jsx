@@ -8,9 +8,7 @@ const TodoGoster = ({ datam, SetDatam }) => {
     <div>
       {datam.map((d) => (
         <div key={d.id}>
-          <h1>{d.text}</h1>
-          <p>{d.day}</p>
-          <p>{d.isDone}</p>
+          <p>{d.text}</p>
         </div>
       ))}
     </div>
