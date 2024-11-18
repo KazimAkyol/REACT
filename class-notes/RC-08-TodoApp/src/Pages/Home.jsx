@@ -4,7 +4,7 @@ import TodoGoster from "../components/TodoGoster";
 import data from "../helper/Data";
 
 const Home = () => {
-    const [datam,setDatam]=useState(data);
+  const [datam, setDatam] = useState(data);
   return (
     <div>
       <TodoEkle />
