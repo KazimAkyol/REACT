@@ -4,21 +4,22 @@ import "./Card.scss";
 const Card = ({ veri }) => {
   // console.log(props);
   console.log(veri);
+
   //! react alanında (ekrana basarken) döngü olarak sadece map desteklenir,condition'lardan da sadece ternary desteklenir.
 
   //! map döngüsü kullanılan her projede map'ten sonraki ilk etikete key={id} yazılır.
 
   return (
-    <div>
+    <div className="konteynir">
       {veri.map((a) => (
-        <div key={a.id}>
+        <div className="card" key={a.id}>
           <h1>{a.name}</h1>
           <h2>{a.job}</h2>
           <p>{a.comment}</p>
           <img src={a.img} alt="user" />
-          <div>
+          <div className="buton-div">
             <button className="buton-div--small">Small</button>
-            <button className="buton-div--small">Large</button>
+            <button className="buton-div--large">Large</button>
           </div>
         </div>
       ))}
