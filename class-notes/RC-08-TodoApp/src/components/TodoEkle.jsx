@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const TodoEkle = ({ datam, setDatam }) => {
   const [yapilacakIs, setYapilacakIs] = useState("");
   const handleSubmit = (e) => {
-    e, preventDefault();
+    e.preventDefault();
 
     setDatam([
       ...datam,
@@ -15,7 +15,13 @@ const TodoEkle = ({ datam, setDatam }) => {
       },
     ]);
   };
-  return <div></div>;
+
+  return <div>
+    <form>
+        <input className="" type="text" />
+        <button className=""></button>
+    </form>
+  </div>;
 };
 
 export default TodoEkle;

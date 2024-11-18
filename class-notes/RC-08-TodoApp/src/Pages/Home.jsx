@@ -5,11 +5,12 @@ import data from "../helper/Data";
 
 const Home = () => {
   const [datam, setDatam] = useState(data);
+
   return (
     <div>
-      <TodoEkle />
+      <TodoEkle datam={datam} setDatam={setDatam} />
 
-      <TodoGoster datam={datam} />
+      <TodoGoster datam={datam} setDatam={setDatam} />
     </div>
   );
 };

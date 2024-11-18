@@ -1,18 +1,20 @@
-import React from 'react'
+import React from "react";
 
-const TodoGoster = ({datam}) => {
-    const deleteTodo=(id)=> {
-        SetDatam(datam.filter((d)=>d.id !== id))
-    }
+const TodoGoster = ({ datam, SetDatam }) => {
+  const deleteTodo = (id) => {
+    SetDatam(datam.filter((d) => d.id !== id));
+  };
   return (
     <div>
-        {datam.map((d)=>
+      {datam.map((d) => (
         <div key={d.id}>
-        <p></p>
+          <h1>{d.text}</h1>
+          <p>{d.day}</p>
+          <p>{d.isDone}</p>
         </div>
-        )}
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default TodoGoster
+export default TodoGoster;
