@@ -1,8 +1,16 @@
 import React from 'react'
 
-const TodoGoster = () => {
+const TodoGoster = ({datam}) => {
   return (
-    <div>TodoGoster</div>
+    <div>
+        {datam.map((d)=>
+        <div key={d.id}>
+        <h1></h1>
+        <h2></h2>
+        <p></p>
+        </div>
+        )}
+    </div>
   )
 }
 
