@@ -1,12 +1,10 @@
 import { Component } from "react";
 
 //* ====================== CLASS COMPONENTS AND STATE ======================
-//* React taki Class-Components  ES6 class yapısını temel alır.
-//* çok fazla boilerplate code a sahipler.
-//* fakat, state lere sahip olabilirler
-//*  state component hakkında data veya bilgi içermek için kullanılan yerleşik bir React object tidir. component in durumu zamanla değişebilir ;
-//* ne zaman değişse component re-render olur.
-//* this.state ile constructor da state için bir initial value atayabiliriz. constructor  dışında, state i setState() metoduyla değiştirebiliriz,
+//* React'taki Class-Components ES6 class yapısını temel alır. Cok fazla boilerplate code'a sahipler. Fakat, state'lere sahip olabilirler.
+//* State component hakkında data veya bilgi içermek için kullanılan yerleşik bir React objectidir. Component'in durumu zamanla değişebilir;
+//* Ne zaman değişse component re-render olur.
+//* this.state ile constructor'da state için bir initial value atayabiliriz. Constructor  dışında, state'i setState() metoduyla değiştirebiliriz.
 //* =========================================================================
 class Counter extends Component {
   constructor(props) {
@@ -26,7 +24,7 @@ class Counter extends Component {
     this.setState({ baslik: "HALLO" });
   }
 
-  //!burada arrow function tercih ettiğimiz için button kısmında fonksiyonu bind etmeye gerek kalmadı.
+  //! burada arrow function tercih ettiğimiz için button kısmında fonksiyonu bind etmeye gerek kalmadı.
   azalt = () => {
     this.setState({ sayac: this.state.sayac - 1 });
   };

@@ -1,11 +1,11 @@
 import React from "react";
 
 // const Card = ({ hrscp }) => {
-//   // console.log(hrscp);
+// console.log(hrscp);
 
 //   const { title, date, image, desc } = hrscp;
 
-const Card = ({ id, title, image, date, desc }) => {
+const Card = ({ title, date, image, desc }) => {
   return (
     <div className="card">
       <div className="title">
