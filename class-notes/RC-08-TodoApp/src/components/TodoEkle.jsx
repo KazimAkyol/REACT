@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap";
 
 const TodoEkle = ({ datam, setDatam }) => {
   const [yapilacakIs, setYapilacakIs] = useState("");
@@ -17,13 +16,30 @@ const TodoEkle = ({ datam, setDatam }) => {
     ]);
   };
 
-  return <div>
-      <Form.Control
-        placeholder="Search Player.."
-        className="w-50 m-auto"
-        onChange={(e) => setYapilacakIs(e.target.value)}
-      />
-  </div>;
+  const handleChange = (e) => {
+    setYapilacakIs({ ...datam, [e.target.text]: e.target.value });
+  };
+
+  return (
+    <div className="todoEkle">
+      <form
+        className="input-form"
+        action="handleSubmit onSubmit={handleSubmit}"
+      >
+        <input
+          className="todoEkle-input todoEkle-input-title"
+          name="title"
+          type="text"
+          placeholder="Enter title"
+          onChange={handleChange}
+          value={datam.title}
+        />
+        <button className="todoEkle-btn" type="onSubmit">
+          Add
+        </button>
+      </form>
+    </div>
+  );
 };
 
 export default TodoEkle;

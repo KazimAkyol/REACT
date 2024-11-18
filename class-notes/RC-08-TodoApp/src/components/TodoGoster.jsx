@@ -11,6 +11,12 @@ const TodoGoster = ({ datam, SetDatam }) => {
           <p>{d.text}</p>
         </div>
       ))}
+
+      <div>
+        <button className="todoGoster-btn" type="onSubmit">
+          Delete
+        </button>
+      </div>
     </div>
   );
 };
