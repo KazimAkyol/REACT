@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import { TiDelete } from "react-icons/ti";
 
-const GorevleriGoster = () => {
+const GorevleriGoster = ({ yapilacak }) => {
   return (
-    <div>GorevleriGoster</div>
-  )
-}
+    <div>
+      {yapilacak.map((a) => (
+        <div>
+          <h3>
+            {a.text}
 
-export default GorevleriGoster
+            <TiDelete />
+          </h3>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default GorevleriGoster;

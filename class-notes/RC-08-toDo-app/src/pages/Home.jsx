@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from "react";
+import GorevEkle from "../components/GorevEkle";
+import GorevleriGoster from "../components/GorevleriGoster";
+
+import Data from "../helper/Data";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const [yapilacak, setYapilacak] = useState(Data);
 
-export default Home
+  // console.log(yapilacak);
+  // console.log(Data);
+
+  return (
+    <div>
+      <GorevEkle />
+
+      <GorevleriGoster yapilacak={yapilacak} />
+    </div>
+  );
+};
+
+export default Home;
