@@ -21,6 +21,7 @@ const GorevEkle = ({ yapilacak, setYapilacak }) => {
         <button
           className="btn"
           style={{ background: goster === true ? "red" : "purple" }}
+          onClick={() => setGoster(!goster)}
         >
           {goster === true ? "CLOSE" : "SHOW"} ADD TASK BAR
         </button>

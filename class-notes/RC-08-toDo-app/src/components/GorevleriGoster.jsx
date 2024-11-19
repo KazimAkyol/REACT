@@ -5,7 +5,7 @@ const GorevleriGoster = ({ yapilacak, setYapilacak }) => {
   return (
     <div>
       {yapilacak.map((a) => (
-        <div className={a.isDone === true ? "done" : "gorev"}>
+        <div key={a.id} className={a.isDone === true ? "done" : "gorev"}>
           <h3>
             {a.text}
 
