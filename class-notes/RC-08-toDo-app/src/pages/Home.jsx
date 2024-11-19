@@ -14,7 +14,7 @@ const Home = () => {
     <div>
       <GorevEkle />
 
-      <GorevleriGoster yapilacak={yapilacak} />
+      <GorevleriGoster yapilacak={yapilacak} setYapilacak={setYapilacak} />
     </div>
   );
 };
