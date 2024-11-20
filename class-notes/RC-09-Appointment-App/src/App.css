@@ -11,15 +11,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.btn {
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  font-weight: 600;
-  font-size: 17px;
-  padding: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+.card {
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
 }
 
 .form-control input {
@@ -35,6 +30,14 @@ body {
   width: 100%;
   background-color: red;
   margin: 2rem 0;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
 
 h3 {

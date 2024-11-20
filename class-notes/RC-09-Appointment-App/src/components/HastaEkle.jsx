@@ -7,16 +7,13 @@ const HastaEkle = ({ eklenecek, setEklenecek }) => {
   const gonder = (e) => {
     e.preventDefault();
 
-    setEklenecek([
-        {id:7, text:"Mauro Icardi", day: "Dec 21th at 1:00pm" }
-    ])
-  }
-
+    setEklenecek([{ id: 7, text: "Mauro Icardi", day: "Dec 21th at 1:00pm" }]);
+  };
+  //  a yi buraya gönder ve burada karsila  ve ekrana bastir
   return (
     <div>
       <header className="header">
         <h1>HOSPITAL</h1>
-        <button className="btn"></button>
       </header>
       <form>
         <div className="form-control">

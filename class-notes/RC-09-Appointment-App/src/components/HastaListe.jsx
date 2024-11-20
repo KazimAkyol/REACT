@@ -5,7 +5,7 @@ const HastaListe = ({ eklenecek, setEklenecek }) => {
   return (
     <div>
       {eklenecek.map((a) => (
-        <div key={a.id} className={a.bittiMi === true ? "" : "false"}>
+        <div key={a.id}>
           <h3>
             {a.text}
             <TiDelete
