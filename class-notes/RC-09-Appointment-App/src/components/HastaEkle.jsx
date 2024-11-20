@@ -4,6 +4,14 @@ const HastaEkle = ({ eklenecek, setEklenecek }) => {
   const [ekle, setEkle] = useState("");
   const [day, setDay] = useState("");
 
+  const gonder = (e) => {
+    e.preventDefault();
+
+    setEklenecek([
+        {id:7, text:"Mauro Icardi", day: "Dec 21th at 1:00pm" }
+    ])
+  }
+
   return (
     <div>
       <header className="header">
