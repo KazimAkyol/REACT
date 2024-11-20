@@ -8,7 +8,7 @@ const HastaEkle = ({ eklenecek, setEklenecek }) => {
     <div>
       <header className="header">
         <h1>HOSPITAL</h1>
-        <button className="btn">ADD TASK BAR</button>
+        <button className="btn"></button>
       </header>
       <form>
         <div className="form-control">
