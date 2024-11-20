@@ -1,8 +1,17 @@
 import React from 'react'
 
-const HastaListe = () => {
+const HastaListe = ({eklenecek, setEklenecek}) => {
   return (
-    <div>HastaListe</div>
+    <div>
+    {eklenecek.map((a) =>(
+        <div>
+            {a.text}
+            {a.day}
+            {a.bittiMi}
+            {a.doktor}
+        </div>
+    ))}
+    </div>
   )
 }
 

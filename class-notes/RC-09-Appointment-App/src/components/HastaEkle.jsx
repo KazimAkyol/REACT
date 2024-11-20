@@ -21,7 +21,7 @@ const HastaEkle = ({ eklenecek, setEklenecek }) => {
         </div>
         <div>
           <button className="btn btn-submit" type="submit">
-            SUBMİT
+            ICIN KAYIT OLUSTUR
           </button>
         </div>
       </form>

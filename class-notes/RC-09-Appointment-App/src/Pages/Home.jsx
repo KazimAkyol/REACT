@@ -12,11 +12,11 @@ const Home = () => {
   // console.log(Data);
   return (
     <div>
+      <Card />
+
       <HastaEkle eklenecek={eklenecek} setEklenecek={setEklenecek} />
 
-      <HastaListe />
-
-      <Card />
+      <HastaListe eklenecek={eklenecek} setEklenecek={setEklenecek} />
     </div>
   );
 };

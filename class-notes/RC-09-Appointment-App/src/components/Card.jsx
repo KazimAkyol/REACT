@@ -1,48 +1,37 @@
-import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
+import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
+
+import photo1 from "../assets/ahmet.png";
+import photo2 from "../assets/Ayse.png";
+import photo3 from "../assets/Fatma.png";
+import photo4 from "../assets/Oya.png";
 
 function GroupExample() {
   return (
     <CardGroup>
       <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Img variant="top" src={photo1} />
         <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </Card.Text>
+          <Card.Title>Dr.Ahmet Bilen</Card.Title>
         </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
       </Card>
       <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Img variant="top" src={photo2} />
         <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This card has supporting text below as a natural lead-in to
-            additional content.
-          </Card.Text>
+          <Card.Title>Dr.Ayse Okur</Card.Title>
         </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
       </Card>
       <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Img variant="top" src={photo3} />
         <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This card has even longer content than the
-            first to show that equal height action.
-          </Card.Text>
+          <Card.Title>Dr.Fatma Idil</Card.Title>
         </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
+      </Card>
+      <Card>
+        <Card.Img variant="top" src={photo4} />
+        <Card.Body>
+          <Card.Title>Dr.Oya Basar</Card.Title>
+        </Card.Body>
       </Card>
     </CardGroup>
   );
