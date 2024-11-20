@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import HastaEkle from "../components/HastaEkle";
 import HastaListe from "../components/HastaListe";
-import { doctor } from "../Pages/doctor";
+import { doctorData } from "./doctor";
 
 import Data from "../helper/data";
+import Card from "../components/Card";
 
 const Home = () => {
   const [eklenecek, setEklenecek] = useState(Data);
-  const [doctor, setDoctor] = useState(doctor);
 
   // console.log(eklenecek);
   // console.log(Data);
+  
   return (
     <div>
-      <header>
-        <Doctor doctor={doctor} />
-      </header>
+      <Card doctor={doctorData} />
 
       <HastaEkle eklenecek={eklenecek} setEklenecek={setEklenecek} />
 
