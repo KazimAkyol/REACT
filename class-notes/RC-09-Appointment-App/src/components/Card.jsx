@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { doctorData } from "../Pages/doctor";
 
-const Card = () => {
+const Card = ({ DataA, setDataA }) => {
   return (
-    <div>Card</div>
-  )
-}
+    <div>
+      {doctorData.map((a) => (
+        <div key={a.id}>
+          <h3>{a.doctorName}</h3>
+          <img src={a.doctorImg} alt="" />
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default Card
+export default Card;

@@ -8,10 +8,11 @@ import Card from "../components/Card";
 
 const Home = () => {
   const [eklenecek, setEklenecek] = useState(Data);
+  const [dataA, setDataA] = useState(doctorData);
 
   // console.log(eklenecek);
   // console.log(Data);
-  
+
   return (
     <div>
       <Card doctor={doctorData} />
