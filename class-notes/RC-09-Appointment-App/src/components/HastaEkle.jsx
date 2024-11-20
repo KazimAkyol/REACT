@@ -4,10 +4,19 @@ const HastaEkle = ({ eklenecek, setEklenecek }) => {
   const [ekle, setEkle] = useState("");
   const [day, setDay] = useState("");
 
-  const gonder = (e) => {
-    e.preventDefault();
+  const gonder = (a) => {
+    a.preventDefault();
 
-    setEklenecek([{ id: 7, text: "Mauro Icardi", day: "Dec 21th at 1:00pm" }]);
+    setDataA([
+      {
+        id: 7,
+        text: "Mauro Icardi",
+        day: "Dec 21th at 1:00pm",
+        bittiMi: "",
+        doktor: "",
+      },
+      ...DataA,
+    ]);
   };
   //  a yi buraya gönder ve burada karsila  ve ekrana bastir
   return (
@@ -15,7 +24,7 @@ const HastaEkle = ({ eklenecek, setEklenecek }) => {
       <header className="header">
         <h1>HOSPITAL</h1>
       </header>
-      <form>
+      <form onSubmit={gonder}>
         <div className="form-control">
           <label htmlFor="text">Task</label>
           <input id="text" type="text" name="text" />
