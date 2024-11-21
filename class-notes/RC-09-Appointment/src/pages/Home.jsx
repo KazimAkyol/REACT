@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from "react";
+
+import { hastaData, doctorData } from "../helper/Data";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const [doktorlar, setDoctors] = useState(doctorData);
+  const [hastalar, setPatient] = useState(hastaData);
+  const [show, setShow] = useState(true);
 
-export default Home
+  return (
+    <div>
+      <header>
+        <h1>HOSPITAL</h1>
+      </header>
+
+      <div className="dr"></div>
+    </div>
+  );
+};
+
+export default Home;
