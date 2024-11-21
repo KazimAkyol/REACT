@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { hastaData, doctorData } from "../helper/Data";
 import PatientList from "../components/PatientList";
+import AddPatient from "../components/AddPatient";
 
 const Home = () => {
   const [doktorlar, setDoctors] = useState(doctorData);
@@ -15,7 +16,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div style={{ display: show === true ? "block" : "flex" }}>
       <header>
         <h1>HOSPITAL</h1>
 
@@ -45,6 +46,8 @@ const Home = () => {
           ))}
         </div>
       </header>
+
+      {show === false && <AddPatient />}
 
       <PatientList hastalar={hastalar} setPatient={setPatient} />
     </div>
