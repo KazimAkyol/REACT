@@ -12,6 +12,10 @@ const GorevEkle = ({ yapilacak, setYapilacak }) => {
       { id: 7, text: todo, day: day, isDone: false },
       ...yapilacak,
     ]);
+
+    setTodo("");
+
+    setDay("");
   };
 
   return (
@@ -45,6 +49,7 @@ const GorevEkle = ({ yapilacak, setYapilacak }) => {
               type="datetime-local"
               name="day"
               onChange={(e) => setDay(e.target.value)}
+              value={day}
             />
           </div>
           <div>
