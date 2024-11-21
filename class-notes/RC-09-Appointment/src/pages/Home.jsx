@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { hastaData, doctorData } from "../helper/Data";
+import PatientList from "../components/PatientList";
 
 const Home = () => {
   const [doktorlar, setDoctors] = useState(doctorData);
@@ -8,40 +9,44 @@ const Home = () => {
   const [show, setShow] = useState(true);
 
   const doctorClick = (id) => {
-    setShow(false)
-  }
+    setShow(false);
+
+    setDoctors(doktorlar.filter((a) => a.id === id));
+  };
 
   return (
     <div>
       <header>
         <h1>HOSPITAL</h1>
+
+        <div className="dr">
+          {doktorlar.map((dr) => (
+            <div key={dr.id}>
+              <img
+                className="btn"
+                width="180px"
+                height="150px"
+                src={dr.doctorImg}
+                alt=""
+                style={{ background: show === true ? "aqua" : "lightgreen" }}
+                onClick={() => doctorClick(dr.id)}
+              />
+
+              <h4
+                style={{
+                  background: show === true ? "aqua" : "lightgreen",
+                  borderLeft:
+                    show === true ? "10px solid blue" : "10px solid green",
+                }}
+              >
+                {dr.doctorName}
+              </h4>
+            </div>
+          ))}
+        </div>
       </header>
 
-      <div className="dr">
-        {doktorlar.map((dr) => (
-          <div key={dr.id}>
-            <img
-              className="btn"
-              width="180px"
-              height="150px"
-              src={dr.doctorImg}
-              alt=""
-              style={{ background: show === true ? "aqua" : "lightgreen" }}
-              onClick={() => doctorClick(dr.id)}
-            />
-
-            <h4
-              style={{
-                background: show === true ? "aqua" : "lightgreen",
-                borderLeft:
-                  show === true ? "10px solid blue" : "10px solid green",
-              }}
-            >
-              {dr.doctorName}
-            </h4>
-          </div>
-        ))}
-      </div>
+      <PatientList hastalar={hastalar} setPatient={setPatient} />
     </div>
   );
 };
