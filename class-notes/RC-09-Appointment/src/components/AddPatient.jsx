@@ -4,6 +4,8 @@ const AddPatient = ({ hastalar, setPatient, doktorlar }) => {
   const [hastaAdi, setName] = useState("");
   const [tarih, setTarih] = useState("");
 
+  // console.log(doktorlar);
+
   const kayitSubmit = (e) => {
     e.preventDefault();
 
@@ -18,6 +20,7 @@ const AddPatient = ({ hastalar, setPatient, doktorlar }) => {
       },
     ]);
   };
+
   return (
     <div>
       <form onSubmit={kayitSubmit}>
@@ -40,7 +43,7 @@ const AddPatient = ({ hastalar, setPatient, doktorlar }) => {
 
         <div>
           <button className="doc" type="submit">
-            <span>kasjcklsajd </span> için kayıt oluştur
+            <span>{doktorlar[0].doctorName}</span> için kayıt oluştur
           </button>
         </div>
       </form>
