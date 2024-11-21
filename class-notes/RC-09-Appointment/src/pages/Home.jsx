@@ -5,7 +5,7 @@ import PatientList from "../components/PatientList";
 import AddPatient from "../components/AddPatient";
 
 const Home = () => {
-  const [doktorlar, setDoctors] = useState(doctorData);
+  let [doktorlar, setDoctors] = useState(doctorData);
   const [hastalar, setPatient] = useState(hastaData);
 
   const [show, setShow] = useState(true);
@@ -13,7 +13,12 @@ const Home = () => {
   const doctorClick = (id) => {
     setShow(false);
 
-    setDoctors(doktorlar.filter((a) => a.id === id));
+    doktorlar = doktorlar.filter((a) => a.id === id);
+    setDoctors(doktorlar);
+
+    console.log(doktorlar[0].doctorName);
+
+    setPatient(hastalar.filter((a) => a.myDoctor === doktorlar[0].doctorName));
   };
 
   return (
@@ -49,7 +54,9 @@ const Home = () => {
           </div>
         </header>
 
-        {show === false && <AddPatient />}
+        {show === false && (
+          <AddPatient setPatient={setPatient} doktorlar={doktorlar} />
+        )}
       </div>
 
       <PatientList hastalar={hastalar} setPatient={setPatient} />

@@ -35,7 +35,7 @@ body {
 .btn {
   border: none;
   cursor: pointer;
- /* outline: none; */
+  /* outline: none; */
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -44,7 +44,7 @@ body {
 /* 2. sayfadaki kayıt oluştur butonu */
 .doc {
   color: #fff;
- text-transform: uppercase;
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -108,8 +108,7 @@ body {
 }
 .btn + h4 {
   padding: 10px 20px;
-/* btn className li img den sonraki h4 doktor isimleri */
-  
+  /* btn className li img den sonraki h4 doktor isimleri */
 }
 /* ilk sayfadaki 4 doktor resmi ve isimlerinin div i*/
 .dr {
@@ -117,7 +116,3 @@ body {
   gap: 2rem 1rem;
   justify-content: center;
 }
-
-
-
-

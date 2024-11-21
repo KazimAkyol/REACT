@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddPatient = ({ hastalar, setPatient }) => {
+const AddPatient = ({ hastalar, setPatient, doktorlar }) => {
   const [hastaAdi, setName] = useState("");
   const [tarih, setTarih] = useState("");
 
@@ -14,7 +14,7 @@ const AddPatient = ({ hastalar, setPatient }) => {
         patientName: hastaAdi,
         day: tarih,
         isDone: false,
-        myDoctor: "kutsi",
+        myDoctor: doktorlar[0].doctorName,
       },
     ]);
   };
@@ -22,7 +22,7 @@ const AddPatient = ({ hastalar, setPatient }) => {
     <div>
       <form onSubmit={kayitSubmit}>
         <div className="form-control">
-          <label htmlFor="name"> Patient Information</label>
+          <label htmlFor="name">Patient Information</label>
           <input
             id="name"
             type="text"
@@ -31,7 +31,7 @@ const AddPatient = ({ hastalar, setPatient }) => {
         </div>
 
         <div className="form-control">
-          <label htmlFor=""> Day & Time</label>
+          <label htmlFor="">Day & Time</label>
           <input
             type="datetime-local"
             onChange={(e) => setTarih(e.target.value)}
