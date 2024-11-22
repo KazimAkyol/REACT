@@ -10,7 +10,7 @@ import React, { Component } from "react";
 class LifeCycle extends Component {
   constructor(props) {
     super(props);
-    console.log("state oluştur. Constructor çalıştı");
+    console.log("state oluştur. Constructor çalişti");
     this.state = {
       count: 0,
     };
@@ -52,13 +52,13 @@ class LifeCycle extends Component {
               <h1 className="display-4 mb-4">{this.state.count}</h1>
               <div className="btn-group">
                 <button className="btn btn-success" onClick={this.increment}>
-                  <i className="bi bi-plus-circle"></i> Artır
+                  <i className="bi bi-plus-circle"></i> Artir
                 </button>
                 <button className="btn btn-danger" onClick={this.decrement}>
                   <i className="bi bi-dash-circle"></i> Azalt
                 </button>
                 <button className="btn btn-warning" onClick={this.reset}>
-                  <i className="bi bi-arrow-counterclockwise"></i> Sıfırla
+                  <i className="bi bi-arrow-counterclockwise"></i> Sifirla
                 </button>
               </div>
             </div>
