@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const People = () => {
   const [user, setUser] = useState([]);
@@ -12,11 +13,32 @@ const People = () => {
 
   //! 1.Yol: fetch-then
 
+  //   useEffect(() => {
+  //     fetch("https://jsonplaceholder.typicode.com/users")
+  //       .then((data) => data.json())
+  //       .then((veri) => setUser(veri));
+  //   }, []);
+
+  //! 2.Yol: async-await
+
+  //   const veriGetir = async () => {
+  //     const veri = await fetch("https://jsonplaceholder.typicode.com/users");
+  //     const data = await veri.json();
+  //     setUser(data);
+  //   };
+  //   useEffect(() => {
+  //     veriGetir();
+  //   }, []);
+
+  //! 3.Yol: axios
+
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((data) => data.json())
-      .then((veri) => setUser(veri));
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((res) => setUser(res.data));
   }, []);
+
+  console.log(user);
 
   return (
     <div className="container">

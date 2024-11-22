@@ -19,9 +19,9 @@ function App() {
       </button>
       {/* {show && <LifeCycle />} */}
 
-      {show && <Clock />}
+      {/* {show && <Clock />} */}
 
-      <People />
+      {show && <People />}
     </div>
   );
 }
