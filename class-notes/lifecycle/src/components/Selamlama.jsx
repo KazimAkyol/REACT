@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-const Selamlama = () => {
-  return (
-    <div>Selamlama</div>
-  )
+class Selamlama extends Component {
+  render() {
+    return <h2>Merhaba {this.props.isim}</h2>;
+  }
 }
 
-export default Selamlama
+export default Selamlama;
