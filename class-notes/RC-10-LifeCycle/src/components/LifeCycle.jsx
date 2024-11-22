@@ -26,10 +26,15 @@ class LifeCycle extends Component {
     console.log("Update calisti");
   }
 
+  increment = () => {
+    this.setState((prevState) => ({ count: prevState.count + 1 }));
+  };
+
   render() {
     return (
       <div>
         <h3>Count:{this.state.count} </h3>
+        <button onClick={() => this.increment()}>ARTTIR</button>
       </div>
     );
   }
