@@ -32,6 +32,11 @@ const Clock = () => {
 
   // Köşeli parantez kullanımı bir defa render ediyor demektir.
 
+  //! Component Did Update karsiligi olarak useEffect kullaniyoruz.
+  useEffect(() => {
+    console.log("DidUpdate calisti");
+  }, [count]);
+
   return (
     <div>
       <div className="container d-flex justify-content-center mt-3 w-50">
@@ -48,7 +53,12 @@ const Clock = () => {
           <h1 className="display-4 text-center text-primary">
             Counter:{count}
           </h1>
-          <button className="btn btn-success">+</button>
+          <button
+            className="btn btn-success"
+            onClick={() => setCount(count + 1)}
+          >
+            +
+          </button>
         </div>
       </div>
     </div>

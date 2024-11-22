@@ -4,6 +4,7 @@ import Selamlama from "./components/Selamlama";
 import LifeCycle from "./components/LifeCycle";
 import { useState } from "react";
 import Clock from "./components/Clock";
+import People from "./fetch-axios/People";
 
 function App() {
   const [show, setShow] = useState(true);
@@ -19,6 +20,8 @@ function App() {
       {/* {show && <LifeCycle />} */}
 
       {show && <Clock />}
+
+      <People />
     </div>
   );
 }

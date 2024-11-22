@@ -10,9 +10,7 @@ import React, { Component } from "react";
 class LifeCycle extends Component {
   constructor(props) {
     super(props);
-
-    console.log("state olustur. Constructor calisti");
-
+    console.log("state oluştur. Constructor çalıştı");
     this.state = {
       count: 0,
     };
@@ -21,36 +19,54 @@ class LifeCycle extends Component {
   //! Component DOM'a yerleştiğinde çalışır. API çağrıları veya başlangıç işlevlerini burada yapabilirsiniz.
 
   componentDidMount() {
-    console.log("component Dom'a yerlesti");
+    console.log("component Dom'a yerleşti");
   }
 
   componentDidUpdate() {
-    console.log("Update calisti");
+    console.log("Update çalıştı");
   }
 
   componentWillUnmount() {
-    console.log("Component öldü. Mevlüdüne davetlisiniz");
+    console.log("Component öldu. MEvlüdüne davetlisiniz");
   }
 
   increment = () => {
     this.setState((prevState) => ({ count: prevState.count + 1 }));
   };
+  decrement = () => {
+    this.setState((prevState) => ({ count: prevState.count - 1 }));
+  };
 
+  reset = () => {
+    this.setState(() => ({ count: 0 }));
+  };
   render() {
     return (
       <div>
-        <h3>Count:{this.state.count} </h3>
-        <button className="btn btn-success" onClick={() => this.increment()}>
-          ARTTIR
-        </button>
-        <button className="btn btn-success" onClick={() => this.increment()}>
-          AZALT
-        </button>
+        <div className="container mt-5 ">
+          <div className="card text-center shadow w-50 m-auto">
+            <div className="card-header bg-primary text-white">
+              <h2>Counter</h2>
+            </div>
+            <div className="card-body">
+              <h1 className="display-4 mb-4">{this.state.count}</h1>
+              <div className="btn-group">
+                <button className="btn btn-success" onClick={this.increment}>
+                  <i className="bi bi-plus-circle"></i> Artır
+                </button>
+                <button className="btn btn-danger" onClick={this.decrement}>
+                  <i className="bi bi-dash-circle"></i> Azalt
+                </button>
+                <button className="btn btn-warning" onClick={this.reset}>
+                  <i className="bi bi-arrow-counterclockwise"></i> Sıfırla
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
 export default LifeCycle;
-
-// this.state.count yazarak ulasiyoruz
