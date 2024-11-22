@@ -18,12 +18,18 @@ class LifeCycle extends Component {
     };
   }
 
+  //! Component DOM'a yerleştiğinde çalışır. API çağrıları veya başlangıç işlevlerini burada yapabilirsiniz.
+
   componentDidMount() {
     console.log("component Dom'a yerlesti");
   }
 
   componentDidUpdate() {
     console.log("Update calisti");
+  }
+
+  componentWillUnmount() {
+    console.log("Component öldü. Mevlüdüne davetlisiniz");
   }
 
   increment = () => {
@@ -34,7 +40,12 @@ class LifeCycle extends Component {
     return (
       <div>
         <h3>Count:{this.state.count} </h3>
-        <button onClick={() => this.increment()}>ARTTIR</button>
+        <button className="btn btn-success" onClick={() => this.increment()}>
+          ARTTIR
+        </button>
+        <button className="btn btn-success" onClick={() => this.increment()}>
+          AZALT
+        </button>
       </div>
     );
   }
