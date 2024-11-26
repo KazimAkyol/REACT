@@ -9,6 +9,19 @@ const Home = () => {
 
   //!GET (READ)
 
+  const getBilgiler =async () => {
+   const res= await axios.get(url)
+   // console.log(res.data);
+
+   setTutorials(res.data)
+  }
+
+  useEffect(()=>{
+    getBilgiler();
+  }, [])
+
+  
+
 
 
  
