@@ -1,6 +1,6 @@
 import React from "react";
 
-const EditBilgi = () => {
+const EditBilgi = ({ updateBilgi, setUpdateBilgi }) => {
   return (
     <div
       class="modal fade"
@@ -28,11 +28,30 @@ const EditBilgi = () => {
             {/* inputlar  */}
             <div className="mb-3">
               <label htmlFor="title">Title</label>
-              <input type="text" className="form-control" id="title" />
+              <input
+                type="text"
+                className="form-control"
+                id="title"
+                value={updateBilgi.title}
+                onChange={(e) =>
+                  setUpdateBilgi({ ...updateBilgi, title: e.target.value })
+                }
+              />
             </div>
             <div className="mb-3">
               <label htmlFor="desc">Description</label>
-              <input type="text" id="desc" className="form-control" />
+              <input
+                type="text"
+                className="form-control"
+                id="desc"
+                value={updateBilgi.description}
+                onChange={(e) =>
+                  setUpdateBilgi({
+                    ...updateBilgi,
+                    description: e.target.value,
+                  })
+                }
+              />
             </div>
           </div>
           <div class="modal-footer">
