@@ -12,9 +12,10 @@ const Home = () => {
 
   const getBilgiler =async () => {
    const res= await axios.get(url)
-   // console.log(res.data);
 
-   setTutorials(res.data)
+   console.log(res.data);
+
+   setTutorials(res.data);
   }
 
   useEffect(()=>{
@@ -33,13 +34,19 @@ const Home = () => {
 
 //!DELETE (database den silme)
 
+const deleteBilgi =async (id) => {
+ await axios.delete(`${url}${id}/`)
+
+ getBilgiler();
+
+}
 
 
 
 
   return <>
 
- <BilgiList tutorials={tutorials} />
+ <BilgiList tutorials={tutorials} deleteBilgi={deleteBilgi} />
 
 
   </>;

@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 
-const BilgiList = ({ tutorials }) => {
+const BilgiList = ({ tutorials, deleteBilgi }) => {
   // console.log(tutorials);
   return (
     <div className="container mt-4">
@@ -23,7 +23,12 @@ const BilgiList = ({ tutorials }) => {
               <td>{a.title}</td>
               <td>{a.description}</td>
               <td className="text-center">
-                <AiFillDelete type="button" className="text-danger" size={22} />
+                <AiFillDelete
+                  type="button"
+                  className="text-danger"
+                  size={22}
+                  onClick={() => deleteBilgi(a.id)}
+                />
               </td>
             </tr>
           ))}
