@@ -1,19 +1,15 @@
 import React from "react";
 import { useState } from "react";
 
-const AddBilgi = ({postBilgi}) => {
+const AddBilgi = ({ postBilgi }) => {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
 
-    const [title, setTitle] = useState("")
-    const[desc, setDesc] = useState("")
-
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    postBilgi({title:title, description:desc})
-
-
-}
-
+    postBilgi({ title: title, description: desc });
+  };
 
   return (
     <div className="container text-center mt-4">
@@ -29,7 +25,7 @@ const handleSubmit = (e) => {
             id="title"
             placeholder="Enter your title"
             required
-            onChange={(e)=>setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className="mb-3">
@@ -42,7 +38,7 @@ const handleSubmit = (e) => {
             id="desc"
             placeholder="Enter your Description"
             required
-            onChange={(e)=>setDesc(e.target.value)}
+            onChange={(e) => setDesc(e.target.value)}
           />
         </div>
         <button type="submit" className="btn btn-danger mb-4">

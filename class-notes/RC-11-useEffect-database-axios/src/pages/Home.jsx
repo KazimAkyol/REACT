@@ -10,53 +10,41 @@ const Home = () => {
 
   //! GET (READ)
 
-  const getBilgiler =async () => {
-   const res= await axios.get(url)
+  const getBilgiler = async () => {
+    const res = await axios.get(url);
 
-   console.log(res.data);
+    console.log(res.data);
 
-   setTutorials(res.data);
-  }
+    setTutorials(res.data);
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     getBilgiler();
-  }, [])
+  }, []);
 
-  
+  //! POST (create database e veri gönderme)
 
+  const postBilgi = async (yeniVeri) => {
+    await axios.post(url, yeniVeri);
 
+    getBilgiler();
+  };
 
- 
+  //! DELETE (database den silme)
 
-//! POST (create database e veri gönderme)
+  const deleteBilgi = async (id) => {
+    await axios.delete(`${url}${id}/`);
 
-const postBilgi =async (yeniVeri) => {
-   await axios.post(url, yeniVeri)
+    getBilgiler();
+  };
 
-   getBilgiler();
-}
- 
+  return (
+    <>
+      <AddBilgi postBilgi={postBilgi} />
 
-//! DELETE (database den silme)
-
-const deleteBilgi =async (id) => {
- await axios.delete(`${url}${id}/`)
-
- getBilgiler();
-
-}
-
-
-
-
-  return <>
-
-  <AddBilgi postBilgi={postBilgi} />
-
- <BilgiList tutorials={tutorials} deleteBilgi={deleteBilgi} />
-
-
-  </>;
+      <BilgiList tutorials={tutorials} deleteBilgi={deleteBilgi} />
+    </>
+  );
 };
 
 export default Home;

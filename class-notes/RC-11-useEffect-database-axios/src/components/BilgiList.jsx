@@ -1,9 +1,14 @@
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
+import EditBilgi from "./EditBilgi";
+import { useState } from "react";
 
 const BilgiList = ({ tutorials, deleteBilgi }) => {
   // console.log(tutorials);
+
+  const [updateBilgi, setUpdateBilgi] = useState("");
+
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -32,9 +37,19 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
                 />
 
                 <FaEdit
-                size={20}
-                className="text-warning"
-                 />
+                  data-bs-toggle="modal"
+                  data-bs-target="#editModal"
+                  size={20}
+                  className="text-warning"
+                  cursor="pointer"
+                  onClick={() =>
+                    setUpdateBilgi({
+                      id: a.id,
+                      title: a.title,
+                      description: a.description,
+                    })
+                  }
+                />
               </td>
             </tr>
           ))}
@@ -42,6 +57,8 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
       </table>
 
       {/* Modal */}
+
+      <EditBilgi updateBilgi={updateBilgi} setUpdateBilgi={setUpdateBilgi} />
     </div>
   );
 };
