@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const AddBilgi = ({ postBilgi }) => {
   const [title, setTitle] = useState("");
@@ -9,6 +8,9 @@ const AddBilgi = ({ postBilgi }) => {
     e.preventDefault();
 
     postBilgi({ title: title, description: desc });
+
+    setTitle("");
+    setDesc("");
   };
 
   return (

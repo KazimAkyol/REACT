@@ -4,7 +4,7 @@ import { FaEdit } from "react-icons/fa";
 import EditBilgi from "./EditBilgi";
 import { useState } from "react";
 
-const BilgiList = ({ tutorials, deleteBilgi }) => {
+const BilgiList = ({ tutorials, deleteBilgi, putBilgi }) => {
   // console.log(tutorials);
 
   const [updateBilgi, setUpdateBilgi] = useState("");
@@ -57,8 +57,13 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
       </table>
 
       {/* Modal */}
+      {/* tutorials dizisinde map le dolaşırken her bir elemana a diyoruz ve a sadece süslünün içinde erişilir. bu yüzden EditBilgi componentine a nın içeriğini, globalde bir state (updateBilgi) açarak, herkesin ulşamasını sağladık.tıklanan elemanın tüm bilgilerini ve tamircilerini EditBilgi comp. yolluyoruz */}
 
-      <EditBilgi updateBilgi={updateBilgi} setUpdateBilgi={setUpdateBilgi} />
+      <EditBilgi
+        updateBilgi={updateBilgi}
+        setUpdateBilgi={setUpdateBilgi}
+        putBilgi={putBilgi}
+      />
     </div>
   );
 };

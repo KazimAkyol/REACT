@@ -38,11 +38,23 @@ const Home = () => {
     getBilgiler();
   };
 
+  //! put update islemi
+
+  const putBilgi = async (yeniVeri) => {
+    await axios.put(`$(url)$(yeniVeri.id)/`, yeniVeri);
+
+    getBilgiler();
+  };
+
   return (
     <>
       <AddBilgi postBilgi={postBilgi} />
 
-      <BilgiList tutorials={tutorials} deleteBilgi={deleteBilgi} />
+      <BilgiList
+        tutorials={tutorials}
+        deleteBilgi={deleteBilgi}
+        putBilgi={putBilgi}
+      />
     </>
   );
 };

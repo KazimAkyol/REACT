@@ -1,6 +1,8 @@
 import React from "react";
 
-const EditBilgi = ({ updateBilgi, setUpdateBilgi }) => {
+const EditBilgi = ({ updateBilgi, setUpdateBilgi, putBilgi }) => {
+  // updateBilgi ile gelen bilgileri input'ta value ile gösterdik, setUpdateBilgi ile de içini değiştirdik. Buradaki div'in id'si ile, BilgiList'teki buton (icon)'un data-bs-target ismi aynı AiOutlineUserAdd, o buton tıklanınca bu div modal çalışır.
+
   return (
     <div
       class="modal fade"
@@ -59,6 +61,7 @@ const EditBilgi = ({ updateBilgi, setUpdateBilgi }) => {
               type="button"
               class="btn btn-secondary"
               data-bs-dismiss="modal"
+              onClick={() => putBilgi()}
             >
               Save
             </button>
