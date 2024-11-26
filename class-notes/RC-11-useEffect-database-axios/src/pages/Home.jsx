@@ -28,8 +28,11 @@ const Home = () => {
 
  
 
-  //!POST (create database e veri gönderme)
+//!POST (create database e veri gönderme)
 
+const postBilgi =async () => {
+   await axios.post(url, yeniVeri)
+}
  
 
 //!DELETE (database den silme)
@@ -45,6 +48,8 @@ const deleteBilgi =async (id) => {
 
 
   return <>
+
+  <AddBilgi postBilgi={postBilgi} />
 
  <BilgiList tutorials={tutorials} deleteBilgi={deleteBilgi} />
 
