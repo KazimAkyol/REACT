@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BilgiList from "../components/BilgiList";
 import AddBilgi from "../components/AddBilgi";
+
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
 
@@ -38,7 +39,7 @@ const Home = () => {
 
   return <>
 
- Home
+ <BilgiList tutorials={tutorials} />
 
 
   </>;
