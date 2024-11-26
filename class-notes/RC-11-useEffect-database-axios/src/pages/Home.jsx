@@ -8,7 +8,7 @@ const Home = () => {
 
   const url = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
 
-  //!GET (READ)
+  //! GET (READ)
 
   const getBilgiler =async () => {
    const res= await axios.get(url)
@@ -28,14 +28,16 @@ const Home = () => {
 
  
 
-//!POST (create database e veri gönderme)
+//! POST (create database e veri gönderme)
 
-const postBilgi =async () => {
+const postBilgi =async (yeniVeri) => {
    await axios.post(url, yeniVeri)
+
+   getBilgiler();
 }
  
 
-//!DELETE (database den silme)
+//! DELETE (database den silme)
 
 const deleteBilgi =async (id) => {
  await axios.delete(`${url}${id}/`)

@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
+import { FaEdit } from "react-icons/fa";
 
 const BilgiList = ({ tutorials, deleteBilgi }) => {
   // console.log(tutorials);
@@ -29,6 +30,11 @@ const BilgiList = ({ tutorials, deleteBilgi }) => {
                   size={22}
                   onClick={() => deleteBilgi(a.id)}
                 />
+
+                <FaEdit
+                size={20}
+                className="text-warning"
+                 />
               </td>
             </tr>
           ))}
