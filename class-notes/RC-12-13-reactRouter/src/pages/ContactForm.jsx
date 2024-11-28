@@ -17,7 +17,7 @@ const ContactForm = () => {
     <div className="container text-center mt-4">
       <h1>*********************************************</h1>
 
-      <h1>FORM(EVENTS)</h1>
+      <h1>LOGIN</h1>
 
       <form onSubmit={gonderDatabase}>
         <div className="mb-3">

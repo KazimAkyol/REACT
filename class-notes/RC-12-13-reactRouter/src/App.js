@@ -12,6 +12,7 @@ const App = () => {
   return (
     <div>
       <Router>
+        {/* demirbaslar yani her daim görünecek componentler Router ve Routes etiketinin icine yazilir */}
         <MyNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
