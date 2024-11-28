@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const CourseCard = () => {
   const navigasyon = useNavigate();
+
   return (
     <Container>
       <Row justify-content-center>

@@ -11,6 +11,7 @@ const Teacher = () => {
       .get("https://jsonplaceholder.typicode.com/users")
       .then((res) => setUser(res.data));
   }, []);
+
   return (
     <div className="container">
       <div className="row justify-content-center">
