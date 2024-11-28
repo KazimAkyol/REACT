@@ -9,25 +9,25 @@ const MyNavbar = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Link to="#home">
+        <Link to="/">
           <img src={logo} alt="" />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link className="nav-link" to="#home">
+            <Link className="nav-link" to="/">
               Home
             </Link>
-            <Link className="nav-link" to="#teacher">
+            <Link className="nav-link" to="/teacher">
               Teacher
             </Link>
-            <Link className="nav-link" to="#courses">
+            <Link className="nav-link" to="/courses">
               Courses
             </Link>
-            <Link className="nav-link" to="#contact">
+            <Link className="nav-link" to="/contact">
               Contact
             </Link>
-            <Link className="nav-link" to="#paths">
+            <Link className="nav-link" to="/paths">
               Paths
             </Link>
             <Nav.Link href="#link">Github</Nav.Link>
