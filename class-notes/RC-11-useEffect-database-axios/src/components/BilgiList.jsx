@@ -7,6 +7,10 @@ import { useState } from "react";
 const BilgiList = ({ tutorials, deleteBilgi, putBilgi }) => {
   // console.log(tutorials);
 
+//   const deleteBilgi = async() => {
+//     await axios.delete(url/id/)
+//   }
+
   const [updateBilgi, setUpdateBilgi] = useState("");
 
   return (
@@ -24,7 +28,7 @@ const BilgiList = ({ tutorials, deleteBilgi, putBilgi }) => {
         </thead>
         <tbody>
           {tutorials.map((a) => (
-            <tr>
+            <tr key={a.id}>
               <th>{a.id}</th>
               <td>{a.title}</td>
               <td>{a.description}</td>
@@ -57,7 +61,7 @@ const BilgiList = ({ tutorials, deleteBilgi, putBilgi }) => {
       </table>
 
       {/* Modal */}
-      {/* tutorials dizisinde map le dolaşırken her bir elemana a diyoruz ve a sadece süslünün içinde erişilir. bu yüzden EditBilgi componentine a nın içeriğini, globalde bir state (updateBilgi) açarak, herkesin ulşamasını sağladık.tıklanan elemanın tüm bilgilerini ve tamircilerini EditBilgi comp. yolluyoruz */}
+      {/* tutorials dizisinde map le dolaşırken her bir elemana a diyoruz ve a sadece süslünün içinde erişilir. Bu yüzden EditBilgi componentine a nın içeriğini, globalde bir state (updateBilgi) açarak, herkesin ulşamasını sağladık.tıklanan elemanın tüm bilgilerini ve tamircilerini EditBilgi comp. yolluyoruz */}
 
       <EditBilgi
         updateBilgi={updateBilgi}
