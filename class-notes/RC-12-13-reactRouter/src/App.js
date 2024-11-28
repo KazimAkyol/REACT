@@ -7,6 +7,7 @@ import Teacher from "./pages/Teacher";
 import CourseCard from "./pages/CourseCard";
 import ContactForm from "./pages/ContactForm";
 import Paths from "./pages/Paths";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/paths" element={<Paths />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
