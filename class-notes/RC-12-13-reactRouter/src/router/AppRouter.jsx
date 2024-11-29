@@ -9,6 +9,8 @@ import CardDetails from "../pages/CardDetails";
 import ContactForm from "../pages/ContactForm";
 import Paths from "../pages/Paths";
 import Footer from "../components/Footer";
+import Login from "../pages/Login";
+import PrivateRouter from "../router/PrivateRouter";
 
 const AppRouter = () => {
   return (
@@ -17,7 +19,15 @@ const AppRouter = () => {
       <MyNavbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/teacher" element={<Teacher />} />
+        <Route path="/login" element={<Login />} />
+
+        {/* sifre kontrolü icin privateRouter'a gidecegiz */}
+
+        <Route path="/teacher" element={<PrivateRouter />}>
+          <Route path="" element={<Teacher />} />
+        </Route>
+
+        {/* <Route path="/teacher" element={<Teacher />} /> */}
         <Route path="/teacher/:id" element={<TeacherDetails />} />
 
         <Route path="/courses" element={<CourseCard />} />
