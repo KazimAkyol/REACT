@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // database'e yolla
 
     localStorage.setItem("email", JSON.stringify(email));
     localStorage.setItem("pass", JSON.stringify(password));
 
+    navigate("/contact");
     setEmail("");
     setPass("");
   };

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const TeacherDetails = () => {
   //! 1.yol navigate yolladığı path e id yi gömerek yolladı, burada da useParams la id yi çektik*******
@@ -18,10 +18,12 @@ const TeacherDetails = () => {
   //! useLocation.//  navigate ile gonderilen state'i yakalamak icin useLocation Hook'u kullanilabilir.
   //! Bu durumda veri, state ile geldigi icin yeniden fetch yapilmasina gerek kalmaz.
 
+  const navigate = useNavigate();
+
   const {
     state: { kisi },
   } = useLocation();
-  
+
   return (
     <div>
       <img
@@ -32,6 +34,14 @@ const TeacherDetails = () => {
       <h2>{kisi.email}</h2>
       <h5>{kisi.website}</h5>
       <h5>{kisi.phone}</h5>
+
+      <div></div>
+      <button onClick={() => navigate("-1")} className="btn btn-success">
+        GO BACK
+      </button>
+      <button onClick={() => navigate("/")} className="btn btn-warning">
+        GO HOME
+      </button>
     </div>
   );
 };
