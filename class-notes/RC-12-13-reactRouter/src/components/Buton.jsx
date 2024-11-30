@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Buton = () => {
   const navigate = useNavigate();
+
   return (
     <div className="text-center">
       <Button

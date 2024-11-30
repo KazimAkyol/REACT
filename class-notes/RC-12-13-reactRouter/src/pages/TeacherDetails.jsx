@@ -25,7 +25,7 @@ const TeacherDetails = () => {
   } = useLocation();
 
   return (
-    <div>
+    <div className="text-center">
       <img
         src={`https://api.dicebear.com/9.x/avataaars/svg?seed=${kisi.id}`}
         alt=""
