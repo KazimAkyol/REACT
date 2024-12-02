@@ -29,11 +29,11 @@ body {
 }
 
 .navbar {
-  background-color: rgb(179, 151, 151);
+  background-color: rgb(207, 186, 186);
 }
 
 .nav-link {
-  color: blue !important;
+  color: blueviolet !important;
   &:hover {
     color: red !important;
   }
