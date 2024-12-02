@@ -1,21 +1,18 @@
-
 import Main from "./pages/Main";
 import NewProduct from "./pages/NewProduct";
 import ProductList from "./pages/ProductList";
 import About from "./pages/About";
-import Navbar from "./components/Navbar";
+import MyNavbar from "./components/MyNavbar";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-
-  
-
   return (
     <div className="bg-light app">
-      <Navbar/>
-      <Main/>
-      <About/>
-      <NewProduct/>
-      <ProductList/>
+      <MyNavbar />
+      <Main />
+      <About />
+      <NewProduct />
+      <ProductList />
     </div>
   );
 }
