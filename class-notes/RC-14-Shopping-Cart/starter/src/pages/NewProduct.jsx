@@ -42,8 +42,8 @@ const NewProduct = () => {
           </label>
           <input
             className="form-control"
-            id="password"
-            type="password"
+            id="isim"
+            type="text"
             value={price}
             onChange={(p) => setPrice(p.target.value)}
           />
@@ -54,8 +54,8 @@ const NewProduct = () => {
           </label>
           <input
             className="form-control"
-            id="password"
-            type="password"
+            id="isim"
+            type="text"
             value={quantity}
             onChange={(p) => setQuantity(p.target.value)}
           />
@@ -66,8 +66,8 @@ const NewProduct = () => {
           </label>
           <input
             className="form-control"
-            id="password"
-            type="password"
+            id="isim"
+            type="text"
             value={image}
             onChange={(p) => setImage(p.target.value)}
           />
