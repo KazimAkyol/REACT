@@ -17,6 +17,7 @@ const AppRouter = () => {
         <Route path="/productList" element={<ProductList />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <UpdateProduct />
     </Router>
   );
 };

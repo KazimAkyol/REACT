@@ -5,13 +5,14 @@ const NewProduct = () => {
   const [price, setPrice] = useState("");
   const [quantity, setQuantity] = useState("");
   const [image, setImage] = useState("");
+  const [save, setSave] = useState("");
 
   const gonderDatabase = (e) => {
     e.preventDefault();
 
-    alert(
-      `name:${name}  price: ${price} quantity: ${quantity} image:${image} `
-    );
+    // alert(
+    //   `name:${name}  price: ${price} quantity: ${quantity} image:${image} `
+    // );
 
     setName("");
     setPrice("");
@@ -73,7 +74,11 @@ const NewProduct = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onSubmit={() => setSave("/productList")}
+        >
           Save To New Product
         </button>
       </form>

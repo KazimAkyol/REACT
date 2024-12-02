@@ -19,6 +19,7 @@ const ProductList = () => {
   useEffect(() => {
     productUpdate();
   }, []);
+  
   return (
     <div className="container mt-3">
       <div className={"bg-light d-sm-block d-md-flex"}>
