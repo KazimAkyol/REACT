@@ -27,8 +27,13 @@ body {
     }
   }
 }
+
+.navbar {
+  background-color: rgb(179, 151, 151);
+}
+
 .nav-link {
-  color: white !important;
+  color: blue !important;
   &:hover {
     color: red !important;
   }
