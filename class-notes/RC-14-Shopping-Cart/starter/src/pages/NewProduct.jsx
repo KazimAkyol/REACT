@@ -10,10 +10,6 @@ const NewProduct = () => {
   const gonderDatabase = (e) => {
     e.preventDefault();
 
-    // alert(
-    //   `name:${name}  price: ${price} quantity: ${quantity} image:${image} `
-    // );
-
     setName("");
     setPrice("");
     setQuantity("");
@@ -33,7 +29,7 @@ const NewProduct = () => {
             className="form-control"
             id="isim"
             type="text"
-            onInput={(e) => setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
             value={name}
           />
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import MyNavbar from "../components/MyNavbar";
+import Navbar from "../components/Navbar";
 import Main from "../pages/Main";
 import About from "../pages/About";
 import NewProduct from "../pages/NewProduct";
@@ -10,7 +10,7 @@ import UpdateProduct from "../pages/UpdateProduct";
 const AppRouter = () => {
   return (
     <Router>
-      <MyNavbar />
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Main />} />
         <Route path="/newProduct" element={<NewProduct />} />

@@ -19,11 +19,11 @@ const ProductList = () => {
   useEffect(() => {
     productUpdate();
   }, []);
-  
+
   return (
     <div className="container mt-3">
       <div className={"bg-light d-sm-block d-md-flex"}>
-        <p className="text-center text-danger w-100">Loading....</p>
+        <p className="text-center text-danger w-100">Loading...</p>
 
         <>
           <article id="product-panel" className="col-md-6">
