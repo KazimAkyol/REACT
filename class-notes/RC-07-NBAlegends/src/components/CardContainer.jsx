@@ -7,7 +7,6 @@ const CardContainer = () => {
   // console.log(data);
 
   const [arama, SetArama] = useState("");
-
   // console.log(arama);
 
   //! 1.yöntem
@@ -21,12 +20,18 @@ const CardContainer = () => {
         className="w-50 m-auto"
         onChange={(e) => SetArama(e.target.value)}
       />
-      <Container className="my-2 kartContainer">
-        <Row xs={1} md={2} lg={4}>
+      <Container className="my-2 kartContainer p-3">
+        <Row className="g-3">
           {data
             .filter((d) => d.name.toLowerCase().includes(arama.toLowerCase()))
             .map((player) => (
-              <Col className="my-2" key={player.name}>
+              <Col
+                xs={12}
+                md={6}
+                lg={3}
+                className="my-2 m-auto"
+                key={player.name}
+              >
                 <PlayerCard {...player} />
               </Col>
             ))}

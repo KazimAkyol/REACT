@@ -19,7 +19,7 @@ const Teacher = () => {
   const dataGet = async () => {
     const res = await axios.get(url);
 
-    console.log(res);
+    // console.log(res);
 
     setUser(res.data);
   };

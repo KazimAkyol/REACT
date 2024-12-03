@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 
 const PlayerCard = ({ name, img, statistics }) => {
-  const [showResim, setShow] = useState(true);
+  const [showImage, setShowImage] = useState(true);
 
   // console.log(statistics);
   return (
@@ -10,9 +10,9 @@ const PlayerCard = ({ name, img, statistics }) => {
       style={{ width: "18rem" }}
       className="player-kart m-auto"
       role="button"
-      onClick={() => setShow(!showResim)}
+      onClick={() => setShowImage(!showImage)}
     >
-      {showResim ? (
+      {showImage ? (
         <Card.Img variant="top" src={img} className="player-resim" />
       ) : (
         <ul>
