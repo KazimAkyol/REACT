@@ -1,17 +1,31 @@
 import React, { useEffect, useState } from "react";
-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
 // https://jsonplaceholder.typicode.com/users
 
 const Teacher = () => {
   const [user, setUser] = useState([]);
   const navigatee = useNavigate();
 
+  //   useEffect(() => {
+  //     axios
+  //       .get("https://jsonplaceholder.typicode.com/users")
+  //       .then((res) => setUser(res.data));
+  //   }, []);
+
+  const url = "https://jsonplaceholder.typicode.com/users";
+
+  const dataGet = async () => {
+    const res = await axios.get(url);
+
+    console.log(res);
+
+    setUser(res.data);
+  };
+
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((res) => setUser(res.data));
+    dataGet();
   }, []);
 
   return (

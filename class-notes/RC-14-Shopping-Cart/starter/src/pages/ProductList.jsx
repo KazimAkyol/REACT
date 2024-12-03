@@ -11,7 +11,7 @@ const ProductList = () => {
   const productUpdate = async () => {
     const res = await axios.get(url);
 
-    console.log(res.data);
+    // console.log(res.data);
 
     setUpdate(res);
   };

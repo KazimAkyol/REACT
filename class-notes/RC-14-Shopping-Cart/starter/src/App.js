@@ -1,10 +1,11 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import AppRouter from "./router/AppRouter";
+
+// bootstrap in script teşekkür linkini isHtmlElement, fontAwesome'ın teşekkür linkini index.html'ye ekledik.
 
 function App() {
   return (
-    <div className="bg-light app">
+    <div>
       <AppRouter />
     </div>
   );
