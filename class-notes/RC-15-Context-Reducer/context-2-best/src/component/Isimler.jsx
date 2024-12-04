@@ -1,18 +1,13 @@
-import React from 'react'
+import React from "react";
 
 import AnaUser from "./AnaUser";
+
 const Isimler = () => {
-
-
-
   return (
     <div>
-   
-
-   <AnaUser/>
-
+      <AnaUser />
     </div>
   );
-}
+};
 
-export default Isimler
+export default Isimler;
