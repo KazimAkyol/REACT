@@ -42,6 +42,7 @@ const Form = () => {
             className="form-control"
             id="isim"
             type="text"
+            value={isim}
             onInput={(e) => setIsim(e.target.value)}
           />
         </div>
@@ -53,6 +54,7 @@ const Form = () => {
             className="form-control"
             id="password"
             type="password"
+            value={pass}
             onChange={(p) => setPass(p.target.value)}
           />
         </div>
