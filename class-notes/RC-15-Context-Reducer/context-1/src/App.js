@@ -7,10 +7,13 @@ export const StudentContext = createContext();
 
 const App = () => {
   const [students, setStudents] = useState(data);
+
+  const changeColor = () => {};
+
   return (
     //! 2-bütün projeye gönderilebilsin diye ilk olarak Home sayfasini gönderilecek verilerle ve contextle sarmallayalim
 
-    <StudentContext.Provider value={{ students }}>
+    <StudentContext.Provider value={{ students, changeColor }}>
       <Home />
     </StudentContext.Provider>
   );

@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { StudentContext } from "../App";
 
 const OgrenciItem = () => {
-  return (
-    <div>OgrenciItem</div>
-  )
-}
+  //! 3-(context consumer) gloabalde (mesela App.js'de) tanimladigim degerleri buraya cagiralim
 
-export default OgrenciItem
+  const { students, changeColor } = useContext(StudentContext);
+
+  return (
+    <div>
+      {students.map((a) => (
+        <div key={a.id} style={{ background: a.color }}>
+          <h3>NAME: {a.name} </h3>
+          <h4>EMAIL: {a.email}</h4>
+          <h4>AGE: {a.age}</h4>
+          Color: <input value={a.color} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default OgrenciItem;
