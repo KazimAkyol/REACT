@@ -8,10 +8,14 @@ export const StudentContext = createContext();
 const App = () => {
   const [students, setStudents] = useState(data);
 
-  const changeColor = () => {};
+  const changeColor = (id, newRenk) => {
+    setStudents(
+      students.map((a) => (a.id === id ? { ...a, color: newRenk } : a))
+    );
+  };
 
   return (
-    //! 2-bütün projeye gönderilebilsin diye ilk olarak Home sayfasini gönderilecek verilerle ve contextle sarmallayalim
+    //! 2- Bütün projeye gönderilebilsin diye ilk olarak Home  sayfasını, gönderilecek verilerle ve context le sarmallayalım:
 
     <StudentContext.Provider value={{ students, changeColor }}>
       <Home />
