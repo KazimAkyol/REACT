@@ -11,11 +11,12 @@ const Home = () => {
       <LinkStyle href="www">LINKS</LinkStyle>
 
       <ButtonS>TIKLA1</ButtonS>
-      <ButtonS>TIKLA2</ButtonS>
+      <ButtonS fatma>TIKLA2</ButtonS>
       <ButtonS>TIKLA3</ButtonS>
 
       <YanciButton>TIKLA4</YanciButton>
-      <YanciButton>TIKLA5</YanciButton>
+      <YanciButton gokhan>TIKLA5</YanciButton>
+      <YanciButton kazim="100px">TIKLA6</YanciButton>
     </DivStyle>
   );
 };
