@@ -1,15 +1,13 @@
 import Card from "./components/Card";
 import Header from "./components/Header";
+import ContainerSSS from "./components/styles/ContainerSSS";
 
 function App() {
-
   return (
-   
-      <div>
-        <Header />
-        <Card />
-      </div>
-   
+    <ContainerSSS>
+      <Header />
+      <Card />
+    </ContainerSSS>
   );
 }
 
