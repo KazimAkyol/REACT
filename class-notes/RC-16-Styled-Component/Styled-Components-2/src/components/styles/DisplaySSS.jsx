@@ -5,6 +5,12 @@ const DisplaySSS = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: ${({ theme }) => theme.responsive}) {
+    flex-direction: column;
+  }
+
+  box-shadow: ${({ theme }) => theme.golge};
 `;
 
 export default DisplaySSS;
