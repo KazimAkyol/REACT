@@ -11,7 +11,7 @@ const App = () => {
   const changeColor = (id, newRenk) => {
     setStudents(
       students.map((a) => (a.id === id ? { ...a, color: newRenk } : a))
-    );
+    ); // set in içinde bir dögüyle, şartı tutan elemanı değiştirmek istersek && yerine ternary tercih etmeliyiz.
   };
 
   return (
