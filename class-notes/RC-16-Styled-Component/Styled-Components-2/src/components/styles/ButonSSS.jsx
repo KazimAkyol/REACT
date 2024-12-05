@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const ButtonSSS = styled.button`
-  background-color: #a62440;
-  color: white;
+  background-color: ${({ muhterem }) => (muhterem ? "#a62440" : "white")};
+  color: ${({ fatma }) => fatma || "white"};
 
   border: 1px solid #a62440;
   border-radius: 5px;
@@ -16,6 +16,12 @@ const ButtonSSS = styled.button`
 
     transform: scale(0.95);
   }
+`;
+
+export const YanciButton = styled(ButtonSSS)`
+  color: tomato;
+  border-radius: 20px 0;
+  border-left: 3px solid blue;
 `;
 
 export default ButtonSSS;
