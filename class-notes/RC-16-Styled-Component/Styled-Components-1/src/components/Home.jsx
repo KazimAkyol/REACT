@@ -1,12 +1,11 @@
 import React from 'react'
-import DivStyle from './style/ContainerStyle'
-import HeaderS, { LinkS } from './style/HeaderStyle'
-import ButtonS, { TomatoButton } from './style/ButonStyle'
+import DivStyle from "./style/ContainerStyle"
+import Baslik from './style/HeaderStyle'
 
 const Home = () => {
   return (
-    <div>
-<h1>STYLED COMPONENTS</h1>
+    <DivStyle>
+<Baslik>STYLED COMPONENTS</Baslik>
 
 <a href="www">LINKS</a>
 
@@ -21,7 +20,7 @@ const Home = () => {
 <button >TIKLA5</button>
 
 
-    </div>
+    </DivStyle>
   )
 }
 
