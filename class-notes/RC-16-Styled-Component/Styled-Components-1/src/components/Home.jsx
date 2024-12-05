@@ -1,27 +1,23 @@
-import React from 'react'
-import DivStyle from "./style/ContainerStyle"
-import Baslik from './style/HeaderStyle'
+import React from "react";
+import DivStyle from "./style/ContainerStyle";
+import Baslik, { LinkStyle } from "./style/HeaderStyle";
+import ButtonS, { YanciButton } from "./style/ButonStyle";
 
 const Home = () => {
   return (
     <DivStyle>
-<Baslik>STYLED COMPONENTS</Baslik>
+      <Baslik>STYLED COMPONENTS</Baslik>
 
-<a href="www">LINKS</a>
+      <LinkStyle href="www">LINKS</LinkStyle>
 
+      <ButtonS>TIKLA1</ButtonS>
+      <ButtonS>TIKLA2</ButtonS>
+      <ButtonS>TIKLA3</ButtonS>
 
-<button >TIKLA1</button>
-<button >TIKLA2</button>
-<button>TIKLA3</button>
-
-
-
-<button>TIKLA4</button>
-<button >TIKLA5</button>
-
-
+      <YanciButton>TIKLA4</YanciButton>
+      <YanciButton>TIKLA5</YanciButton>
     </DivStyle>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
