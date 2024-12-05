@@ -1,19 +1,20 @@
 import React from "react";
 import data from "../data";
 import ImageSSS from "./styles/ImageSSS";
+import KartSSS from "./styles/KartSSS";
 
 const Card = () => {
   return (
     <div>
       {data.map((a) => (
-        <div key={a.id}>
+        <KartSSS fatma={a.id % 2 === 1 && "row-reverse"} key={a.id}>
           <div>
             <h2>{a.title}</h2>
-            <p></p>
+            <p>{a.body}</p>
           </div>
 
           <ImageSSS src={`/images/${a.image}`} alt="" />
-        </div>
+        </KartSSS>
       ))}
     </div>
   );
