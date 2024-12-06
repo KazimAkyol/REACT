@@ -11,11 +11,12 @@ const App = () => {
   const changeColor = (id, newRenk) => {
     setStudents(
       students.map((a) => (a.id === id ? { ...a, color: newRenk } : a))
-    ); // set in içinde bir dögüyle, şartı tutan elemanı değiştirmek istersek && yerine ternary tercih etmeliyiz.
+    );
   };
+  // set in içinde bir döngüyle, şartı tutan elemanı değiştirmek istersek && yerine ternary tercih etmeliyiz.
 
   return (
-    //! 2- Bütün projeye gönderilebilsin diye ilk olarak Home  sayfasını, gönderilecek verilerle ve context le sarmallayalım:
+    //! 2- Bütün projeye gönderilebilsin diye ilk olarak Home  sayfasını, gönderilecek verilerle ve context'le sarmallayalım:
 
     <StudentContext.Provider value={{ students, changeColor }}>
       <Home />
