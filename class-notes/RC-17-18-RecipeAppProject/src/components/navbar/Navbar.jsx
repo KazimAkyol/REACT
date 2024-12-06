@@ -1,22 +1,24 @@
 import React from "react";
 import { MenuLink, Nav } from "./NavbarStyles";
 import { Menu } from "./NavbarStyles";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
-      <Nav>
-        <img src="https://github.com/clarusway" alt="" />
+      <NavLink>
+        <img src="" alt="" />
+      </NavLink>
 
-        <div>
-          <Link>ABOUT</Link>
-          <a href="www.">GITHUB</a>
-          <Link>LOG OUT</Link>
-        </div>
-        <Menu />
-        <MenuLink />
-      </Nav>
+      <NavLink to="/about">ABOUT</NavLink>
+      <Nav.Link href="https://github.com/clarusway" target="blank">
+        Github
+      </Nav.Link>
+
+      <NavLink to="/">LOG OUT</NavLink>
+
+      <Menu />
+      <MenuLink />
     </div>
   );
 };
