@@ -21,8 +21,11 @@ const RecipeProvider = () => {
 
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
-
-
+   useEffect(() => {
+     fetch(url)
+       .then((data) => data.json())
+       .then((veri) => console.log(veri));
+    });
 
 
 
