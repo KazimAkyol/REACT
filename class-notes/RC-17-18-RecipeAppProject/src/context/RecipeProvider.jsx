@@ -1,4 +1,4 @@
-//!context alanı create edelim
+//! context alanı create edelim
 
 import { useState } from "react";
 
