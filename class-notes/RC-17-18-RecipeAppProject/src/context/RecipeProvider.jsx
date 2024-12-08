@@ -1,6 +1,8 @@
-//! context alanı create edelim
+import { createContext, useEffect, useState } from "react";
 
-import { useState } from "react";
+//! context alanı create edelim:
+
+export const NeuContext=createContext()
 
 
 const APP_ID = "bfbb3efc";
@@ -23,8 +25,10 @@ const RecipeProvider = () => {
 
 
 
+
+
   return (
-    <div></div>
+    <NeuContext.Provider></NeuContext.Provider>
   );
 };
 
