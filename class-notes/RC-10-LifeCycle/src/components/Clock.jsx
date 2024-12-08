@@ -11,7 +11,7 @@ const Clock = () => {
   const [count, setCount] = useState(0);
 
   //! Component Did Mount işlemi
-  // Yeni Hook useEffect hook
+  // Yeni Hook useEffect hook'u
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -20,7 +20,7 @@ const Clock = () => {
     }, 1000);
 
     //! ComponentWillUnmount
-    //COmponenti öldürdük
+    //Componenti öldürdük
     return () => {
       clearInterval(timer);
     };
