@@ -1,12 +1,13 @@
-import { createContext, useEffect, useState } from "react";
+import React from "react";
+
+const APP_ID = "58c5091b";
+const APP_KEY = "9ced208298cb1fd453c44d6655f88efb";
 
 //! context alanı create edelim:
 
-const APP_ID = "bfbb3efc";
-const APP_KEY = "43faeee790f26cd82b28050d3031619d";
 
-const RecipeProvider = () => {
-  //! Home, header, recipecard da gerekli olan veriler
+const RecipeProvider = ({ children }) => {
+  //! Home, header, recipecard da gerekli olan veriler:
 
   const [recipes, setRecipes] = useState([]);
   const [query, setQuery] = useState("");
@@ -14,7 +15,17 @@ const RecipeProvider = () => {
 
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
-  return <div></div>;
+  //! Diger bölümlerde kullanilacak degiskenler:
+
+ 
+
+  //! Verinin cekildigi bölüm:
+
+
+
+  return (
+    <div></div>
+  );
 };
 
 export default RecipeProvider;
