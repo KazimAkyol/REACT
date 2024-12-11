@@ -17,6 +17,18 @@ const HoverFocus = () => {
         type="text"
         className="border-2 rounded-2xl text-xl ml-2 text-center focus:outline-rose-500 focus:bg-slate-400"
       />
+
+      <p>Peer Özelligi</p>
+      <input
+        type="email"
+        className="peer border-2 rounded-2xl text-xl ml-2 text-center focus:outline-rose-500 focus:bg-slate-400"
+      />
+      <p className="text-red-700 ml-4 invisible peer-invalid:visible">
+        Invalid email adress
+      </p>
+
+      <input type="checkbox" className="peer" />
+      <p className="peer-checked:bg-green-400">Tiklandi</p>
     </div>
   );
 };
