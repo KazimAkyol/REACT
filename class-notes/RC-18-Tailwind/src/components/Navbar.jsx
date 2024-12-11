@@ -24,7 +24,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
   return (
     <Disclosure
       as="nav"
-      className={`${darkMode ? "bg-gray-800" : "bg-gray-200 text-gray"}`}
+      className={`${darkMode ? "bg-gray-800" : "bg-gray-200"}`}
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">

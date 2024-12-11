@@ -12,7 +12,7 @@ const Sizing = () => {
 
       <div>
         <p className="bg-yellow-600 mt-5">Margin Padding</p>
-        <button className="bg-lime-600 m-4 p-2">Tıkla</button>
+        <button className="bg-lime-600 m-4 p-2">Tikla</button>
         <button className="bg-orange-700 mt-4 ml-6 pl-5 pr-8 pt-3 pb-1">
           Tikla
         </button>

@@ -10,10 +10,10 @@ const Typography = () => {
       <h2 className="text-[25px]">Tailwind css</h2>
 
       <p className="text-sm">
-        Tailwind, en temel CSS kullanımlarını sıfırdan yazmanızı tekrar tekrar
-        yazmanızı engelleyen, yazılımcıların ve tasarımcıların işini
-        kolaylaştıran bir CSS framework’üdür. Tailwind, bir UI kiti olmadığı
-        için Bootstrap, Foundation gibi frameworklerden farklıdır.
+        Tailwind, en temel CSS kullanimlarini sifirdan yazmanizi tekrar tekrar
+        yazmanizi engelleyen, yazilimcilarin ve tasarimcilarin işini
+        kolaylaştiran bir CSS framework'üdür. Tailwind, bir UI kiti olmadigi
+        için Bootstrap, Foundation gibi frameworklerden farklidir.
         <h3 className="bg-slate-500 text-3xl mt-5">Line Clamp özelliği</h3>
       </p>
       {/* Line Clamp özelliği */}

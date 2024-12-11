@@ -10,7 +10,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   return (
     <div>
-      {/* <Typography/> */}
+      {/* <Typography /> */}
 
       {/* <Sizing /> */}
 
