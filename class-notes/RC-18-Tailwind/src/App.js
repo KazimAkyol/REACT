@@ -1,9 +1,10 @@
 import "./App.css";
+import Typography from "./components/Typography";
 
 function App() {
   return (
-    <div className="App">
-      <h1>DE10</h1>
+    <div>
+        <Typography/>
     </div>
   );
 }
