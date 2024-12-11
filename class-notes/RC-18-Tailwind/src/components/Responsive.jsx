@@ -4,9 +4,18 @@ const Responsive = () => {
   return (
     <div>
       <h3>Responsive</h3>
-      <div className="flex-wrap">
-        <div className="bg-red-300">1</div>
-        <div className="bg-red-500">2</div>
+      <div className="flex flex-wrap">
+        <div className="bg-red-300 basis-1/4">1</div>
+        <div className="bg-red-500 basis-1/2">2</div>
+        <div className="bg-red-600 basis-1/2">3</div>
+        <div className="bg-red-700 basis-3/5">4</div>
+        <div className="bg-red-900 basis-1/12">5</div>
+      </div>
+      <br />
+      <h1>Grid yapisi</h1>
+      <div className="anasayfaGrid">
+        <div className="bg-red-300 md:text-2xl lg:text-3xl">Tailwind grid</div>
+        <div className="bg-red-500 md:bg-yellow-300 lg:bg-green-300">2</div>
         <div className="bg-red-600">3</div>
         <div className="bg-red-700">4</div>
         <div className="bg-red-900">5</div>
