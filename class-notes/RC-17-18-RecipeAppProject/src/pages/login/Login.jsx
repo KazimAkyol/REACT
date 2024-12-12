@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   FormContainer,
   Header,
@@ -10,8 +10,12 @@ import {
 } from "./LoginStyles";
 
 import meal from "../../assets/meal.svg";
+import { RecipeContext } from "../../context/RecipeProvider";
 
 const Login = () => {
+  // Consume islemi:
+
+  const { name, setName, password, setPassword } = useContext(RecipeContext);
   return (
     <LoginContainer>
       <FormContainer>
@@ -22,7 +26,12 @@ const Login = () => {
         </Header>
 
         <StyledForm>
-          <StyledInput type="text" placeholder="username" required />
+          <StyledInput
+            type="text"
+            placeholder="username"
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
           <StyledInput type="password" placeholder="password" required />
           <StyledButton type="submit">Login</StyledButton>
         </StyledForm>

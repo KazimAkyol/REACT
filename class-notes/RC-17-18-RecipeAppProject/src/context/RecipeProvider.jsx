@@ -29,7 +29,7 @@ const RecipeProvider = ({ children }) => {
 
 
   return (
-    <RecipeContext.Provider>
+    <RecipeContext.Provider value={{name, setName, password, setPassword}}>
         {children}
     </RecipeContext.Provider>
   );
