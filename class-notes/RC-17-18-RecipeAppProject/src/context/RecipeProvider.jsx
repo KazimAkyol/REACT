@@ -1,9 +1,11 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 
 const APP_ID = "58c5091b";
 const APP_KEY = "9ced208298cb1fd453c44d6655f88efb";
 
 //! context alanı create edelim:
+
+export const RecipeContext=createContext()
 
 
 const RecipeProvider = ({ children }) => {
@@ -16,6 +18,9 @@ const RecipeProvider = ({ children }) => {
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
   //! Diger bölümlerde kullanilacak degiskenler:
+  const[name,setName]=useState(localStorage.getItem("username") || "")
+
+  const [password, setPassword] = useState(localStorage.getItem("password") || "")
 
  
 
@@ -24,7 +29,9 @@ const RecipeProvider = ({ children }) => {
 
 
   return (
-    <div></div>
+    <RecipeContext.Provider>
+        {children}
+    </RecipeContext.Provider>
   );
 };
 
