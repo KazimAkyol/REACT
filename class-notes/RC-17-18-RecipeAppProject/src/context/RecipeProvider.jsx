@@ -7,7 +7,6 @@ const APP_KEY = "9ced208298cb1fd453c44d6655f88efb";
 
 export const RecipeContext=createContext()
 
-
 const RecipeProvider = ({ children }) => {
   //! Home, header, recipecard da gerekli olan veriler:
 
