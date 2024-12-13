@@ -5,7 +5,7 @@ const APP_KEY = "9ced208298cb1fd453c44d6655f88efb";
 
 //! context alanı create edelim:
 
-export const RecipeContext=createContext()
+export const RecipeContext = createContext();
 
 const RecipeProvider = ({ children }) => {
   //! Home, header, recipecard da gerekli olan veriler:
@@ -17,19 +17,30 @@ const RecipeProvider = ({ children }) => {
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
   //! Diger bölümlerde kullanilacak degiskenler:
-  const[name,setName]=useState(localStorage.getItem("username") || "")
+  const [name, setName] = useState(localStorage.getItem("username") || "");
 
-  const [password, setPassword] = useState(localStorage.getItem("password") || "")
-
- 
+  const [password, setPassword] = useState(
+    localStorage.getItem("password") || ""
+  );
 
   //! Verinin cekildigi bölüm:
 
-
-
   return (
-    <RecipeContext.Provider value={{name, setName, password, setPassword}}>
-        {children}
+    <RecipeContext.Provider
+      value={{
+        name,
+        setName,
+        password,
+        setPassword,
+        recipes,
+        setRecipes,
+        query,
+        setQuery,
+        mealType,
+        setMealType,
+      }}
+    >
+      {children}
     </RecipeContext.Provider>
   );
 };
