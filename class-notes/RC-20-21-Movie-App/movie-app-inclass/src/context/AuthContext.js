@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { createContext } from 'react'
 
-const AuthContext = () => {
+//! context alani create edelim:
+export const YetkiContext=createContext()
+
+const AuthContext = ({children}) => {
   return (
-    <div>AuthContext</div>
+    <YetkiContext.Provider>
+        {children}
+    </YetkiContext.Provider>
   )
 }
 
