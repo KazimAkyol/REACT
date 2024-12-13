@@ -13,7 +13,7 @@ const AuthContext = ({ children }) => {
   const createKullanici = async (email, password) => {
     await createUserWithEmailAndPassword(auth, email, password);
 
-    successToast("Kayit basarili")
+    successToast("Kayit basarili");
 
     // main sayfasina git
   };

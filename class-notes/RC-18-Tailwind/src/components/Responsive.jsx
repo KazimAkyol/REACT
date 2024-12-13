@@ -15,7 +15,7 @@ const Responsive = () => {
       <h1>Grid yapisi</h1>
       <div className="anasayfaGrid">
         {/* <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5'> */}
-        {/* Bu şekilde çok class isimleri karışık göründüğü için istersek @appy yapısı kullanılabilir */}
+        {/* Bu şekilde çok class isimleri karışık göründüğü için istersek @apply yapısı kullanılabilir */}
         <div className="bg-red-300 md:text-2xl lg:text-3xl">Tailwind grid</div>
         <div className="bg-red-500 md:bg-yellow-300 lg:bg-green-300">2</div>
         <div className="bg-red-600">3</div>
