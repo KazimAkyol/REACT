@@ -1,6 +1,7 @@
 import React, { createContext } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../auth/firebase";
+import { successToast } from "../helpers/ToastNotify";
 
 //! context alani create edelim:
 export const YetkiContext = createContext();
@@ -11,6 +12,10 @@ const AuthContext = ({ children }) => {
 
   const createKullanici = async (email, password) => {
     await createUserWithEmailAndPassword(auth, email, password);
+
+    successToast("Kayit basarili")
+
+    // main sayfasina git
   };
 
   return (
