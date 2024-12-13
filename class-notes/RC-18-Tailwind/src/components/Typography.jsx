@@ -14,6 +14,7 @@ const Typography = () => {
         yazmanizi engelleyen, yazilimcilarin ve tasarimcilarin işini
         kolaylaştiran bir CSS framework'üdür. Tailwind, bir UI kiti olmadigi
         için Bootstrap, Foundation gibi frameworklerden farklidir.
+        
         <h3 className="bg-slate-500 text-3xl mt-5">Line Clamp özelliği</h3>
       </p>
       {/* Line Clamp özelliği */}
@@ -33,9 +34,9 @@ const Typography = () => {
 
       <h3 className="bg-red-500 mt-5">Tailwind Renkler</h3>
       <p className="text-teal-800 bg-gray-500">Tailwind renkleri</p>
-      <p className="bg-[rgb(207,136,208)]">Tailwind rgb renk kullanımı</p>
+      <p className="bg-[rgb(207,136,208)]">Tailwind rgb renk kullanimi</p>
 
-      <p className="bg-[#9cb88e]">Tailwind ile hexadecimal renk kullanımı</p>
+      <p className="bg-[#9cb88e]">Tailwind ile hexadecimal renk kullanimi</p>
     </div>
   );
 };
