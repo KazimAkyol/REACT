@@ -11,11 +11,14 @@ import {
 
 import meal from "../../assets/meal.svg";
 import { RecipeContext } from "../../context/RecipeProvider";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   // Consume islemi:
 
   const { name, setName, password, setPassword } = useContext(RecipeContext);
+
+  const navigate = useNavigate;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +27,7 @@ const Login = () => {
 
     localStorage.setItem("username", name);
     localStorage.setItem("password", password);
+    navigate("/home");
   };
 
   return (
