@@ -18,7 +18,7 @@ const Login = () => {
 
   const { name, setName, password, setPassword } = useContext(RecipeContext);
 
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
