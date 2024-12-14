@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import axios from "axios";
 
 const APP_ID = "58c5091b";
 const APP_KEY = "9ced208298cb1fd453c44d6655f88efb";
@@ -25,6 +26,12 @@ const RecipeProvider = ({ children }) => {
 
   //! Verinin cekildigi bölüm:
 
+  const getData = async () => {
+    const { data } = await axios.get(url);
+    // console.log(data.hits);
+    setRecipes(data.hits);
+  };
+
   return (
     <RecipeContext.Provider
       value={{
@@ -32,12 +39,13 @@ const RecipeProvider = ({ children }) => {
         setName,
         password,
         setPassword,
-        recipes,
-        setRecipes,
         query,
         setQuery,
         mealType,
         setMealType,
+        getData,
+        recipes,
+        setRecipes,
       }}
     >
       {children}
