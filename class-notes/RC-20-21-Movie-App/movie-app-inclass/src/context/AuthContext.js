@@ -1,5 +1,8 @@
 import React, { createContext } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { successToast } from "../helpers/ToastNotify";
 import { useNavigate } from "react-router-dom";
@@ -21,8 +24,18 @@ const AuthContext = ({ children }) => {
     navigate("/");
   };
 
+  //! login icin daha önce olusturulmus kullanici adiyla giris yapmak icin firebase kodu:
+
+  const login = async (email, password) => {
+    await signInWithEmailAndPassword(auth, email, password);
+
+    successToast("Giris basarili");
+
+    navigate("/");
+  };
+
   return (
-    <YetkiContext.Provider value={{ createKullanici }}>
+    <YetkiContext.Provider value={{ createKullanici, login }}>
       {children}
     </YetkiContext.Provider>
   );
