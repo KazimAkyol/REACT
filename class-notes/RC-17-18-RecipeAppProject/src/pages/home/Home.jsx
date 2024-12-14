@@ -5,7 +5,6 @@ import Cooker from "../../assets/home.svg";
 
 const Home = () => {
   const { recipes } = useContext(RecipeContext);
-  console.log(recipes);
 
   return (
     <div>
