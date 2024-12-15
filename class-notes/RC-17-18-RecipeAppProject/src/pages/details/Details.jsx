@@ -21,7 +21,7 @@ const Details = () => {
   return (
     <DetailContainer>
       <HeaderContainer>
-        <h1>{recipe.label} </h1>
+        <h1>{recipe.label}</h1>
         <img src={diet} alt="" />
       </HeaderContainer>
 
