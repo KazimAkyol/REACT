@@ -18,6 +18,8 @@ const Login = () => {
 
   const { name, setName, password, setPassword } = useContext(RecipeContext);
 
+  // Navigate icin:
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
