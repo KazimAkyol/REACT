@@ -8,7 +8,7 @@ const Register = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
 
-  const { createKullanici } = useContext(YetkiContext);
+  const { createKullanici, signUpGoogleE } = useContext(YetkiContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -76,6 +76,7 @@ const Register = () => {
           <button
             type="button"
             className="btn-danger flex justify-between text-center "
+            onClick={() => signUpGoogleE()}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />

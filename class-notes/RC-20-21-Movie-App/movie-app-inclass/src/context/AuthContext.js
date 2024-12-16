@@ -1,7 +1,9 @@
 import React, { createContext } from "react";
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { successToast } from "../helpers/ToastNotify";
@@ -34,8 +36,24 @@ const AuthContext = ({ children }) => {
     navigate("/");
   };
 
+  //! google ile giriş:
+
+  //* https://firebase.google.com/docs/auth/web/google-signin?hl=tr
+
+  const signUpGooglE = () => {
+    //? google hesaplarima ulasmak icin firebase kodu:
+
+    const provider = new GoogleAuthProvider();
+
+    //? acilir pencerede google hesaplarinin gelmesi icin firebase metodu:
+
+    signInWithPopup(auth, provider).then((res) => {
+      successToast("Google ile giris basarili");
+    });
+  };
+
   return (
-    <YetkiContext.Provider value={{ createKullanici, login }}>
+    <YetkiContext.Provider value={{ createKullanici, login, signUpGooglE }}>
       {children}
     </YetkiContext.Provider>
   );

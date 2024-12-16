@@ -6,7 +6,7 @@ const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const { login } = useContext(YetkiContext);
+  const { login, signUpGoogleE } = useContext(YetkiContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,6 +49,7 @@ const Login = () => {
           <button
             type="button"
             className="btn-danger flex justify-between text-center "
+            onClick={() => signUpGoogleE()}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />
