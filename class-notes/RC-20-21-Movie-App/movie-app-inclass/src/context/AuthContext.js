@@ -1,7 +1,8 @@
-import React, { createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -15,6 +16,14 @@ export const YetkiContext = createContext();
 
 const AuthContext = ({ children }) => {
   const navigate = useNavigate();
+
+  const [currentUser, setCurrentUser] = useState();
+
+  //! Bu sayfaya ister login ister register ister google için gelin, sadece bir seferliğine user kontrolü yapan fonksiyonu çalıştır:
+
+  useEffect(() => {
+    userTakip();
+  }, []);
 
   //! register için (sitede zincir yapılı fetch işlemi var biz burada async await i tercih ettik)
   // https://firebase.google.com/docs/auth/web/start?hl=tr
@@ -70,6 +79,19 @@ const AuthContext = ({ children }) => {
     signOut(auth);
 
     successToast("cikis basarili");
+  };
+
+  //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu. bir kere çalıştır login logout takip eder.login ile bilgiler gelir bizde burada currentUser ın içine atarız, signout olunca bilgiler gider bizde currentUser ın içini güncelleriz (register ve logindeki email vs ye navbardan ulaşabilmek için). google ile giriş yapınca user ile displayname gelir ama email ile girecekseniz en üstte update kodunu firebase den çağırmalısınız.(userObserver)
+
+  const userTakip = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { email, displayName, photoUrl } = user;
+
+        setCurrentUser({ email, displayName, photoUrl });
+      } else {
+      }
+    });
   };
 
   return (
