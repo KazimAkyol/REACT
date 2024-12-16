@@ -28,7 +28,7 @@ const AuthContext = ({ children }) => {
   //! register için (sitede zincir yapılı fetch işlemi var biz burada async await i tercih ettik)
   // https://firebase.google.com/docs/auth/web/start?hl=tr
 
-  const createKullanici = async (email, password) => {
+  const createKullanici = async (email, password, displayName) => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
 
@@ -81,7 +81,7 @@ const AuthContext = ({ children }) => {
     successToast("cikis basarili");
   };
 
-  //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu. bir kere çalıştır login logout takip eder.login ile bilgiler gelir bizde burada currentUser ın içine atarız, signout olunca bilgiler gider bizde currentUser ın içini güncelleriz (register ve logindeki email vs ye navbardan ulaşabilmek için). google ile giriş yapınca user ile displayname gelir ama email ile girecekseniz en üstte update kodunu firebase den çağırmalısınız.(userObserver)
+  //? Kullanıcının signIn olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu. Bir kere çalıştır login logout takip eder.login ile bilgiler gelir bizde burada currentUser'ın içine atarız, signout olunca bilgiler gider bizde currentUser ın içini güncelleriz (register ve logindeki email vs ye navbardan ulaşabilmek için). google ile giriş yapınca user ile displayname gelir ama email ile girecekseniz en üstte update kodunu firebase den çağırmalısınız.(userObserver)
 
   const userTakip = () => {
     onAuthStateChanged(auth, (user) => {
@@ -90,13 +90,14 @@ const AuthContext = ({ children }) => {
 
         setCurrentUser({ email, displayName, photoUrl });
       } else {
+        setCurrentUser(false);
       }
     });
   };
 
   return (
     <YetkiContext.Provider
-      value={{ createKullanici, login, signUpGooglE, cikis }}
+      value={{ createKullanici, login, signUpGooglE, cikis, currentUser }}
     >
       {children}
     </YetkiContext.Provider>
