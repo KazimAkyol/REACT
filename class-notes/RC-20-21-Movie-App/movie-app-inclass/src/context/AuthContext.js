@@ -6,7 +6,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../auth/firebase";
-import { successToast } from "../helpers/ToastNotify";
+import { errorToast, successToast } from "../helpers/ToastNotify";
 import { useNavigate } from "react-router-dom";
 
 //! context alani create edelim:
@@ -19,21 +19,31 @@ const AuthContext = ({ children }) => {
   // https://firebase.google.com/docs/auth/web/start?hl=tr
 
   const createKullanici = async (email, password) => {
-    await createUserWithEmailAndPassword(auth, email, password);
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
 
-    successToast("Kayit basarili");
+      successToast("Kayit basarili");
 
-    navigate("/");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+
+      errorToast(error.message);
+    }
   };
 
   //! login icin daha önce olusturulmus kullanici adiyla giris yapmak icin firebase kodu:
 
   const login = async (email, password) => {
-    await signInWithEmailAndPassword(auth, email, password);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
 
-    successToast("Giris basarili");
+      successToast("Giris basarili");
 
-    navigate("/");
+      navigate("/");
+    } catch (error) {
+      errorToast(error.message);
+    }
   };
 
   //! google ile giriş:
@@ -41,14 +51,15 @@ const AuthContext = ({ children }) => {
   //* https://firebase.google.com/docs/auth/web/google-signin?hl=tr
 
   const signUpGooglE = () => {
-    //? google hesaplarima ulasmak icin firebase kodu:
-
+    //?google hesaplarıma ulaşmak için firebase kodu
     const provider = new GoogleAuthProvider();
 
-    //? acilir pencerede google hesaplarinin gelmesi icin firebase metodu:
-
+    //?açılır pencerede google hesaplarının gelmesi için firebase metodu
     signInWithPopup(auth, provider).then((res) => {
-      successToast("Google ile giris basarili");
+      console.log(res);
+      successToast("google ile giriş başarili");
+
+      navigate("/");
     });
   };
 

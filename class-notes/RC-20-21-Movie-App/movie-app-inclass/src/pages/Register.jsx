@@ -75,7 +75,7 @@ const Register = () => {
           </button>
           <button
             type="button"
-            className="btn-danger flex justify-between text-center "
+            className="btn-danger flex justify-between text-center"
             onClick={() => signUpGoogleE()}
           >
             Continue with Google

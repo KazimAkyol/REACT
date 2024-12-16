@@ -6,12 +6,12 @@ const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const { login, signUpGoogleE } = useContext(YetkiContext);
+  const { login, signUpGooglE } = useContext(YetkiContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    Login(email, password);
+    login(email, password);
   };
 
   return (
@@ -48,8 +48,8 @@ const Login = () => {
           </button>
           <button
             type="button"
-            className="btn-danger flex justify-between text-center "
-            onClick={() => signUpGoogleE()}
+            className="btn-danger flex justify-between text-center"
+            onClick={signUpGooglE}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />
