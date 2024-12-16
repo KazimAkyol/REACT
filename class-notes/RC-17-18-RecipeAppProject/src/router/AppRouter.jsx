@@ -24,7 +24,7 @@ const AppRouter = () => {
 
         <Route path="/details" element={<Details />} />
 
-        <Route to="*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
