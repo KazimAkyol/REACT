@@ -17,6 +17,7 @@ export const Nav = styled.div`
 
 export const Menu = styled.div`
   /* navbardaki 3 kelime about ...hepsini içine alan sarmalın (kutunun ) özellikleri*/
+
   background: #e1f1dd;
   display: flex;
   justify-content: center;
@@ -102,7 +103,7 @@ export const Logo = styled(MenuLink)`
 
 export const Hamburger = styled.div`
   display: none;
-  /* Bir öğeyi gizleme özelliği  Öğe gizlenecek ve sayfa, öğe orada değilmiş gibi alttaki stiller yok gibi görüntülenecektir: hamburger ekran büyükken görünmesin 768 den küçülmeye başlayınca görünsün*/
+  /* Bir öğeyi gizleme özelliği: Öğe gizlenecek ve sayfa, öğe orada değilmiş gibi alttaki stiller yok gibi görüntülenecektir: hamburger ekran büyükken görünmesin 768 den küçülmeye başlayınca görünsün*/
 
   cursor: pointer;
 
