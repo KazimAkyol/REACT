@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { errorToast, successToast } from "../helpers/ToastNotify";
@@ -35,6 +36,11 @@ const AuthContext = ({ children }) => {
       successToast("Kayit basarili");
 
       navigate("/");
+
+      //? USERTAKİPTEN SONRA -----kullanıcı profilini güncellemek için kullanılan firebase metodu, login logout da userTakip sayesinde güncelleniyor ama register da isim güncellemesi yok, o da bu şekilde oluyor.alttakini yazmazsam (register ile girdiğimde) navbarda displayName i göremem. alttakini yazmazsam sadece google ile girersem görürüm
+
+      await updateProfile(auth.currentUser, { displayName: displayName });
+      
     } catch (error) {
       console.log(error);
 

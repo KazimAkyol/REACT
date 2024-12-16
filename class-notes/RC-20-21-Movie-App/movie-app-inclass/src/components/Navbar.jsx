@@ -28,12 +28,12 @@ export default function Navbar() {
             </Link>
 
             <div className="absolute inset-y-0 right-0 flex items-center">
-              <h5 className="mr-2 capitalize">{currentUser.displayName}</h5>
+              <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>
               <Menu as="div" className="relative ml-3">
                 <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <img
                     className="h-8 w-8 rounded-full"
-                    src={avatar}
+                    src={currentUser?.photoUrl}
                     referrerPolicy="no-referrer"
                     alt=""
                   />

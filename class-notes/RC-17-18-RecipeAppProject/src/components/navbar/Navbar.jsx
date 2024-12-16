@@ -1,10 +1,13 @@
 import React from "react";
+import { Logo, Nav } from "./NavbarStyles";
 
 function Navbar() {
   return (
-    <div>
-      Navbar
-    </div>
+    <Nav>
+      <Logo to="/home">
+        {"<Clarusway/>"} <span>Recipe</span>
+      </Logo>
+    </Nav>
   );
 }
 
