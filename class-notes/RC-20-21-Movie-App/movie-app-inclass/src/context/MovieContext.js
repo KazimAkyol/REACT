@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
-//!context alanı
+
+//! context alanı create edelim:
 export const FilmContext = createContext();
 
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
