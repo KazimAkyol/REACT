@@ -2,6 +2,7 @@ import { Fragment, useContext } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import avatar from "../assets/icons/avatar.png";
+import { YetkiContext } from "../context/AuthContext";
 
 //tailwindui.com/components/preview navigation, mobile menu button, open, Disclosure.Panel sil
 
@@ -10,7 +11,10 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const { cikis } = useContext(YetkiContext);
+
   // referrerPolicy = "no-referrer"; google dan gelen resimde bazen sıkıntı oluyor, olmasın diye
+
   return (
     <>
       <Disclosure
@@ -78,6 +82,7 @@ export default function Navbar() {
                             active ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
                           )}
+                          onClick={cikis}
                         >
                           Log out
                         </span>
