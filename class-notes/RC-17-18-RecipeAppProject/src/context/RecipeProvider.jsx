@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 import axios from "axios";
 
 const APP_ID = "58c5091b";
@@ -27,11 +27,29 @@ const RecipeProvider = ({ children }) => {
 
   //! Verinin cekildigi bölüm:
 
+  const [error, setError] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+
   const getData = async () => {
-    const { data } = await axios.get(url);
-    // console.log(data.hits);
-    setRecipes(data.hits);
+    setLoading(true);
+    try {
+      const { data } = await axios.get(url);
+      setRecipes(data.hits);
+    } catch (error) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   };
+
+  if (error) {
+    return <p>Something went wrong</p>;
+  }
+
+  if (loading) {
+    return <p>...LOADING...</p>;
+  }
 
   return (
     <RecipeContext.Provider

@@ -3,9 +3,9 @@ import { RecipeContext } from "../../context/RecipeProvider";
 import {
   Cards,
   MainContainer,
-  RecipeButton,
   RecipeHeader,
   RecipeImage,
+  RecipeButton,
 } from "./HomeStyles";
 import { useNavigate } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const RecipeCard = () => {
           <RecipeImage src={recipe.image} />
 
           <RecipeButton
-            onClick={(() => navigate("/details"), { state: { recipe } })}
+            onClick={() => navigate("/details", { state: { recipe } })}
           >
             Details
           </RecipeButton>
