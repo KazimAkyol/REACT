@@ -18,7 +18,7 @@ const RecipeProvider = ({ children }) => {
   const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${mealType}`;
 
   //! Diger bölümlerde kullanilacak degiskenler:
-  
+
   const [name, setName] = useState(localStorage.getItem("username") || "");
 
   const [password, setPassword] = useState(
