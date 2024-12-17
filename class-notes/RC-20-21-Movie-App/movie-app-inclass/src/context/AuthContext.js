@@ -18,6 +18,8 @@ export const YetkiContext = createContext();
 const AuthContext = ({ children }) => {
   const navigate = useNavigate();
 
+  //? burada login, register yada google'dan gelen displayName ve email'i navbarda bastırmak üzere, navbar'a gönderebilmek için alttaki state'e attık:
+
   const [currentUser, setCurrentUser] = useState();
 
   //! Bu sayfaya ister login ister register ister google için gelin, sadece bir seferliğine user kontrolü yapan fonksiyonu çalıştır:
@@ -31,16 +33,16 @@ const AuthContext = ({ children }) => {
 
   const createKullanici = async (email, password, displayName) => {
     try {
+      //? sitede ilk defa kullanıcı adı oluşturmak için kullanılan firebase metodu:
       await createUserWithEmailAndPassword(auth, email, password);
 
       successToast("Kayit basarili");
 
       navigate("/");
 
-      //? USERTAKİPTEN SONRA -----kullanıcı profilini güncellemek için kullanılan firebase metodu, login logout da userTakip sayesinde güncelleniyor ama register da isim güncellemesi yok, o da bu şekilde oluyor.alttakini yazmazsam (register ile girdiğimde) navbarda displayName i göremem. alttakini yazmazsam sadece google ile girersem görürüm
+      //? USERTAKİPTEN SONRA -----kullanıcı profilini güncellemek için kullanılan firebase metodu, login logout da userTakip sayesinde güncelleniyor ama register da isim güncellemesi yok, o da bu şekilde oluyor.Alttakini yazmazsam (register ile girdiğimde) navbarda displayName i göremem. Alttakini yazmazsam sadece google ile girersem görürüm.
 
       await updateProfile(auth.currentUser, { displayName: displayName });
-      
     } catch (error) {
       console.log(error);
 
@@ -48,7 +50,7 @@ const AuthContext = ({ children }) => {
     }
   };
 
-  //! login icin daha önce olusturulmus kullanici adiyla giris yapmak icin firebase kodu:
+  //? kayıt olduktan sonraki giriş için login den çağırılacak firebase metodu:
 
   const login = async (email, password) => {
     try {
@@ -67,10 +69,11 @@ const AuthContext = ({ children }) => {
   //* https://firebase.google.com/docs/auth/web/google-signin?hl=tr
 
   const signUpGooglE = () => {
-    //?google hesaplarıma ulaşmak için firebase kodu
+    //? google hesaplarıma ulaşmak için firebase kodu:
     const provider = new GoogleAuthProvider();
 
-    //?açılır pencerede google hesaplarının gelmesi için firebase metodu
+    //?açılır pencerede google hesaplarının gelmesi için firebase metodu:
+
     signInWithPopup(auth, provider).then((res) => {
       console.log(res);
       successToast("google ile giriş başarili");

@@ -1,6 +1,8 @@
 import React from "react";
 
 const MovieCard = ({ poster_path, title, overview, vote_average }) => {
+  //?  parent'tan (Main) gelen içi açılmış filmler'in içinden gerekli olanlarını havada destructuring ederek karşıladık.
+
   return (
     <div className="movie" id="container">
       {/* img için base adrese endpoint olaraka dizideki poster_path eklenecek */}

@@ -8,6 +8,8 @@ const API_KEY = process.env.REACT_APP_TMDB_KEY;
 
 const BASE_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
 
+//? bu sayfa https://api.themoviedb.org adresine üye olup film afişlerini bir diziye attığımız context sayfası
+
 const MovieContext = ({ children }) => {
   const [filmler, setFilmler] = useState([]);
 
