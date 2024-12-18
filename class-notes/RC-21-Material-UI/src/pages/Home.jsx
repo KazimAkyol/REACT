@@ -7,9 +7,9 @@ import TextFieldComp from "../components/TextFieldComp";
 const Home = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       {/* <TypoButtons /> */}
-      <TextFieldComp />
+      {/* <TextFieldComp /> */}
       {/* <CardGrid /> */}
     </>
   );
