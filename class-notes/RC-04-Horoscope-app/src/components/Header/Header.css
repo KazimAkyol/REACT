@@ -1,0 +1,29 @@
+.header {
+  text-align: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  margin-top: 10rem;
+}
+.header .title {
+  animation: yanarSoner 0.5s infinite ease-in-out alternate;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  color: rgba(183, 103, 42, 0.9);
+  transition: all 0.5s easy-in-out;
+}
+.header .title:hover {
+  color: black;
+  cursor: pointer;
+}
+@keyframes yanarSoner {
+  0% {
+    opacity: 0.5;
+    text-shadow: 2px 2px 10px orange;
+  }
+  100% {
+    opacity: 0.9;
+    text-shadow: 2px 2px 10px orange;
+  }
+}/*# sourceMappingURL=Header.css.map */

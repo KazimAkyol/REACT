@@ -1,0 +1,30 @@
+.navbar {
+  background-color: rgba(183, 103, 42, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+.navbar .link {
+  display: flex;
+  font-size: 1.5rem;
+  gap: 10px;
+}
+.navbar .link a {
+  color: #f9efd4;
+  text-decoration: none;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+.navbar .link a:hover {
+  background-color: #f9efd4;
+  color: rgba(183, 103, 42, 0.9);
+  border-radius: 5px;
+}
+.navbar .logo img {
+  width: 100px;
+  height: 100px;
+}/*# sourceMappingURL=Navbar.css.map */

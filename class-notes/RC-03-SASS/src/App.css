@@ -1,0 +1,33 @@
+/* Color Theme Swatches in Hex */
+.buton-div button {
+  border: none;
+  border-radius: 1rem;
+  margin: 1rem;
+  color: white;
+}
+.buton-div button:hover {
+  opacity: 0.5;
+}
+.buton-div--small {
+  background-color: #22babb;
+  padding: 0.6rem;
+}
+.buton-div--large {
+  background-color: #f24405;
+  padding: 0.6rem 1.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Color Theme Swatches in Hex */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #fa7f08;
+}/*# sourceMappingURL=App.css.map */
