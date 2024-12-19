@@ -10,7 +10,7 @@ const Register = () => {
 
   const { createKullanici, signUpGooglE } = useContext(YetkiContext);
 
-  //handleSubmit=> createKullanici(email,password)
+  //? handleSubmit => createKullanici(email,password)
   const handleSubmit = (e) => {
     e.preventDefault();
 
