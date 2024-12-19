@@ -28,8 +28,12 @@ const CardGrid = () => {
       <Grid container spacing={2}>
         {products.map((a) => (
           <Grid key={a.id} item xs={6} md={4}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardMedia sx={{ height: 140 }} image={a.images} title="urun" />
+            <Card sx={{ maxWidth: 345, height: 450 }}>
+              <CardMedia
+                sx={{ height: 140 }}
+                image={a.images[0]}
+                title="urun"
+              />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   {a.title}
