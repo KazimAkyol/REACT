@@ -2,15 +2,11 @@ import React from "react";
 import okLogo from "../../assets/ok.png";
 import deleteLogo from "../../assets/delete.png";
 
-
 const TodoItem = () => {
-
-
-
   return (
     <div
       style={{
-        textDecoration:  "line-through",
+        textDecoration: "line-through",
         background: "#A9A9A9",
         borderRadius: "5px",
       }}
@@ -19,21 +15,10 @@ const TodoItem = () => {
       <h2 className="todoText">{}</h2>
       <div>
         <span>
-          <img
-            src={okLogo}
-            className="ok-logo"
-            alt="ok logo"
-           
-
-           
-          />
+          <img src={okLogo} className="ok-logo" alt="ok logo" />
         </span>
         <span>
-          <img
-            src={deleteLogo}
-            className="delete-logo"
-            alt="delete logo"
-          />
+          <img src={deleteLogo} className="delete-logo" alt="delete logo" />
         </span>
       </div>
     </div>
