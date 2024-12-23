@@ -7,8 +7,11 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const News = () => {
+  const { loading, haberler } = useSelector((state) => state.haberSlice);
+
   return (
     <div>
       <Card sx={{ maxWidth: 345 }}>
