@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getirData = createAsyncThunk("<haberSlice/getirData", async () => {
+export const getData = createAsyncThunk("<haberSlice/getirData", async () => {
   const res = await axios(
     "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=81a4163ea7eb4bccb489151972100adb"
   );
@@ -20,10 +20,10 @@ export const haberSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getirData.pending, (state) => {
+      .addCase(getData.pending, (state) => {
         state.loading = true;
       })
-      .addCase(getirData.fulfilled, (state, { payload }) => {
+      .addCase(getData.fulfilled, (state, { payload }) => {
         state.haberler = payload;
         state.loading = false;
       });
