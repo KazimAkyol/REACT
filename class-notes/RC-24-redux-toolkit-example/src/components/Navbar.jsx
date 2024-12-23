@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
+import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" color="secondary">
+        <Toolbar>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, cursor: "pointer" }}
+          >
+            Clarusway News
+          </Typography>
 
-export default Navbar
+          <Button color="inherit">LogIn</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+};
+
+export default Navbar;
