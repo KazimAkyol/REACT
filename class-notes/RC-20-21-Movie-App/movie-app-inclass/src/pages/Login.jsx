@@ -10,6 +10,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     //? daha önce register (kayıt) olduğumuz email password ile siteye giriş yapma firebase metodu:
     login(email, password);
   };
