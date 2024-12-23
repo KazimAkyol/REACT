@@ -26,10 +26,32 @@ const Login = () => {
         <Typography component="h1" variant="h5">
           Sign In
         </Typography>
+        {/* noValidate = doğrulanmasın
+        autocomplete = Otomatik Tamamlama listesi, siz yazmaya başladığınızda adlara ve e-posta adreslerine ilişkin önerileri görüntüleyen bir özelliktir. Bu öneriler, gönderdiğiniz e-posta mesajlarındaki ad ve e-posta adresleri listesindeki olası eşleşmelerdir.
+         */}
         <Box component="form" sx={{ mt: 1 }}>
-          <TextField />
-          <TextField />
-          <Button>Sign In</Button>
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <TextField
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+          />
+          <Button type="submit" fullWidth variant="contained" color="secondary">
+            Sign In
+          </Button>
         </Box>
       </Box>
     </Container>
