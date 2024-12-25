@@ -70,6 +70,7 @@ const AuthContext = ({ children }) => {
 
   const signUpGooglE = () => {
     //? google hesaplarıma ulaşmak için firebase kodu:
+
     const provider = new GoogleAuthProvider();
 
     //?açılır pencerede google hesaplarının gelmesi için firebase metodu:
