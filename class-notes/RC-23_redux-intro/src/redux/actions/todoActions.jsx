@@ -1,9 +1,11 @@
-import React from 'react'
+export const ekle = (inputData) => ({ type: "EKLE", payload: inputData });
 
-const todoActions = () => {
-  return (
-    <div>todoActions</div>
-  )
-}
+export const sil = (gorev) => ({
+  type: "SIL",
+  payload: gorev,
+});
 
-export default todoActions
+export const degistir = (id) => ({
+  type: "CHANGE",
+  payload: id,
+});

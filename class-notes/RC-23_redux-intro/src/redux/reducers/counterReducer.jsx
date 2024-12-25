@@ -5,10 +5,10 @@ const counterReducer = (state = { sayac: 0, yazi: "" }, { type, payload1 }) => {
     case "OKE":
       return { sayac: state.sayac + 1, yazi: payload1 };
     case "REDUZIEREN":
-      return;
+      return { sayac: state.sayac - 1, yazi: payload1 };
 
     case "RESETLE":
-      return;
+      return { sayac: 0 };
     default:
       return state;
   }
