@@ -3,12 +3,12 @@ import { useDispatch } from "react-redux";
 import { ekle } from "../../redux/actions/todoActions";
 
 const TodoInput = () => {
-  //inputtan gelen veriyi taşıması için useState
+  // inputtan gelen veriyi taşıması için useState:
   const [inputVeri, setInput] = useState("");
 
   const dispatch = useDispatch();
 
-  // submit fonksiyonu reducers dan gelsin
+  // submit fonksiyonu reducers dan gelsin:
   const handleSubmit = (e) => {
     e.preventDefault();
 

@@ -3,10 +3,10 @@ import "./Counter.css";
 import { arttir, azalt, sifirla } from "../../redux/actions/counterActions";
 
 const Counter = () => {
-  // değişkenler useSelector hookuyla getirilir
+  // değişkenler useSelector hookuyla getirilir:
   const { yazi, sayac } = useSelector((state) => state.counterReducer);
 
-  // fonksiyonları action aracılığıyla reducer dan getirme komutu
+  // fonksiyonları action aracılığıyla reducer'dan getirme komutu:
   const dispatch1 = useDispatch();
 
   return (
