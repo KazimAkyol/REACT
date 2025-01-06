@@ -10,8 +10,30 @@ import AuthHeader from "../components/AuthHeader";
 import AuthImage from "../components/AuthImage";
 import { Formik } from "formik";
 import { TextField, Button } from "@mui/material";
+import * as Yup from "yup";
 
 const Register = () => {
+  const SignupSchema = Yup.object().shape({
+    username: Yup.string()
+      .min(5, "Kullanici aid 5 karakterden ay olamaz")
+      .max(50, "Kullanici adi 50 karakterden fazla olamaz")
+      .required("Kullanici adi zorunludur"),
+    firstName: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    lastName: Yup.string()
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    email: Yup.string().email("Invalid email").required("Required"),
+    password: Yup.string()
+      .min(8, "password 8 karakterden fazla olmalidir")
+      .matches(/[a-z]/, "Sifre k+c+k harf icermelidir")
+      .matches(/[A-Z]/, "Sifre büyük harf icermelidir")
+      .matches(/\d+/, "Sifre sayisal karakter icermelidir"),
+  });
+
   return (
     <Container maxWidth="lg">
       <Grid
@@ -56,7 +78,7 @@ const Register = () => {
               email: "",
               password: "",
             }}
-            validate={{}}
+            validate={SignupSchema}
             onSubmit={(values) => {
               console.log(values);
             }}
