@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
 import AuthHeader from "../components/AuthHeader";
 import AuthImage from "../components/AuthImage";
+import { Formik } from "formik";
+import { TextField, Button } from "@mui/material";
 
 const Register = () => {
   return (
@@ -43,6 +45,64 @@ const Register = () => {
           >
             Register
           </Typography>
+
+          {/* {{FORMIK YAPISI}} */}
+
+          <Formik
+            initialValues={{
+              username: "",
+              firstName: "",
+              lastName: "",
+              email: "",
+              password: "",
+            }}
+            validate={{}}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <form onSubmit={handleSubmit}>
+                <TextField
+                  name="username"
+                  value={values.username}
+                  onChange={handleChange}
+                  label="Username"
+                  variant="outlined"
+                  fullWidth
+                  type="text"
+                  margin="normal"
+                />
+                <TextField
+                  name="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  label="Password"
+                  variant="outlined"
+                  fullWidth
+                  type="password"
+                  margin="normal"
+                />
+
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  margin="normal"
+                >
+                  SUBMIT
+                </Button>
+              </form>
+            )}
+          </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
             <Link to="/">Already have an account? Sign in</Link>
