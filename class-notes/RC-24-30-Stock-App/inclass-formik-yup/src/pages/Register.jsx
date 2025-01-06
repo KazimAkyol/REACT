@@ -31,7 +31,8 @@ const Register = () => {
       .min(8, "password 8 karakterden fazla olmalidir")
       .matches(/[a-z]/, "Sifre k+c+k harf icermelidir")
       .matches(/[A-Z]/, "Sifre büyük harf icermelidir")
-      .matches(/\d+/, "Sifre sayisal karakter icermelidir"),
+      .matches(/\d+/, "Sifre sayisal karakter icermelidir")
+      .matches(/[@$?!%&*]+/, "Özel karakter içermelidir(@$?!%&*)"),
   });
 
   return (
@@ -78,7 +79,7 @@ const Register = () => {
               email: "",
               password: "",
             }}
-            validate={SignupSchema}
+            validationSchema={SignupSchema}
             onSubmit={(values) => {
               console.log(values);
             }}
@@ -97,10 +98,52 @@ const Register = () => {
                   name="username"
                   value={values.username}
                   onChange={handleChange}
-                  label="Username"
+                  label="User Name"
+                  onBlur={handleBlur}
+                  error={touched.username && errors.username}
+                  helperText={touched.username && errors.username}
                   variant="outlined"
                   fullWidth
                   type="text"
+                  margin="normal"
+                />
+                <TextField
+                  name="firstName"
+                  value={values.firstName}
+                  onChange={handleChange}
+                  label="First Name"
+                  onBlur={handleBlur}
+                  error={touched.firstName && errors.firstName}
+                  helperText={touched.firstName && errors.firstName}
+                  variant="outlined"
+                  fullWidth
+                  type="text"
+                  margin="normal"
+                />
+                <TextField
+                  name="lastName"
+                  value={values.lastName}
+                  onChange={handleChange}
+                  label="Last Name"
+                  onBlur={handleBlur}
+                  error={touched.lastName && errors.lastName}
+                  helperText={touched.lastName && errors.lastName}
+                  variant="outlined"
+                  fullWidth
+                  type="text"
+                  margin="normal"
+                />
+                <TextField
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                  label="Email"
+                  onBlur={handleBlur}
+                  error={touched.email && errors.email}
+                  helperText={touched.email && errors.email}
+                  variant="outlined"
+                  fullWidth
+                  type="email"
                   margin="normal"
                 />
                 <TextField
@@ -108,6 +151,9 @@ const Register = () => {
                   value={values.password}
                   onChange={handleChange}
                   label="Password"
+                  onBlur={handleBlur}
+                  error={touched.password && errors.password}
+                  helperText={touched.password && errors.password}
                   variant="outlined"
                   fullWidth
                   type="password"
