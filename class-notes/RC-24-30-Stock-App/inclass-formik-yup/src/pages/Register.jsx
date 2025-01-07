@@ -15,7 +15,7 @@ import * as Yup from "yup";
 const Register = () => {
   const SignupSchema = Yup.object().shape({
     username: Yup.string()
-      .min(5, "Kullanici aid 5 karakterden ay olamaz")
+      .min(5, "Kullanici adi 5 karakterden az olamaz")
       .max(50, "Kullanici adi 50 karakterden fazla olamaz")
       .required("Kullanici adi zorunludur"),
     firstName: Yup.string()
@@ -28,10 +28,10 @@ const Register = () => {
       .required("Required"),
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string()
-      .min(8, "password 8 karakterden fazla olmalidir")
-      .matches(/[a-z]/, "Sifre k+c+k harf icermelidir")
-      .matches(/[A-Z]/, "Sifre büyük harf icermelidir")
-      .matches(/\d+/, "Sifre sayisal karakter icermelidir")
+      .min(8, "Password 8 karakterden fazla olmalidir")
+      .matches(/[a-z]/, "Password kucuk harf icermelidir")
+      .matches(/[A-Z]/, "Password büyük harf icermelidir")
+      .matches(/\d+/, "Password sayisal karakter icermelidir")
       .matches(/[@$?!%&*]+/, "Özel karakter içermelidir(@$?!%&*)"),
   });
 
@@ -69,6 +69,7 @@ const Register = () => {
             Register
           </Typography>
 
+          {/* /* -------------------------------------------------------------------------- */}
           {/* {{FORMIK YAPISI}} */}
 
           <Formik
@@ -99,14 +100,16 @@ const Register = () => {
                   value={values.username}
                   onChange={handleChange}
                   label="User Name"
-                  onBlur={handleBlur}
-                  error={touched.username && errors.username}
-                  helperText={touched.username && errors.username}
+                  onBlur={handleBlur} // kullanıcının input alanından ayrıldığını yakalayan event.
+                  error={touched.username && errors.username} // validation'da verdiğimiz kalıba uymazsa ilgili mesajları göstermesi için errors dan gelen mesajı yakalıyoruz.
+                  helperText={touched.username && errors.username} // validation'da verdiğimiz kalıba uymazsa rengi errora çevirmesi için error attribute'ı benden false/true degeri bekliyor, ondan dolayı daha sağlıklı olması için boolean deger döndürüyoruz.
+                  // touched'da kullanıcının inputa tıklayıp tıklamadığını yakalıyor.
                   variant="outlined"
                   fullWidth
                   type="text"
                   margin="normal"
                 />
+
                 <TextField
                   name="firstName"
                   value={values.firstName}
@@ -120,6 +123,7 @@ const Register = () => {
                   type="text"
                   margin="normal"
                 />
+
                 <TextField
                   name="lastName"
                   value={values.lastName}
@@ -133,6 +137,7 @@ const Register = () => {
                   type="text"
                   margin="normal"
                 />
+
                 <TextField
                   name="email"
                   value={values.email}
@@ -146,6 +151,7 @@ const Register = () => {
                   type="email"
                   margin="normal"
                 />
+
                 <TextField
                   name="password"
                   value={values.password}

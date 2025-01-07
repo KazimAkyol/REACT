@@ -22,4 +22,5 @@ const authSlice = createSlice({
 });
 
 export const { fetchStart, fetchFail } = authSlice.actions;
+
 export default authSlice.reducer;
