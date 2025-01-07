@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Avatar,
   Box,
@@ -7,6 +6,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { olusturKullanici } from "../features/yetkiSlice";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +31,7 @@ const Login = () => {
   return (
     <Container component="main" maxWidth="xs">
       <Box
-        xs={{
+        sx={{
           marginTop: 8,
           display: "flex",
           flexDirection: "column",
@@ -45,10 +45,10 @@ const Login = () => {
         <Typography component="h1" variant="h5">
           Sign In
         </Typography>
-        {/* noValidate = doğrulanmasın
-        autocomplete = Otomatik Tamamlama listesi, siz yazmaya başladığınızda adlara ve e-posta adreslerine ilişkin önerileri görüntüleyen bir özelliktir. Bu öneriler, gönderdiğiniz e-posta mesajlarındaki ad ve e-posta adresleri listesindeki olası eşleşmelerdir.
-         */}
-        <Box onSubmit={handleSubmit} component="form" sx={{ mt: 1 }}>
+        {/* noValidate=doğrulanmasın
+          autocomplete=Otomatik Tamamlama listesi, siz yazmaya başladığınızda adlara ve e-posta adreslerine ilişkin önerileri görüntüleyen bir özelliktir. Bu öneriler, gönderdiğiniz e-posta mesajlarındaki ad ve e-posta adresleri listesindeki olası eşleşmelerdir.
+           */}
+        <Box onSubmit={handleSubmit} noValidate component="form" sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required
@@ -64,10 +64,10 @@ const Login = () => {
             margin="normal"
             required
             fullWidth
-            name="password"
-            label="Password"
-            type="password"
             id="password"
+            label="Password"
+            name="password"
+            type="password"
             onChange={(e) => (password = e.target.value)}
           />
           <Button type="submit" fullWidth variant="contained" color="secondary">
