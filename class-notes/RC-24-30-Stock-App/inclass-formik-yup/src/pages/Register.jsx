@@ -9,7 +9,6 @@ import { Box } from "@mui/material";
 import AuthHeader from "../components/AuthHeader";
 import AuthImage from "../components/AuthImage";
 import { Formik } from "formik";
-import { TextField, Button } from "@mui/material";
 import * as Yup from "yup";
 import useAuthCall from "../hook/useAuthCall";
 import RegisterForm from "../components/RegisterForm";
@@ -90,9 +89,9 @@ const Register = () => {
             onSubmit={(values) => {
               console.log(values);
               register(values);
-              // actions degeri formikten gelen metotlari icerir, resetForm, setSubmitting...
-              // Formun text
-              // submit islemi bittigi icin
+              // actions değeri formikden gelen metodları içerir , resetForm, setSubmitting,...
+              // Formun text alanaları temizlenmesi için resetForm
+              // submit işlemi bittiği için setSubmitting(false) yapıyoruz.
               actions.resetForm();
               actions.setSubmitting(false);
             }}

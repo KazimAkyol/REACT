@@ -1,7 +1,15 @@
 import React from "react";
+import { Button, TextField } from "@mui/material";
 
-const RegisterForm = () => {
-  values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting;
+const RegisterForm = ({
+  values,
+  errors,
+  touched,
+  handleChange,
+  handleBlur,
+  handleSubmit,
+  isSubmitting,
+}) => {
   return (
     <form onSubmit={handleSubmit}>
       <TextField
