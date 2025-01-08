@@ -17,11 +17,13 @@ const useAuthCall = () => {
 
     try {
       const { data } = await axios.post(
-        "https://stock-api-js.fullstack.clarusway.com/users/",
+        "https://10102.fullstack.clarusway.com/users",
         userInfo
       );
       console.log("register icinde", data);
       dispatch(registerSuccess(data));
+      naviagte("/stock");
+      
     } catch (error) {
       dispatch(fetchFail());
     }
