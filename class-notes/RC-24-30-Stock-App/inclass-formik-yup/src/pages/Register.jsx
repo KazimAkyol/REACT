@@ -11,8 +11,11 @@ import AuthImage from "../components/AuthImage";
 import { Formik } from "formik";
 import { TextField, Button } from "@mui/material";
 import * as Yup from "yup";
+import useAuthCall from "../hook/useAuthCall";
 
 const Register = () => {
+  const { register } = useAuthCall;
+
   const SignupSchema = Yup.object().shape({
     username: Yup.string()
       .min(5, "Kullanici adi 5 karakterden az olamaz")
@@ -85,6 +88,7 @@ const Register = () => {
             validationSchema={SignupSchema}
             onSubmit={(values) => {
               console.log(values);
+              register(values);
             }}
           >
             {({
