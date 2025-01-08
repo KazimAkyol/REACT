@@ -14,7 +14,7 @@ import * as Yup from "yup";
 import useAuthCall from "../hook/useAuthCall";
 
 const Register = () => {
-  const { register } = useAuthCall;
+  const { register } = useAuthCall();
 
   const SignupSchema = Yup.object().shape({
     username: Yup.string()

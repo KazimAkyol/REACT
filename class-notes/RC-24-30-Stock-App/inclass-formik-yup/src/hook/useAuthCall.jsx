@@ -1,8 +1,11 @@
 import React from "react";
+import axios from "axios";
 import { useDispatch } from "react-redux";
-import { fetchFail, fetchStart } from "../features/authSlice";
+import { fetchFail, fetchStart, registerSuccess } from "../features/authSlice";
 
 const useAuthCall = () => {
+  const dispatch = useDispatch();
+
   // Custom hook yazma kuralları
   //? 1-use Kelimesi ile başlar
   //? 2- return de { fonksiyonlar }, değişkense [ bilgiler ] gönderilmeli
@@ -10,21 +13,21 @@ const useAuthCall = () => {
   //? const {register}=useAuthCall()
 
   const register = async (userInfo) => {
-    const dispatch = useDispatch();
-
     dispatch(fetchStart());
+
     try {
       const { data } = await axios.post(
         "https://stock-api-js.fullstack.clarusway.com/users/",
         userInfo
       );
-      console.log(data);
+      console.log("register icinde", data);
+      dispatch(registerSuccess(data));
     } catch (error) {
       dispatch(fetchFail());
     }
   };
 
-  return {register}
+  return { register };
 };
 
 export default useAuthCall;
