@@ -13,7 +13,16 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import useAuthCall from "../hook/useAuthCall";
 
-const Login = () => {
+const LoginForm = () => {(
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isSubmitting,
+)
+        
   const SignupSchema = Yup.object().shape({
     email: Yup.string()
       .email("Gecersiz email adres")
@@ -125,4 +134,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;

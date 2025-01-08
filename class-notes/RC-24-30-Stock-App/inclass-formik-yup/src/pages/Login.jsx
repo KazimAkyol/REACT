@@ -12,6 +12,7 @@ import AuthImage from "../components/AuthImage";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import useAuthCall from "../hook/useAuthCall";
+import LoginForm from "../components/LoginForm";
 
 const Login = () => {
   const theme = useTheme();
@@ -67,56 +68,10 @@ const Login = () => {
             onSubmit={(values) => {
               console.log(values);
             }}
-          >
-            {({
-              values,
-              errors,
-              touched,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              isSubmitting,
-            }) => (
-              <form onSubmit={handleSubmit}>
-                <TextField
-                  name="email"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={touched.email && errors.email}
-                  helperText={touched.email && errors.email}
-                  label="Email"
-                  variant="outlined"
-                  fullWidth
-                  type="email"
-                  margin="normal"
-                />
-
-                <TextField
-                  name="password"
-                  value={values.password}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={touched.password && errors.password}
-                  helperText={touched.password && errors.password}
-                  label="Password"
-                  variant="outlined"
-                  fullWidth
-                  type="password"
-                  margin="normal"
-                />
-
-                <Button
-                  type="submit"
-                  variant="contained"
-                  fullWidth
-                  margin="normal"
-                >
-                  SUBMIT
-                </Button>
-              </form>
-            )}
-          </Formik>
+            component={() => {
+              <LoginForm {...props} />;
+            }}
+          />
 
           <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
             <Link to="/register">Don't have an account? Sign Up</Link>
