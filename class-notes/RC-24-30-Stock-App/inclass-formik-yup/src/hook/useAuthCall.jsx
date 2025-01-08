@@ -6,7 +6,7 @@ import { fetchFail, fetchStart, registerSuccess } from "../features/authSlice";
 const useAuthCall = () => {
   const dispatch = useDispatch();
 
-  // Custom hook yazma kuralları
+  //! Custom hook yazma kuralları:
   //? 1- use kelimesi ile başlar
   //? 2- return de { fonksiyonlar }, değişkense [ bilgiler ] gönderilmeli
   //? 3- Çağrılacağı noktada const {register}=useAuthCall()

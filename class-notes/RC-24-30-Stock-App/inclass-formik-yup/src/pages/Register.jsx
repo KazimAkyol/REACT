@@ -86,7 +86,7 @@ const Register = () => {
               password: "",
             }}
             validationSchema={SignupSchema}
-            onSubmit={(values) => {
+            onSubmit={(values, actions) => {
               console.log(values);
               register(values);
               // actions değeri formikden gelen metodları içerir , resetForm, setSubmitting,...
@@ -95,7 +95,7 @@ const Register = () => {
               actions.resetForm();
               actions.setSubmitting(false);
             }}
-            component={() => <RegisterForm {...props} />}
+            component={(props) => <RegisterForm {...props} />}
           />
 
           <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
