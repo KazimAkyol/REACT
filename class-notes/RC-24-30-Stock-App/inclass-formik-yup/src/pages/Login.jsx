@@ -1,6 +1,6 @@
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
-import { TextField, useTheme } from "@mui/material";
+import { Button, TextField, useTheme } from "@mui/material";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -88,6 +88,29 @@ const Login = () => {
                   type="email"
                   margin="normal"
                 />
+                
+                <TextField
+                  name="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  error={touched.password && errors.password}
+                  helperText={touched.password && errors.password}
+                  label="Password"
+                  variant="outlined"
+                  fullWidth
+                  type="password"
+                  margin="normal"
+                />
+
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  margin="normal"
+                >
+                  SUBMIT
+                </Button>
               </form>
             )}
           </Formik>
