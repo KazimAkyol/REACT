@@ -23,13 +23,28 @@ const useAuthCall = () => {
       console.log("register icinde", data);
       dispatch(registerSuccess(data));
       naviagte("/stock");
-      
     } catch (error) {
       dispatch(fetchFail());
     }
   };
 
-  return { register };
+  const login = async (userInfo) => {
+    dispatch(fetchStart());
+
+    try {
+      const { data } = await axios.post(
+        "https://10102.fullstack.clarusway.com/users",
+        userInfo
+      );
+      console.log("login icinde", data);
+      dispatch(loginSuccess(data));
+      naviagte("/stock");
+    } catch (error) {
+      dispatch(fetchFail());
+    }
+  };
+
+  return { register, login };
 };
 
 export default useAuthCall;

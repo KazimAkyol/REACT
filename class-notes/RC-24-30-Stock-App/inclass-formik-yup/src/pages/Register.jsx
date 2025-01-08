@@ -12,6 +12,7 @@ import { Formik } from "formik";
 import { TextField, Button } from "@mui/material";
 import * as Yup from "yup";
 import useAuthCall from "../hook/useAuthCall";
+import RegisterForm from "../components/RegisterForm";
 
 const Register = () => {
   const { register } = useAuthCall();
@@ -89,20 +90,14 @@ const Register = () => {
             onSubmit={(values) => {
               console.log(values);
               register(values);
+              // actions degeri formikten gelen metotlari icerir, resetForm, setSubmitting...
+              // Formun text
+              // submit islemi bittigi icin
+              actions.resetForm();
+              actions.setSubmitting(false);
             }}
-          >
-            {({
-              values,
-              errors,
-              touched,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              isSubmitting,
-            }) => (
-
-            )}
-          </Formik>
+            component={() => <RegisterForm {...props} />}
+          />
 
           <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
             <Link to="/">Already have an account? Sign in</Link>

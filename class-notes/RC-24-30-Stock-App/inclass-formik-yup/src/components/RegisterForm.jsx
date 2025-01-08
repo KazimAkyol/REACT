@@ -1,6 +1,7 @@
 import React from "react";
 
-const Register = () => {
+const RegisterForm = () => {
+  values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting;
   return (
     <form onSubmit={handleSubmit}>
       <TextField
@@ -81,4 +82,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterForm;

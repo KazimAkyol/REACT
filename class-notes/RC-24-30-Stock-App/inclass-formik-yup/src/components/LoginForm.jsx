@@ -14,10 +14,6 @@ import * as Yup from "yup";
 import useAuthCall from "../hook/useAuthCall";
 
 const Login = () => {
-  const theme = useTheme();
-
-  const { login } = useAuthCall();
-
   const SignupSchema = Yup.object().shape({
     email: Yup.string()
       .email("Gecersiz email adres")
