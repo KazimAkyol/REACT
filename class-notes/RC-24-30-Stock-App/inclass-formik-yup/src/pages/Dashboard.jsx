@@ -1,33 +1,3 @@
-// import React from "react";
-// import AppBar from "@mui/material/AppBar";
-// import Box from "@mui/material/Box";
-// import CssBaseline from "@mui/material/CssBaseline";
-// import Toolbar from "@mui/material/Toolbar";
-// import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
-// import useAuthCall from "../hook/useAuthCall";
-
-// function Dashboard() {
-// const {logout}=useAuthCall()
-//   return (
-//     <Box sx={{ display: "flex" }}>
-//       <CssBaseline />
-//       <AppBar position="fixed">
-//         <Toolbar>
-//           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-//             STOCK APP
-//           </Typography>
-//           <Button color="inherit" onClick={logout} >Logout</Button>
-//         </Toolbar>
-//       </AppBar>
-//     </Box>
-//   );
-// }
-
-// export default Dashboard;
-
-/* -------------------------------------------------------------------------- */
-
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -39,6 +9,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Outlet } from "react-router-dom";
 import MenuListItems from "./../components/MenuListItems";
+import { Button } from "@mui/material";
+import useAuthCall from "../hook/useAuthCall";
 
 const drawerWidth = 240;
 
@@ -46,6 +18,7 @@ function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
+  const { logout } = useAuthCall();
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -62,7 +35,6 @@ function Dashboard(props) {
     }
   };
 
-  // Remove this const when copying and pasting into your project.
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -74,9 +46,12 @@ function Dashboard(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: "white",
+          color: "secondary.main",
+          borderRadius: "10px",
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -86,9 +61,12 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Responsive drawer
+          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+            Stock App
           </Typography>
+          <Button color="inherit" onClick={logout}>
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
       <Box
