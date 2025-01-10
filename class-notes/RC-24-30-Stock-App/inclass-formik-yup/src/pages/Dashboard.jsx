@@ -133,7 +133,7 @@ function Dashboard(props) {
       >
         <Toolbar />
 
-        {/* Sayfalar yanda açıldın diye outleti buraya ekledik */}
+        {/* Sayfalar yanda açılsın diye Outlet'i buraya ekledik */}
         <Outlet />
       </Box>
     </Box>

@@ -1,13 +1,14 @@
 import React from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 import {
   fetchFail,
   fetchStart,
+  loginSuccess,
   logoutSuccess,
   registerSuccess,
 } from "../features/authSlice";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const useAuthCall = () => {
@@ -30,7 +31,7 @@ const useAuthCall = () => {
       );
       console.log("register icinde", data);
       dispatch(registerSuccess(data));
-      naviagte("/stock");
+      navigate("/stock");
     } catch (error) {
       dispatch(fetchFail());
     }

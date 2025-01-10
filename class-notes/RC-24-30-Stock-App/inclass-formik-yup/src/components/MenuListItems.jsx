@@ -48,15 +48,26 @@ const MenuListItems = () => {
   const location = useLocation();
   console.log(location);
 
-  const btnStyle = {{
+  const btnStyle = {
+    color: "secondary.main",
+    borderRadius: "1rem",
+    transition: "all 0.5s ease-in-out",
+    "&:hover": {
+      backgroundColor: "secondary.main",
+      color: "white",
+    },
+  };
 
-        color: "secondary.main";
-                    borderRadius: "1rem";
-                    transition: "all 0.5s ease-in-out";
-                    "&:hover": {
-                      backgroundColor: "secondary.main";
-                      color: "white";
-  }}
+  const selectedStyle = {
+    backgroundColor: "secondary.main",
+    color: "white",
+    borderRadius: "1rem",
+    transition: "all 0.5s ease-in-out",
+    "&:hover": {
+      backgroundColor: "secondary.main",
+      color: "white",
+    },
+  };
 
   return (
     <div>
@@ -66,18 +77,16 @@ const MenuListItems = () => {
           <ListItem key={item.title} disablePadding>
             <ListItemButton
               onClick={() => navigate(item.url)}
-              sx={{
-                color: "secondary.main",
-                borderRadius: "1rem",
-                transition: "all 0.5s ease-in-out",
-                "&:hover": {
-                  backgroundColor: "secondary.main",
-                  color: "white",
-                },
-              }}
+              sx={item.url === location.pathname ? selectedStyle : btnStyle}
             >
               <Box
-                sx={{item.url === location.pathname ? selectedStyle : btnStyle}}
+                sx={{
+                  width: "24px",
+                  height: "24px",
+                  mask: `url(${item.icon}) no-repeat center/contain`,
+                  bgcolor: "currentcolor",
+                  mr: 2,
+                }}
               ></Box>
               {/* <Box sx={{
                     width:"24px",

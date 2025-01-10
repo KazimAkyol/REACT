@@ -90,7 +90,7 @@ const Register = () => {
               console.log(values);
               register(values);
               // actions değeri formikden gelen metodları içerir , resetForm, setSubmitting,...
-              // Formun text alanaları temizlenmesi için resetForm
+              // formun text alanlarının temizlenmesi için resetForm
               // submit işlemi bittiği için setSubmitting(false) yapıyoruz.
               actions.resetForm();
               actions.setSubmitting(false);
