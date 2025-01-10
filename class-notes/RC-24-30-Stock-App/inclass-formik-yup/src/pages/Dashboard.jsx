@@ -178,7 +178,7 @@ function Dashboard(props) {
         }}
       >
         <Toolbar />
-        //? Sayfalar yan tarafta acilsin diye
+        {/* Sayfalar yan tarafta acilsin diye */}
         <Outlet />
       </Box>
     </Box>

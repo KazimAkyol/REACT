@@ -8,6 +8,7 @@ import {
   logoutSuccess,
   registerSuccess,
 } from "../features/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const useAuthCall = () => {
   const dispatch = useDispatch();
