@@ -4,11 +4,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { Box } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const icon = (name) => `public/assets/navbar/${name}.svg`;
 
@@ -48,6 +45,18 @@ const links = [
 
 const MenuListItems = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+
+  const btnStyle = {{
+
+        color: "secondary.main";
+                    borderRadius: "1rem";
+                    transition: "all 0.5s ease-in-out";
+                    "&:hover": {
+                      backgroundColor: "secondary.main";
+                      color: "white";
+  }}
 
   return (
     <div>
@@ -55,15 +64,20 @@ const MenuListItems = () => {
       <List>
         {links.map((item, index) => (
           <ListItem key={item.title} disablePadding>
-            <ListItemButton onClick={() => navigate(item.url)}>
+            <ListItemButton
+              onClick={() => navigate(item.url)}
+              sx={{
+                color: "secondary.main",
+                borderRadius: "1rem",
+                transition: "all 0.5s ease-in-out",
+                "&:hover": {
+                  backgroundColor: "secondary.main",
+                  color: "white",
+                },
+              }}
+            >
               <Box
-                sx={{
-                  width: "24px",
-                  height: "24px",
-                  mask: `url(${item.icon}) no-repeat center/contain`,
-                  bgcolor: "currentcolor",
-                  mr: 2,
-                }}
+                sx={{item.url === location.pathname ? selectedStyle : btnStyle}}
               ></Box>
               {/* <Box sx={{
                     width:"24px",

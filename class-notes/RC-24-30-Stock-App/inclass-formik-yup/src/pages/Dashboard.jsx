@@ -11,6 +11,7 @@ import { Outlet } from "react-router-dom";
 import MenuListItems from "./../components/MenuListItems";
 import { Button } from "@mui/material";
 import useAuthCall from "../hook/useAuthCall";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const drawerWidth = 240;
 
@@ -64,8 +65,23 @@ function Dashboard(props) {
           <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
             Stock App
           </Typography>
-          <Button color="inherit" onClick={logout}>
-            Logout
+          <Button
+            color="inherit"
+            onClick={logout}
+            sx={{
+              "&:hover": {
+                backgroundColor: "secondary.main",
+                color: "white",
+                "&.MuiSvgIcon-root": {
+                  color: "red",
+                },
+              },
+              ".MuiSvgIcon-root": {
+                ml: 1,
+              },
+            }}
+          >
+            Logout <LogoutIcon />
           </Button>
         </Toolbar>
       </AppBar>
@@ -74,7 +90,6 @@ function Dashboard(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"
