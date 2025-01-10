@@ -5,6 +5,7 @@ import { fetchFail, fetchStart, registerSuccess } from "../features/authSlice";
 
 const useAuthCall = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   //! Custom hook yazma kuralları:
   //? 1- use kelimesi ile başlar
@@ -37,7 +38,7 @@ const useAuthCall = () => {
       );
       console.log("login icinde", data);
       dispatch(loginSuccess(data));
-      naviagte("/stock");
+      navigate("/stock");
     } catch (error) {
       dispatch(fetchFail());
     }

@@ -26,6 +26,11 @@ const authSlice = createSlice({
       state.loading = false;
       state.isAdmin = payload?.user?.isAdmin;
     },
+    logoutSuccess: (state) => {
+      state.currentUser = null;
+      state.token = null;
+      state.loading = false;
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -33,7 +38,12 @@ const authSlice = createSlice({
   },
 });
 
-export const { fetchStart, fetchFail, registerSuccess, loginSuccess } =
-  authSlice.actions;
+export const {
+  fetchStart,
+  fetchFail,
+  registerSuccess,
+  loginSuccess,
+  logoutSuccess,
+} = authSlice.actions;
 
 export default authSlice.reducer;

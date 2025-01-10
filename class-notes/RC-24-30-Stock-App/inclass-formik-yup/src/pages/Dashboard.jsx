@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Drawer from "@mui/material/Drawer";
 
 function Dashboard() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -18,6 +21,14 @@ function Dashboard() {
           <Button color="inherit">Logout</Button>
         </Toolbar>
       </AppBar>
+      <Box>
+        <Button onClick={() => setIsOpen(true)}>Dashboard</Button>
+        <Drawer open={isOpen}>
+          <Box sx={{ width: "120px", textAlign: "center" }}>
+            <h1>Dashboard</h1>
+          </Box>
+        </Drawer>
+      </Box>
     </Box>
   );
 }
