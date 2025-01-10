@@ -7,11 +7,22 @@ import Toolbar from "@mui/material/Toolbar";
 import { Box } from "@mui/material";
 
 const links = [
-  { title: "Dashboard", url: "/stock", icon: "../assets/ic_analytics.svg" },
-  { title: "Purchases", url: "/stock/purchases" },
+  {
+    title: "Dashboard",
+    url: "/stock",
+    icon: "public/assets/navbar/ic_analytics.svg",
+  },
+  {
+    title: "Purchases",
+    url: "/stock/purchases",
+    icon: "public/assets/navbar/purchase.svg",
+  },
 ];
 
 const MenuListItems = () => {
+
+    const navigate = useNavigate()
+
   return (
     <div>
       <Toolbar />
@@ -21,11 +32,9 @@ const MenuListItems = () => {
             <ListItemButton>
               <Box
                 sx={{
-                  backgroundImage: `url(${item.icon})`,
+                  mask: `url(${item.icon}) no-repeat center/contain`,
                   width: "24px",
                   height: "24px",
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
                   backgroundColor: "red",
                   mr: 2,
                 }}
