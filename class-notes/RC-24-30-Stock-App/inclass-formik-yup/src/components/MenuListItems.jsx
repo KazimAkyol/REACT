@@ -4,10 +4,10 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import { Box } from "@mui/material";
 
-links = [
-  { title: "Dashboard", url: "/stock" },
+const links = [
+  { title: "Dashboard", url: "/stock", icon: "../assets/ic_analytics.svg" },
   { title: "Purchases", url: "/stock/purchases" },
 ];
 
@@ -15,28 +15,22 @@ const MenuListItems = () => {
   return (
     <div>
       <Toolbar />
-      <Divider />
       <List>
-        {links.map((text, index) => (
+        {links.map((item, index) => (
           <ListItem key={item.title} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              <Box
+                sx={{
+                  backgroundImage: `url(${item.icon})`,
+                  width: "24px",
+                  height: "24px",
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  backgroundColor: "red",
+                  mr: 2,
+                }}
+              ></Box>
               <ListItemText primary={item.title} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
