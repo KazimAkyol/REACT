@@ -5,6 +5,10 @@ import Register from "../pages/Register";
 import PrivateRouter from "./PrivateRouter";
 import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
+import Brands from "../pages/Brands";
+import Firms from "../pages/Firms";
+import Purchases from "../pages/Purchases";
+import Sales from "../pages/Sales";
 
 const AppRouter = () => {
   return (
@@ -14,7 +18,15 @@ const AppRouter = () => {
         <Route path="register" element={<Register />} />
         <Route path="stock" element={<PrivateRouter />}>
           <Route path="" element={<Dashboard />}>
-            <Route path="" element={<Home />} />
+            {/* <Route path="" element={<Home />} /> */}
+            <Route index element={<Home />} />
+            //? Absolute path tanimlama
+            {/* <Route path="/stock/brands" element={<Brands />} /> */}
+            //? Relative path tanimlama
+            <Route path="brands" element={<Brands />} />
+            <Route path="firms" element={<Firms />} />
+            <Route path="purchases" element={<Purchases />} />
+            <Route path="sales" element={<Sales />} />
           </Route>
         </Route>
       </Routes>

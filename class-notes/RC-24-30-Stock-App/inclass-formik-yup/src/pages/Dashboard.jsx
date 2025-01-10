@@ -45,6 +45,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -177,6 +178,8 @@ function Dashboard(props) {
         }}
       >
         <Toolbar />
+        //? Sayfalar yan tarafta acilsin diye
+        <Outlet />
       </Box>
     </Box>
   );
