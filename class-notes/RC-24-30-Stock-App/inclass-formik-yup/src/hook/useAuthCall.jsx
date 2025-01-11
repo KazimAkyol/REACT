@@ -19,7 +19,7 @@ const useAuthCall = () => {
   //! Custom hook yazma kuralları:
   //? 1- use kelimesi ile başlar
   //? 2- return de { fonksiyonlar }, değişkense [ bilgiler ] gönderilmeli
-  //? 3- Çağrılacağı noktada const {register}=useAuthCall()
+  //? 3- Çağrılacağı noktada const {register}=useAuthCall() seklinde tanimlanir.
 
   const register = async (userInfo) => {
     dispatch(fetchStart());

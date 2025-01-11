@@ -19,7 +19,7 @@ const RegisterForm = ({
         label="User Name"
         onBlur={handleBlur} // kullanıcının input alanından ayrıldığını yakalayan event.
         error={touched.username && errors.username} // validation'da verdiğimiz kalıba uymazsa ilgili mesajları göstermesi için errors dan gelen mesajı yakalıyoruz.
-        helperText={touched.username && errors.username} // validation'da verdiğimiz kalıba uymazsa rengi errora çevirmesi için error attribute'ı benden false/true degeri bekliyor, ondan dolayı daha sağlıklı olması için boolean deger döndürüyoruz.
+        helperText={touched.username && errors.username} // validation'da verdiğimiz kalıba uymazsa rengi errora çevirmesi için error attribute'ı bizden false/true degeri bekliyor, ondan dolayı daha sağlıklı olması için boolean deger döndürüyoruz.
         // touched'da kullanıcının inputa tıklayıp tıklamadığını yakalıyor.
         variant="outlined"
         fullWidth
