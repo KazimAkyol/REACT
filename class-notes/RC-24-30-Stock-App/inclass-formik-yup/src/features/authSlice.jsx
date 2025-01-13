@@ -9,6 +9,7 @@ const authSlice = createSlice({
     error: false,
     token: null,
   },
+
   reducers: {
     fetchStart: (state) => {
       state.loading = true;
