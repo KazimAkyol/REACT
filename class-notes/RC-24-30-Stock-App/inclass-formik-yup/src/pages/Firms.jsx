@@ -33,7 +33,12 @@ const Firms = () => {
         New Firm
       </Button>
 
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid
+        container
+        rowSpacing={1}
+        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        sx={{ marginLeft: "1rem" }}
+      >
         {firms.map((firm, index) => (
           <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
             <FirmCard firm={firm} />

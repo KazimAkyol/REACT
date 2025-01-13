@@ -43,8 +43,8 @@ const useStockCall = () => {
   //     }
   //   };
 
-  //   Bu şekilde hersayfa için ayrı bir fonksyion yazmak yerine DRY gereği tek bir fonksyion yazıyoruz.
-  //   Bu nedenle getFirm ve getBrand fonksiyonlarını kullanmayıp getStockDatayı kullanacağız.
+  //   Bu şekilde her sayfa için ayrı bir fonksyion yazmak yerine DRY (don't repeat yourself) gereği tek bir fonksyion yazıyoruz.
+  //   Bu nedenle getFirm ve getBrand fonksiyonlarını kullanmayıp getStockData'yı kullanacağız.
   /* -------------------------------------------------------------------------- */
 
   const getStockData = async (url) => {
@@ -56,8 +56,6 @@ const useStockCall = () => {
           Authorization: `Token ${token}`,
         },
       });
-
-      console.log(data);
       dispatch(stockSuccess({ data, url }));
     } catch (error) {
       dispatch(fetchFail());

@@ -24,8 +24,10 @@ const stockSlice = createSlice({
     //     state.brands=payload.data
     // },
     stockSuccess: (state, { payload: { data, url } }) => {
+      // state[payload.url]=payload.data.data
       state[url] = data.data;
-      console.log(state.firms);
+      state.loading = false;
+      state.error = false;
     },
   },
 });
