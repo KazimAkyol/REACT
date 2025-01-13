@@ -40,10 +40,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios.post(
-        "https://10102.fullstack.clarusway.com/users",
-        userInfo
-      );
+      const { data } = await axios.post(`${BASE_URL}logout`, userInfo);
       console.log("login icinde", data);
       dispatch(loginSuccess(data));
       navigate("/stock");
