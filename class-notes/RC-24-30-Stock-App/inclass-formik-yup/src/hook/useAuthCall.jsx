@@ -40,7 +40,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios.post(`${BASE_URL}logout`, userInfo);
+      const { data } = await axios.post(`${BASE_URL}auth/login`, userInfo);
       console.log("login icinde", data);
       dispatch(loginSuccess(data));
       navigate("/stock");
@@ -53,14 +53,11 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios(
-        "https://10102.fullstack.clarusway.com/auth/logout",
-        {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
-        }
-      );
+      const { data } = await axios(`${BASE_URL}auth/logout`, {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      });
       dispatch(logoutSuccess());
       navigate("/");
     } catch (error) {
