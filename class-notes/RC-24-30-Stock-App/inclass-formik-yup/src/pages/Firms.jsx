@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Firms = () => {
+
+    const {getStockData} = 
   return (
     <div>Firms</div>
   )
