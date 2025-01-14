@@ -82,11 +82,11 @@ const useStockCall = () => {
   /*                                 ADD NEW                                */
   /* -------------------------------------------------------------------------- */
 
-  const postStockData = async (url, id) => {
+  const postStockData = async (url, info) => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axiosWithToken.post(`${url}/${id}`);
+      const { data } = await axiosWithToken.post(`${url}`, info);
       getStockData(url);
     } catch (error) {
       dispatch(fetchFail());

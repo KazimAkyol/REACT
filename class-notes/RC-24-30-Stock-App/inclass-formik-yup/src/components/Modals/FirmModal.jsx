@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { useState } from "react";
@@ -41,7 +40,7 @@ export default function FirmModal({ open, handleClose }) {
 
   return (
     <div>
-      {/* Button modalı açıyor.Açma işlemi firms sayfasında NEw Firm yaptığı için burda pasif hale getirdik */}
+      {/* Button modalı açıyor.Açma işlemi firms sayfasında New Firm yaptığı için burda pasif hale getirdik */}
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
         open={open}
@@ -64,7 +63,7 @@ export default function FirmModal({ open, handleClose }) {
               value={info.name}
             />
             <TextField
-              label="Address"
+              label="Phone"
               variant="outlined"
               type="text"
               name="phone"
@@ -72,7 +71,7 @@ export default function FirmModal({ open, handleClose }) {
               value={info.phone}
             />
             <TextField
-              label="Phone"
+              label="Address"
               variant="outlined"
               type="text"
               name="address"
@@ -80,7 +79,7 @@ export default function FirmModal({ open, handleClose }) {
               value={info.address}
             />
             <TextField
-              label="Image"
+              label="image"
               variant="outlined"
               type="text"
               name="image"
