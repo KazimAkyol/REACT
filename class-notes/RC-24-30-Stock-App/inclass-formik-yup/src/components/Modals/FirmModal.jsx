@@ -3,6 +3,9 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { TextField } from "@mui/material";
+import { useState } from "react";
+import useStockCall from "../../hook/useStockCall";
 
 const style = {
   position: "absolute",
@@ -17,6 +20,25 @@ const style = {
 };
 
 export default function FirmModal({ open, handleClose }) {
+  const { postStockData } = useStockCall();
+
+  const [info, setInfo] = useState({
+    name: "",
+    address: "",
+    phone: "",
+    image: "",
+  });
+
+  const handleChange = (e) => {
+    console.log(e);
+    setInfo({ ...info, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = () => {
+    // Database info bilgisini gönderme işlemi yapılacak:
+    postStockData("firms/", info);
+  };
+
   return (
     <div>
       {/* Button modalı açıyor.Açma işlemi firms sayfasında NEw Firm yaptığı için burda pasif hale getirdik */}
@@ -28,13 +50,49 @@ export default function FirmModal({ open, handleClose }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Box component={form}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+          >
             <TextField
               label="Firm Name"
               variant="outlined"
               type="text"
               name="name"
+              onChange={handleChange}
+              value={info.name}
             />
+            <TextField
+              label="Address"
+              variant="outlined"
+              type="text"
+              name="phone"
+              onChange={handleChange}
+              value={info.phone}
+            />
+            <TextField
+              label="Phone"
+              variant="outlined"
+              type="text"
+              name="address"
+              onChange={handleChange}
+              value={info.address}
+            />
+            <TextField
+              label="Image"
+              variant="outlined"
+              type="text"
+              name="image"
+              onChange={handleChange}
+              value={info.image}
+            />
+            <Button
+              type="submit"
+              sx={{ backgroundColor: "secondary.main", color: "white" }}
+            >
+              ADD FIRM
+            </Button>
           </Box>
         </Box>
       </Modal>
