@@ -10,13 +10,12 @@ import {
 } from "../features/authSlice";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import useAxios from "./useAxios";
 
 const useAuthCall = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { token } = useSelector((state) => state.auth);
-
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const { axiosWithToken, axiosWithoutHeader } = useAxios();
 
   //! Custom hook yazma kuralları:
   //? 1- use kelimesi ile başlar
@@ -27,8 +26,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios.post(`${BASE_URL}users`, userInfo);
-      console.log("register icinde", data);
+      const { data } = await axiosWithoutHeader.post(`users`, userInfo);
       dispatch(registerSuccess(data));
       navigate("/stock");
     } catch (error) {
@@ -40,8 +38,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios.post(`${BASE_URL}auth/login`, userInfo);
-      console.log("login icinde", data);
+      const { data } = await axiosWithoutHeader.post(`auth/login`, userInfo);
       dispatch(loginSuccess(data));
       navigate("/stock");
     } catch (error) {
@@ -53,11 +50,7 @@ const useAuthCall = () => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios(`${BASE_URL}auth/logout`, {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      });
+      const { data } = await axiosWithToken.get(`auth/logout`);
       dispatch(logoutSuccess());
       navigate("/");
     } catch (error) {

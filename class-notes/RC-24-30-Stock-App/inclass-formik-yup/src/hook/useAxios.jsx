@@ -11,7 +11,11 @@ const useAxios = () => {
     },
   });
 
-  return { axiosWithToken };
+  const axiosWithoutHeader = axios.create({
+    baseURL: import.meta.env.VITE_BASE_URL,
+  });
+
+  return { axiosWithToken, axiosWithoutHeader };
 };
 
 export default useAxios;

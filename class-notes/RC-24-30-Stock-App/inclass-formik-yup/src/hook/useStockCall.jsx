@@ -3,11 +3,13 @@ import { fetchFail, fetchStart, stockSuccess } from "../features/stockSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import useAxios from "./useAxios";
 
 const useStockCall = () => {
   const dispatch = useDispatch();
   const { token } = useSelector((state) => state.auth);
   const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const { axiosWithToken } = useAxios();
   /* -------------------------------------------------------------------------- */
   //   const getFirm = async () => {
   //     dispatch(fetchStart());
@@ -47,22 +49,36 @@ const useStockCall = () => {
   //   Bu nedenle getFirm ve getBrand fonksiyonlarını kullanmayıp getStockData'yı kullanacağız.
   /* -------------------------------------------------------------------------- */
 
+  /* -------------------------------------------------------------------------- */
+  /*                               GET STOCK DATA                               */
+  /* -------------------------------------------------------------------------- */
+
   const getStockData = async (url) => {
     dispatch(fetchStart());
 
     try {
-      const { data } = await axios(`${BASE_URL}${url}`, {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      });
+      const { data } = await axiosWithToken.get(`${url}`);
       dispatch(stockSuccess({ data, url }));
     } catch (error) {
       dispatch(fetchFail());
     }
   };
 
-  return { getStockData };
+  /* -------------------------------------------------------------------------- */
+  /*                                 DELETE DATA                                */
+  /* -------------------------------------------------------------------------- */
+  const getDeleteData = async (url, id) => {
+    dispatch(fetchStart());
+
+    try {
+      const { data } = await axiosWithToken.delete(`${url}/${id}`);
+      getStockData(url);
+    } catch (error) {
+      dispatch(fetchFail());
+    }
+  };
+
+  return { getStockData, getDeleteData };
 };
 
 export default useStockCall;
