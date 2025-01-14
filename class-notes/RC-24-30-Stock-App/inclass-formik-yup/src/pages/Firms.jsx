@@ -6,10 +6,16 @@ import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import FirmCard from "./../components/FirmCard";
+import FirmModal from "./../components/Modals/FirmModal";
 
 const Firms = () => {
   const { getStockData } = useStockCall();
+  // Lifting state up işlemi yapıldı.Modaldaki stateler firms sayfasına alındı
   const { firms } = useSelector((state) => state.stock);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   console.log(firms);
 
   useEffect(() => {
@@ -23,22 +29,22 @@ const Firms = () => {
       </Typography>
 
       <Button
+        onClick={handleOpen}
         sx={{
           backgroundColor: "secondary.main",
           color: "white",
           padding: "0.2rem 1rem",
           marginBottom: "1rem",
+          "&:hover": {
+            backgroundColor: "secondary.main",
+          },
         }}
       >
         New Firm
       </Button>
+      <FirmModal open={open} handleClose={handleClose} />
 
-      <Grid
-        container
-        rowSpacing={1}
-        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-        sx={{ marginLeft: "1rem" }}
-      >
+      <Grid container sx={{ marginLeft: "1rem" }}>
         {firms.map((firm, index) => (
           <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
             <FirmCard firm={firm} />
