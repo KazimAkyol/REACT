@@ -20,7 +20,7 @@ const style = {
 };
 
 export default function FirmModal({ open, handleClose, initialState }) {
-  const { postStockData } = useStockCall();
+  const { postStockData, putStockData } = useStockCall();
 
   const [info, setInfo] = useState(initialState);
 
@@ -31,7 +31,11 @@ export default function FirmModal({ open, handleClose, initialState }) {
 
   const handleSubmit = () => {
     // Database info bilgisini gönderme işlemi yapılacak:
-    postStockData("firms/", info);
+    if (info._id) {
+      postStockData("firms", info);
+    } else {
+      putStockData("firms", info);
+    }
   };
 
   console.log(initialState);

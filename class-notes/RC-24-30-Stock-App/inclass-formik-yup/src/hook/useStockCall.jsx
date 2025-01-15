@@ -93,7 +93,19 @@ const useStockCall = () => {
     }
   };
 
-  return { getStockData, getDeleteData, postStockData };
+  const putStockData = async (url, info) => {
+    dispatch(fetchStart());
+
+    try {
+      console.log(info);
+      const { data } = await axiosWithToken.post(`${url}${info._id}`, info);
+      getStockData(url);
+    } catch (error) {
+      dispatch(fetchFail());
+    }
+  };
+
+  return { getStockData, getDeleteData, postStockData, putStockData };
 };
 
 export default useStockCall;
