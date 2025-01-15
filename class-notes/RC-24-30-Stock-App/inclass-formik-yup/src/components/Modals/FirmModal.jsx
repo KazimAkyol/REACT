@@ -1,6 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { useState } from "react";
@@ -30,24 +31,22 @@ export default function FirmModal({ open, handleClose, initialState }) {
   };
 
   const handleSubmit = () => {
-    // Database info bilgisini gönderme işlemi yapılacak:
+    // Database info bilgisini gönderme işlemi
     if (info._id) {
-      postStockData("firms", info);
-    } else {
       putStockData("firms", info);
+    } else {
+      postStockData("firms", info);
     }
   };
 
   console.log(initialState);
 
-  // useEffect didUpdate metodu tarzinda
-  useEffect(() => {
-    setInfo(initialState);
-  }, [initialState]);
+  //useEffect didUpdate metodu tarzında çalışması. dependancy arrayde başlangıç değeri verildiğinde güncelleme yapması.
+  //  useEffect(()=>{setInfo(initialState)},[initialState])
 
   return (
     <div>
-      {/* Button modalı açıyor.Açma işlemi firms sayfasında New Firm yaptığı için burda pasif hale getirdik */}
+      {/* Button modalı açıyor.Açma işlemi firms sayfasında NEw Firm yaptığı için burda pasif hale getirdik */}
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
         open={open}
@@ -70,7 +69,7 @@ export default function FirmModal({ open, handleClose, initialState }) {
               value={info.name}
             />
             <TextField
-              label="Phone"
+              label="phone"
               variant="outlined"
               type="text"
               name="phone"
@@ -86,7 +85,7 @@ export default function FirmModal({ open, handleClose, initialState }) {
               value={info.address}
             />
             <TextField
-              label="Image"
+              label="image"
               variant="outlined"
               type="text"
               name="image"
@@ -97,7 +96,7 @@ export default function FirmModal({ open, handleClose, initialState }) {
               type="submit"
               sx={{ backgroundColor: "secondary.main", color: "white" }}
             >
-              SUBMIT
+              {info._id ? "UPDATE" : "ADD FIRM"}
             </Button>
           </Box>
         </Box>
