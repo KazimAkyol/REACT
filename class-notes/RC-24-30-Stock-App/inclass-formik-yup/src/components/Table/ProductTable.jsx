@@ -1,24 +1,31 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
+import { useSelector } from "react-redux";
 
 const columns = [
   { field: "id", headerName: "ID", width: 90 },
   {
-    field: "firstName",
-    headerName: "First name",
+    field: "categoryId",
+    headerName: "Category",
     width: 150,
     editable: true,
   },
   {
-    field: "lastName",
-    headerName: "Last name",
+    field: "brandId",
+    headerName: "Brand",
     width: 150,
     editable: true,
   },
   {
-    field: "age",
-    headerName: "Age",
+    field: "name",
+    headerName: "Name",
+    width: 110,
+    editable: true,
+  },
+  {
+    field: "quantity",
+    headerName: "Stock",
     type: "number",
     width: 110,
     editable: true,
@@ -46,6 +53,8 @@ const rows = [
 ];
 
 export default function ProductTable() {
+  const [product] = useSelector((state) => state.stock);
+
   return (
     <Box sx={{ height: 400, width: "100%" }}>
       <DataGrid

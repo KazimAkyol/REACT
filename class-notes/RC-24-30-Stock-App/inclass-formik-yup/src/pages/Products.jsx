@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import Grid from "@mui/material/Grid";
 import ProductsModal from "./../components/Modals/ProductsModal";
 import { useState } from "react";
 import ProductTable from "./../components/Table/ProductTable";
