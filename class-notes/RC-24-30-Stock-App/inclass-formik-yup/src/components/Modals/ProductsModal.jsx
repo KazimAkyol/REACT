@@ -1,12 +1,15 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import useStockCall from "../../hook/useStockCall";
-import { useEffect } from "react";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { useSelector } from "react-redux";
 
 const style = {
   position: "absolute",
@@ -21,7 +24,7 @@ const style = {
 };
 
 export default function ProductsModal({ open, handleClose, initialState }) {
-  const { postStockData, putStockData } = useStockCall();
+  const { postStockData, putStockData, getStockData } = useStockCall();
 
   const [info, setInfo] = useState(initialState);
 
@@ -39,7 +42,10 @@ export default function ProductsModal({ open, handleClose, initialState }) {
     }
   };
 
-  console.log(initialState);
+  const { brands } = useSelector((state) => state.stock);
+  const { category } = useSelector((state) => state.stock);
+
+  console.log("category", category);
 
   //useEffect didUpdate metodu tarzında çalışması. dependancy arrayde başlangıç değeri verildiğinde güncelleme yapması.
   //  useEffect(()=>{setInfo(initialState)},[initialState])
@@ -60,30 +66,21 @@ export default function ProductsModal({ open, handleClose, initialState }) {
             onSubmit={handleSubmit}
             sx={{ display: "flex", flexDirection: "column", gap: 2 }}
           >
-            <TextField
-              label="Firm Name"
-              variant="outlined"
-              type="text"
-              name="name"
-              onChange={handleChange}
-              value={info.name}
-            />
-            <TextField
-              label="phone"
-              variant="outlined"
-              type="text"
-              name="phone"
-              onChange={handleChange}
-              value={info.phone}
-            />
-            <TextField
-              label="Address"
-              variant="outlined"
-              type="text"
-              name="address"
-              onChange={handleChange}
-              value={info.address}
-            />
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={info.name}
+                label="Age"
+                onChange={handleChange}
+              >
+                {category.map(() => (
+                  <MenuItem value={10}>{category.name}</MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
             <TextField
               label="image"
               variant="outlined"

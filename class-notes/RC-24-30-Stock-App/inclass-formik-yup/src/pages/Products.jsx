@@ -10,7 +10,8 @@ import ProductTable from "./../components/Table/ProductTable";
 
 const Products = () => {
   const { getStockData } = useStockCall();
-  // Lifting state up işlemi yapıldı.Modaldaki stateler products sayfasına alındı
+
+  // Lifting state up işlemi yapıldı.Modaldaki stateler products sayfasına alındı.
   const { products } = useSelector((state) => state.stock);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -27,6 +28,8 @@ const Products = () => {
 
   useEffect(() => {
     getStockData("products");
+    getStockData("brands");
+    getStockData("categories");
   }, []);
 
   return (
