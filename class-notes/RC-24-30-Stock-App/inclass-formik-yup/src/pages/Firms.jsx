@@ -15,8 +15,12 @@ const Firms = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  console.log(firms);
+  const initialState = {
+    name: "",
+    address: "",
+    phone: "",
+    image: "",
+  };
 
   useEffect(() => {
     getStockData("firms");

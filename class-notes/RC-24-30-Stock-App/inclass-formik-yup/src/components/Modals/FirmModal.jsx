@@ -79,7 +79,7 @@ export default function FirmModal({ open, handleClose }) {
               value={info.address}
             />
             <TextField
-              label="image"
+              label="Image"
               variant="outlined"
               type="text"
               name="image"

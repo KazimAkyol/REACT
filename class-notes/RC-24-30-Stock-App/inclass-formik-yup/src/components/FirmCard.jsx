@@ -36,7 +36,7 @@ const ExpandMore = styled((props) => {
   ],
 }));
 
-export default function FirmCard({ firm }) {
+export default function FirmCard({ name, address, image, phone }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -45,11 +45,11 @@ export default function FirmCard({ firm }) {
 
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardHeader title={firm.name} subheader={firm.address} />
+      <CardHeader title={name} subheader={address} />
       <CardMedia
         component="img"
         height="194"
-        image={firm.image}
+        image={image}
         alt="Paella dish"
         sx={{ width: "70%", padding: "2rem" }}
       />
@@ -58,7 +58,7 @@ export default function FirmCard({ firm }) {
           variant="body2"
           sx={{ color: "text.secondary", textAlign: "center" }}
         >
-          {firm.phone}
+          {phone}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
