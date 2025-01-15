@@ -1,44 +1,9 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useSelector } from "react-redux";
-
-const columns = [
-  { field: "id", headerName: "ID", width: 90 },
-  {
-    field: "categoryId",
-    headerName: "Category",
-    width: 150,
-    editable: true,
-  },
-  {
-    field: "brandId",
-    headerName: "Brand",
-    width: 150,
-    editable: true,
-  },
-  {
-    field: "name",
-    headerName: "Name",
-    width: 110,
-    editable: true,
-  },
-  {
-    field: "quantity",
-    headerName: "Stock",
-    type: "number",
-    width: 110,
-    editable: true,
-  },
-  {
-    field: "fullName",
-    headerName: "Full name",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 160,
-    valueGetter: (value, row) => `${row.firstName || ""} ${row.lastName || ""}`,
-  },
-];
+import DeleteIcon from "@mui/icons-material/Delete";
+import useStockCall from "../../hook/useStockCall";
 
 const rows = [
   { id: 1, lastName: "Snow", firstName: "Jon", age: 14 },
@@ -53,12 +18,54 @@ const rows = [
 ];
 
 export default function ProductTable() {
-  const [product] = useSelector((state) => state.stock);
+  const [products] = useSelector((state) => state.stock);
+  const { getDeleteData } = useStockCall();
+
+  const columns = [
+    { field: "_id", headerName: "ID", width: 90 },
+    {
+      field: "categoryId",
+      headerName: "Category",
+      width: 150,
+      editable: true,
+      valueGetter: (value) => value.name,
+    },
+    {
+      field: "brandId",
+      headerName: "Brand",
+      width: 150,
+      editable: true,
+      valueGetter: (value) => value.name,
+    },
+    {
+      field: "name",
+      headerName: "Name",
+      width: 110,
+      editable: true,
+    },
+    {
+      field: "quantity",
+      headerName: "Stock",
+      type: "number",
+      width: 110,
+      editable: true,
+    },
+    {
+      field: "fullName",
+      headerName: "Full name",
+      description: "This column has a value getter and is not sortable.",
+      sortable: false,
+      width: 100,
+      renderCell: (params) => (
+        <DeleteIcon onClick={() => getDeleteData("products", params.id)} />
+      ),
+    },
+  ];
 
   return (
     <Box sx={{ height: 400, width: "100%" }}>
       <DataGrid
-        rows={rows}
+        rows={products}
         columns={columns}
         initialState={{
           pagination: {
@@ -70,6 +77,8 @@ export default function ProductTable() {
         pageSizeOptions={[5]}
         checkboxSelection
         disableRowSelectionOnClick
+        getRowId={getRowId}
+        slots={{ toolbar: GridToolbar }}
       />
     </Box>
   );
