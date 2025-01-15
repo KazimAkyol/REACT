@@ -5,6 +5,7 @@ import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import useStockCall from "../../hook/useStockCall";
+import { useEffect } from "react";
 
 const style = {
   position: "absolute",
@@ -32,6 +33,13 @@ export default function FirmModal({ open, handleClose, initialState }) {
     // Database info bilgisini gönderme işlemi yapılacak:
     postStockData("firms/", info);
   };
+
+  console.log(initialState);
+
+  // useEffect didUpdate metodu tarzinda
+  useEffect(() => {
+    setInfo(initialState);
+  }, [initialState]);
 
   return (
     <div>
@@ -85,7 +93,7 @@ export default function FirmModal({ open, handleClose, initialState }) {
               type="submit"
               sx={{ backgroundColor: "secondary.main", color: "white" }}
             >
-              ADD FIRM
+              SUBMIT
             </Button>
           </Box>
         </Box>

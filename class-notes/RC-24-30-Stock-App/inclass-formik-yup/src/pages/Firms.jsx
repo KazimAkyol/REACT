@@ -46,16 +46,22 @@ const Firms = () => {
       >
         New Firm
       </Button>
-      <FirmModal
-        open={open}
-        handleClose={handleClose}
-        initialState={initialState}
-      />
+      {open && (
+        <FirmModal
+          open={open}
+          handleClose={handleClose}
+          initialState={initialState}
+        />
+      )}
 
       <Grid container sx={{ marginLeft: "1rem" }}>
         {firms.map((firm, index) => (
           <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
-            <FirmCard firm={...firm}   />
+            <FirmCard
+              {...firm}
+              handleOpen={handleOpen}
+              setInitialState={setInitialState}
+            />
           </Grid>
         ))}
       </Grid>
