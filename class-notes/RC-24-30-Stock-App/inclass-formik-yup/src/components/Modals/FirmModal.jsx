@@ -18,15 +18,10 @@ const style = {
   p: 4,
 };
 
-export default function FirmModal({ open, handleClose }) {
+export default function FirmModal({ open, handleClose, initialState }) {
   const { postStockData } = useStockCall();
 
-  const [info, setInfo] = useState({
-    name: "",
-    address: "",
-    phone: "",
-    image: "",
-  });
+  const [info, setInfo] = useState(initialState);
 
   const handleChange = (e) => {
     console.log(e);

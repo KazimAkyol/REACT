@@ -36,7 +36,15 @@ const ExpandMore = styled((props) => {
   ],
 }));
 
-export default function FirmCard({ name, address, image, phone }) {
+export default function FirmCard({
+  _id,
+  name,
+  address,
+  image,
+  phone,
+  handleChange,
+  setInitialState,
+}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -65,7 +73,13 @@ export default function FirmCard({ name, address, image, phone }) {
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton
+          aria-label="share"
+          onClick={() => {
+            handleOpen();
+            setInitialState({ name, phone, address, image });
+          }}
+        >
           <ShareIcon />
         </IconButton>
         <ExpandMore
