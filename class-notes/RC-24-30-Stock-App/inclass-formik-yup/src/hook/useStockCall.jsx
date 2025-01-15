@@ -45,7 +45,7 @@ const useStockCall = () => {
   //     }
   //   };
 
-  //   Bu şekilde her sayfa için ayrı bir fonksyion yazmak yerine DRY (don't repeat yourself) gereği tek bir fonksyion yazıyoruz.
+  //   Bu şekilde her sayfa için ayrı bir fonksyion yazmak yerine DRY (don't repeat yourself) gereği tek bir fonksiyon yazıyoruz.
   //   Bu nedenle getFirm ve getBrand fonksiyonlarını kullanmayıp getStockData'yı kullanacağız.
   /* -------------------------------------------------------------------------- */
 

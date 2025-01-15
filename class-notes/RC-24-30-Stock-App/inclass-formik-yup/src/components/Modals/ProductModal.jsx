@@ -1,10 +1,12 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import useStockCall from "../../hook/useStockCall";
+import { useEffect } from "react";
 
 const style = {
   position: "absolute",
@@ -18,7 +20,7 @@ const style = {
   p: 4,
 };
 
-export default function FirmModal({ open, handleClose, initialState }) {
+export default function ProductsModal({ open, handleClose, initialState }) {
   const { postStockData, putStockData } = useStockCall();
 
   const [info, setInfo] = useState(initialState);
