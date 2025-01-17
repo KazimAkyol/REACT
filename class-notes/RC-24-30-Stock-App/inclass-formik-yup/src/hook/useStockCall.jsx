@@ -10,6 +10,7 @@ const useStockCall = () => {
   const { token } = useSelector((state) => state.auth);
   const BASE_URL = import.meta.env.VITE_BASE_URL;
   const { axiosWithToken } = useAxios();
+
   /* -------------------------------------------------------------------------- */
   //   const getFirm = async () => {
   //     dispatch(fetchStart());
@@ -67,6 +68,7 @@ const useStockCall = () => {
   /* -------------------------------------------------------------------------- */
   /*                                 DELETE DATA                                */
   /* -------------------------------------------------------------------------- */
+
   const getDeleteData = async (url, id) => {
     dispatch(fetchStart());
 
