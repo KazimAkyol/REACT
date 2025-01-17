@@ -29,7 +29,7 @@ const data = [
 ];
 
 export default function KpiCard() {
-  const { sales } = useSelector((state) => state);
+  const { sales } = useSelector((state) => state.stock);
   return (
     <>
       <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
