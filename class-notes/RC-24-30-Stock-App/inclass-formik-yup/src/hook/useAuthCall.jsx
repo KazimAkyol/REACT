@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import {
   fetchFail,
@@ -8,19 +7,20 @@ import {
   logoutSuccess,
   registerSuccess,
 } from "../features/authSlice";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useAxios from "./useAxios";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const useAuthCall = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { axiosWithToken, axiosWithoutHeader } = useAxios();
 
-  //! Custom hook yazma kuralları:
-  //? 1- use kelimesi ile başlar
-  //? 2- return de { fonksiyonlar }, değişkense [ bilgiler ] gönderilmeli
-  //? 3- Çağrılacağı noktada const {register}=useAuthCall() seklinde tanimlanir.
+  // Custom hook yazma kuralları
+  //? 1-use Kelimesi ile başlar
+  //? 2-return'de { fonksiyonlar }, değişkense [ bilgiler ] gönderilmeli
+  //? 3-cağrılacağı noktada
+  //? const {register}=useAuthCall()
 
   const register = async (userInfo) => {
     dispatch(fetchStart());
@@ -29,8 +29,10 @@ const useAuthCall = () => {
       const { data } = await axiosWithoutHeader.post(`users`, userInfo);
       dispatch(registerSuccess(data));
       navigate("/stock");
+      toastSuccessNotify("Register is successful");
     } catch (error) {
       dispatch(fetchFail());
+      toastErrorNotify("Register failed");
     }
   };
 
@@ -41,8 +43,10 @@ const useAuthCall = () => {
       const { data } = await axiosWithoutHeader.post(`auth/login`, userInfo);
       dispatch(loginSuccess(data));
       navigate("/stock");
+      toastSuccessNotify("Login is successful");
     } catch (error) {
       dispatch(fetchFail());
+      toastErrorNotify("Login failed");
     }
   };
 
@@ -52,6 +56,8 @@ const useAuthCall = () => {
     try {
       const { data } = await axiosWithToken.get(`auth/logout`);
       dispatch(logoutSuccess());
+      toastSuccessNotify("Logout is successful");
+
       navigate("/");
     } catch (error) {
       dispatch(fetchFail());
