@@ -7,12 +7,13 @@ const stockSlice = createSlice({
     loading: false,
     error: false,
     firms: [],
+    brands: [],
     purchases: [],
-    sales: [],
+    categories: [],
     products: [],
     sales: [],
   },
-  
+
   reducers: {
     fetchStart: (state) => {
       state.loading = true;
@@ -22,12 +23,6 @@ const stockSlice = createSlice({
       state.loading = false;
       state.error = true;
     },
-    // firmSuccess:(state,{payload})=>{
-    //     state.firms=payload.data
-    // },
-    // brandSuccess:(state,{payload})=>{
-    //     state.brands=payload.data
-    // },
     stockSuccess: (state, { payload: { data, url } }) => {
       // state[payload.url]=payload.data.data
       state[url] = data.data;

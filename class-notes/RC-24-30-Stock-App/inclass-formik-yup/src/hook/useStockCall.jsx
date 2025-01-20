@@ -75,6 +75,7 @@ const useStockCall = () => {
     try {
       const { data } = await axiosWithToken.delete(`${url}/${id}`);
       getStockData(url);
+      toastSuccessNotify(`${url} is deleted successfully!`);
     } catch (error) {
       dispatch(fetchFail());
     }
@@ -90,6 +91,7 @@ const useStockCall = () => {
     try {
       const { data } = await axiosWithToken.post(`${url}`, info);
       getStockData(url);
+      toastSuccessNotify(`${url} is saved successfully!`);
     } catch (error) {
       dispatch(fetchFail());
     }
@@ -104,8 +106,9 @@ const useStockCall = () => {
 
     try {
       console.log(info);
-      const { data } = await axiosWithToken.post(`${url}${info._id}`, info);
+      const { data } = await axiosWithToken.put(`${url}${info._id}`, info);
       getStockData(url);
+      toastSuccessNotify(`${url} is updated successfully!`);
     } catch (error) {
       dispatch(fetchFail());
     }
