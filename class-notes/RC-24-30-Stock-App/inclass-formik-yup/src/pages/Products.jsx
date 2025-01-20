@@ -9,27 +9,25 @@ import { useState } from "react";
 import ProductTable from "./../components/Table/ProductTable";
 
 const Products = () => {
-  const { getStockData } = useStockCall();
-
-  // Lifting state up işlemi yapıldı.Modaldaki stateler products sayfasına alındı.
+  const { getStockData, getProductCatBrand } = useStockCall();
+  // Lifting State-up işlemi yapıldı.Modaldaki stateler products sayfasına alındı.
   const { products } = useSelector((state) => state.stock);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
-    setInitialState({ name: "", address: "", phone: "", image: "" });
+    setInitialState({ categoryId: "", brandId: "", name: "" });
   };
   const [initialState, setInitialState] = useState({
+    categoryId: "",
+    brandId: "",
     name: "",
-    address: "",
-    phone: "",
-    image: "",
   });
-
   useEffect(() => {
-    getStockData("products");
-    getStockData("brands");
-    getStockData("categories");
+    // getStockData("products");
+    // getStockData("brands");
+    // getStockData("categories");
+    getProductCatBrand();
   }, []);
 
   return (

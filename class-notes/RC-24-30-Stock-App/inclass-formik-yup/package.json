@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.19",
     "@mui/material": "^5.16.14",
-    "@mui/system": "^5.15.14",
+    "@mui/system": "^5.16.14",
     "@mui/x-data-grid": "^7.23.6",
     "@reduxjs/toolkit": "^2.0.1",
     "autoprefixer": "^10.4.20",

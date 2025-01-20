@@ -21,7 +21,7 @@ importers:
         specifier: ^5.16.14
         version: 5.16.14(@emotion/react@11.11.1(@types/react@18.2.43)(react@18.2.0))(@emotion/styled@11.11.0(@emotion/react@11.11.1(@types/react@18.2.43)(react@18.2.0))(@types/react@18.2.43)(react@18.2.0))(@types/react@18.2.43)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@mui/system':
-        specifier: ^5.15.14
+        specifier: ^5.16.14
         version: 5.16.14(@emotion/react@11.11.1(@types/react@18.2.43)(react@18.2.0))(@emotion/styled@11.11.0(@emotion/react@11.11.1(@types/react@18.2.43)(react@18.2.0))(@types/react@18.2.43)(react@18.2.0))(@types/react@18.2.43)(react@18.2.0)
       '@mui/x-data-grid':
         specifier: ^7.23.6
