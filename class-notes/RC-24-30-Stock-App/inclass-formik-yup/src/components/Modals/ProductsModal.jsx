@@ -42,7 +42,7 @@ export default function ProductsModal({ open, handleClose, initialState }) {
 
   const { brands, categories } = useSelector((state) => state.stock);
 
-  // useEffect didUpdate metodu tarzında çalışması. dependancy arrayde başlangıç değeri verildiğinde güncelleme yapması.
+  // useEffect didUpdate metodu tarzında çalışması. dependancy array'de başlangıç değeri verildiğinde güncelleme yapması.
   // useEffect(()=>{setInfo(initialState)},[initialState])
 
   return (
