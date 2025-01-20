@@ -1,10 +1,12 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import useStockCall from "../../hook/useStockCall";
+import { useEffect } from "react";
 
 const style = {
   position: "absolute",
@@ -18,7 +20,7 @@ const style = {
   p: 4,
 };
 
-export default function FirmModal({ open, handleClose, initialState }) {
+export default function BrandModal({ open, handleClose, initialState }) {
   const { postStockData, putStockData } = useStockCall();
 
   const [info, setInfo] = useState(initialState);
@@ -30,20 +32,18 @@ export default function FirmModal({ open, handleClose, initialState }) {
   const handleSubmit = () => {
     // Database info bilgisini gönderme işlemi
     if (info._id) {
-      putStockData("firms", info);
+      putStockData("brands", info);
     } else {
-      postStockData("firms", info);
+      postStockData("brands", info);
     }
   };
 
-  console.log(initialState);
-
-  // useEffect didUpdate metodu tarzında çalışması. dependancy arrayde başlangıç değeri verildiğinde güncelleme yapması.
-  // useEffect(()=>{setInfo(initialState)},[initialState])
+  //useEffect didUpdate metodu tarzında çalışması. dependancy arrayde başlangıç değeri verildiğinde güncelleme yapması.
+  //  useEffect(()=>{setInfo(initialState)},[initialState])
 
   return (
     <div>
-      {/* Button modalı açıyor.Açma işlemi firms sayfasında New Firm yaptığı için burda pasif hale getirdik */}
+      {/* Button modalı açıyor.Açma işlemi brands sayfasında NEw Brand yaptığı için burda pasif hale getirdik */}
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
       <Modal
         open={open}
@@ -58,31 +58,16 @@ export default function FirmModal({ open, handleClose, initialState }) {
             sx={{ display: "flex", flexDirection: "column", gap: 2 }}
           >
             <TextField
-              label="Firm Name"
+              label="Brand Name"
               variant="outlined"
               type="text"
               name="name"
               onChange={handleChange}
               value={info.name}
             />
+
             <TextField
-              label="phone"
-              variant="outlined"
-              type="text"
-              name="phone"
-              onChange={handleChange}
-              value={info.phone}
-            />
-            <TextField
-              label="Address"
-              variant="outlined"
-              type="text"
-              name="address"
-              onChange={handleChange}
-              value={info.address}
-            />
-            <TextField
-              label="image"
+              label="Image Url"
               variant="outlined"
               type="text"
               name="image"
@@ -91,7 +76,11 @@ export default function FirmModal({ open, handleClose, initialState }) {
             />
             <Button
               type="submit"
-              sx={{ backgroundColor: "secondary.main", color: "white" }}
+              sx={{
+                backgroundColor: "secondary.main",
+                color: "white",
+                "&:hover": { backgroundColor: "secondary.main" },
+              }}
             >
               {info._id ? "UPDATE" : "ADD FIRM"}
             </Button>
