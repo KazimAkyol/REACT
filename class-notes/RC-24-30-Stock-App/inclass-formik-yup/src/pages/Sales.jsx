@@ -10,7 +10,7 @@ import SaleTable from "./../components/Table/SaleTable";
 
 const Sales = () => {
   const { getPurcSales } = useStockCall();
- // Lifting State-Up işlemi yapıldı.Modaldaki stateler Sales sayfasına alındı.
+  // Lifting State-Up işlemi yapıldı.Modaldaki stateler Sales sayfasına alındı.
   const { sales } = useSelector((state) => state.stock);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
