@@ -127,7 +127,7 @@ const useStockCall = () => {
         axiosWithToken("categories"),
         axiosWithToken("brands"),
       ]);
-      //Optional Chaining ile undefined,null olan verierden dolayı projenin sorun çıkarmasını engeller
+      // Optional Chaining ile undefined,null olan verierden dolayı projenin sorun çıkarmasını engeller
       dispatch(
         getProductsCatBrandsSuccess([
           products?.data?.data,
@@ -152,7 +152,7 @@ const useStockCall = () => {
         axiosWithToken("brands"),
         axiosWithToken("products"),
       ]);
-      //Optional Chaining ile undefined,null olan verilerden dolayı projenin sorun çıkarmasını engeller.
+      // Optional Chaining ile undefined,null olan verilerden dolayı projenin sorun çıkarmasını engeller.
       dispatch(
         getFirmsBrandsProductsSuccess([
           purchases?.data?.data,
@@ -175,7 +175,7 @@ const useStockCall = () => {
         axiosWithToken("purchases"),
         axiosWithToken("sales"),
       ]);
-      //Optional Cahining ile undefined,null olan verilerden dolayı projenin sorun çıkarmasını engeller.
+      // Optional Cahining ile undefined,null olan verilerden dolayı projenin sorun çıkarmasını engeller.
       dispatch(getPurcSalesSuccess([purchases?.data?.data, sales?.data?.data]));
     } catch (error) {
       dispatch(fetchFail());
