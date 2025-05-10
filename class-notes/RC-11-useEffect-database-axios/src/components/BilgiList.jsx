@@ -7,9 +7,9 @@ import { useState } from "react";
 const BilgiList = ({ tutorials, deleteBilgi, putBilgi }) => {
   // console.log(tutorials);
 
-//   const deleteBilgi = async() => {
-//     await axios.delete(url/id/)
-//   }
+  //   const deleteBilgi = async() => {
+  //     await axios.delete(url/id/)
+  //   }
 
   const [updateBilgi, setUpdateBilgi] = useState("");
 
