@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../img/logo.png";
 
-//!!! React'ta 3 türlü link kullanılabilir. NavLink, Link ve a etiketi. Hangisini ne zaman kullanmalısınız? React uygulamanız içinde, etkinken stil gerektirmeyen bir bağlantı oluşturmak istiyorsanız, Link bileşenini kullanın. React uygulamanız içinde, etkin durumdayken stil gerektiren bir bağlantı oluşturmak istiyorsanız, NavLink bileşenini kullanın. Son olarak, React uygulamanızda harici bir sayfaya veya rota olmayan bir sayfaya bağlantı oluşturmak istiyorsanız, <a></a>  etiketini kullanın. Nav.Link react-bootstrap ten stilli bir a etiketidir. a className="nav-link" demek gibidir.
+//* React'ta 3 türlü link kullanılabilir. NavLink, Link ve a etiketi. Hangisini ne zaman kullanmalısınız? React uygulamanız içinde, etkinken stil gerektirmeyen bir bağlantı oluşturmak istiyorsanız, Link bileşenini kullanın. React uygulamanız içinde, etkin durumdayken stil gerektiren bir bağlantı oluşturmak istiyorsanız, NavLink bileşenini kullanın. Son olarak, React uygulamanızda harici bir sayfaya veya rota olmayan bir sayfaya bağlantı oluşturmak istiyorsanız, <a></a>  etiketini kullanın. Nav.Link react-bootstrap ten stilli bir a etiketidir. a className="nav-link" demek gibidir.
 
 const MyNavbar = () => {
   return (

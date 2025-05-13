@@ -12,7 +12,7 @@ import { olusturKullanici } from "../features/yetkiSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  // 2 değişkene email, password getImageListItemBarUtilityClass, bir tane de kullanıcı oluşturan fonksiyona(submit)
+  // 2 değişkene email, password gibi; bir tane de kullanıcı oluşturan fonksiyona(submit)
 
   let { email, password } = useSelector((state) => state.yetkiSlice);
 

@@ -22,6 +22,7 @@ export const haberSlice = createSlice({
     },
   },
 
+  //* DB'den veri cekme kodu:
   extraReducers: (builder) => {
     builder
       .addCase(getData.pending, (state) => {
