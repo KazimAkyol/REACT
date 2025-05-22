@@ -35,7 +35,6 @@ const TeacherDetails = () => {
       <h5>{kisi.website}</h5>
       <h5>{kisi.phone}</h5>
 
-      <div></div>
       <button onClick={() => navigate("-1")} className="btn btn-success">
         GO BACK
       </button>
