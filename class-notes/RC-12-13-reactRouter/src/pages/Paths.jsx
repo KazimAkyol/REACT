@@ -23,6 +23,7 @@ const Paths = () => {
         </button>
 
         <button className="btn btn-danger w-50">ana sayfa</button>
+        
         <button
           className="btn btn-warning w-25"
           onClick={() => navigate("aws")}

@@ -7,23 +7,23 @@ import Clock from "./components/Clock";
 import People from "./fetch-axios/People";
 
 function App() {
-  const [show, setShow] = useState(true);
+    const [show, setShow] = useState(true);
 
-  return (
-    <div className="App">
-      {/* Class componente prop gönderdik */}
-      <Selamlama isim="Life Cycle" />
+    return (
+        <div className="App">
+            {/* Class componente prop gönderdik */}
+            <Selamlama isim="Life Cycle" />
 
-      <button className="btn btn-danger" onClick={() => setShow(!show)}>
-        SHOW
-      </button>
-      {/* {show && <LifeCycle />} */}
+            <button className="btn btn-danger" onClick={() => setShow(!show)}>
+                SHOW
+            </button>
+            {/* {show && <LifeCycle />} */}
 
-      {/* {show && <Clock />} */}
+            {/* {show && <Clock />} */}
 
-      {show && <People />}
-    </div>
-  );
+            {show && <People />}
+        </div>
+    );
 }
 
 export default App;
