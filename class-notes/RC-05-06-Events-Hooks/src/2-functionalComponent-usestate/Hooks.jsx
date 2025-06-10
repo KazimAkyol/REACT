@@ -16,79 +16,79 @@ import Events from "../1-events-hooksintro/Events";
 //* =============================================================
 
 const Hooks = () => {
-  //! usestate hook'u her zaman en tepeye yazilmali
-  const [sayac, setSayac] = useState(0);
-  // let sayac = 0;
+    //! usestate hook'u her zaman en tepeye yazilmali
+    const [sayac, setSayac] = useState(0);
+    // let sayac = 0;
 
-  const [kisi, setKisi] = useState({
-    isim: "kazim",
-    meslek: "developer",
-    yas: 34,
-    renk: "red",
-  });
-
-  const arttir = () => {
-    setSayac(sayac + 1);
-    // sayac = sayac + 1;
-  };
-
-  const degistir = () => {
-    if (kisi.isim === "kazim") {
-      setKisi({
-        isim: "gökhan",
-        meslek: "cevirmen",
-        yas: 35,
-        renk: "blue",
-      });
-    } else {
-      setKisi({
+    const [kisi, setKisi] = useState({
         isim: "kazim",
         meslek: "developer",
         yas: 34,
         renk: "red",
-      });
-    }
-  };
+    });
 
-  return (
-    <div>
-      <h2>****************************</h2>
-      <h2>****************************</h2>
-      <h1>USESTATE</h1>
+    const arttir = () => {
+        setSayac(sayac + 1);
+        // sayac = sayac + 1;
+    };
 
-      <h2>COUNT:{sayac}</h2>
+    const degistir = () => {
+        if (kisi.isim === "kazim") {
+            setKisi({
+                isim: "gökhan",
+                meslek: "cevirmen",
+                yas: 35,
+                renk: "blue",
+            });
+        } else {
+            setKisi({
+                isim: "kazim",
+                meslek: "developer",
+                yas: 34,
+                renk: "red",
+            });
+        }
+    };
 
-      <button onClick={arttir} className="btn btn-primary">
-        ARTTIR
-      </button>
+    return (
+        <div>
+            <h2>****************************</h2>
+            <h2>****************************</h2>
+            <h1>USESTATE</h1>
 
-      <button
-        onClick={() => sayac > 0 && setSayac(sayac - 1)}
-        className="btn btn-info"
-      >
-        AZALT
-      </button>
+            <h2>COUNT:{sayac}</h2>
 
-      <h1>**********************************</h1>
+            <button onClick={arttir} className="btn btn-primary">
+                ARTTIR
+            </button>
 
-      <div className="text-center">
-        <h1>OBJECT İLE USESTATE KULLANIMI </h1>
-        <h2 className="text-danger">{kisi.isim}</h2>
-        <h3 className="text-primary">{kisi.meslek}</h3>
-        <h5 className="text-success">{kisi.yas}</h5>
+            <button
+                onClick={() => sayac > 0 && setSayac(sayac - 1)}
+                className="btn btn-info"
+            >
+                AZALT
+            </button>
 
-        <button
-          onClick={degistir}
-          style={{ backgroundColor: kisi.renk, color: "yellow" }}
-          className="btn m-4 p-4"
-        >
-          ToggleDEĞİŞTİR
-        </button>
+            <h1>**********************************</h1>
 
-        {kisi.renk === "blue" && <Events />}
-        {/* kisi.renk===blue iken Events comp basılsın dedim. bunu yapmak istiyorsam App.js deki Events'i yoruma almalıyım. */}
+            <div className="text-center">
+                <h1>OBJECT İLE USESTATE KULLANIMI </h1>
+                <h2 className="text-danger">{kisi.isim}</h2>
+                <h3 className="text-primary">{kisi.meslek}</h3>
+                <h5 className="text-success">{kisi.yas}</h5>
 
-        {/* <button
+                <button
+                    onClick={degistir}
+                    style={{ backgroundColor: kisi.renk, color: "yellow" }}
+                    className="btn m-4 p-4"
+                >
+                    ToggleDEĞİŞTİR
+                </button>
+
+                {kisi.renk === "blue" && <Events />}
+                {/* kisi.renk===blue iken Events comp basılsın dedim. bunu yapmak istiyorsam App.js deki Events'i yoruma almalıyım. */}
+
+                {/* <button
           onClick={() =>
             setKisi({
               isim: "fatma",
@@ -103,23 +103,23 @@ const Hooks = () => {
           İsimDEĞİŞTİR
         </button> */}
 
-        <button
-          onClick={() => setKisi({ ...kisi, isim: "fatma", renk: "aqua" })}
-          style={{ backgroundColor: kisi.renk }}
-          className="btn m-4 p-4"
-        >
-          İsimDEĞİŞTİR
-        </button>
+                <button
+                    onClick={() => setKisi({ ...kisi, isim: "fatma", renk: "aqua" })}
+                    style={{ backgroundColor: kisi.renk }}
+                    className="btn m-4 p-4"
+                >
+                    İsimDEĞİŞTİR
+                </button>
 
-        <button
-          onClick={() => setKisi({ ...kisi, yas: 50 })}
-          className="btn btn-secondary"
-        >
-          yasDegistir
-        </button>
-      </div>
-    </div>
-  );
+                <button
+                    onClick={() => setKisi({ ...kisi, yas: 50 })}
+                    className="btn btn-secondary"
+                >
+                    yasDegistir
+                </button>
+            </div>
+        </div>
+    );
 };
 
 export default Hooks;

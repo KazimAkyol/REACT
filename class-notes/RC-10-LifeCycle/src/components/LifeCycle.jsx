@@ -19,11 +19,11 @@ class LifeCycle extends Component {
     //! Component DOM'a yerleştiğinde çalışır. API çağrıları veya başlangıç işlevlerini burada yapabilirsiniz.
 
     componentDidMount() {
-        console.log("component Dom'a yerleşti");
+        console.log("Component Dom'a yerleşti");
     }
 
     componentDidUpdate() {
-        console.log("Update çalıştı");
+        console.log("Update calisti");
     }
 
     componentWillUnmount() {

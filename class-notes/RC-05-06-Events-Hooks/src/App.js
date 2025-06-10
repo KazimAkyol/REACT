@@ -3,17 +3,17 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  return (
-    <div>
-      {/* <Events /> */}
+    return (
+        <div>
+            {/* <Events /> */}
 
-      {/* <Hooks /> */}
+            {/* <Hooks /> */}
 
-      {/* <Counter /> */}
+            {/* <Counter /> */}
 
-      <Form />
-    </div>
-  );
+            <Form />
+        </div>
+    );
 }
 
 export default App;

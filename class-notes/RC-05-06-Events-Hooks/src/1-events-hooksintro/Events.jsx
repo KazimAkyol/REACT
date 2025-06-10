@@ -1,56 +1,56 @@
 import React from "react";
 
 const Events = () => {
-  //! JavaScript alani
+    //! JavaScript alani
 
-  let baslik = "MERHABA";
-  let sayac = 0;
+    let baslik = "MERHABA";
+    let sayac = 0;
 
-  const arttir = () => {
-    sayac = sayac + 1;
+    const arttir = () => {
+        sayac = sayac + 1;
 
-    console.log(sayac);
+        console.log(sayac);
 
-    document.querySelector("span").textContent = sayac;
-  };
+        document.querySelector("span").textContent = sayac;
+    };
 
-  const changeBaslik = (title) => {
-    baslik = title;
-    console.log(baslik);
+    const changeBaslik = (title) => {
+        baslik = title;
+        console.log(baslik);
 
-    document.querySelector("h1").textContent = title;
-  };
+        document.querySelector("h1").textContent = title;
+    };
 
-  const click = () => {
-    document.querySelector(".btn-danger").textContent = "TIKLANDI";
-  };
+    const click = () => {
+        document.querySelector(".btn-danger").textContent = "TIKLANDI";
+    };
 
-  //? Bir componentin return kismi 3 farkli yöntem ile yeniden render edilir.
-  //? 1- Herhangi bir state degisirse
-  //? 2- Props degisirse
-  //? 3- Refresh force edilirse (tercih edilen bir durum olmaz)
+    //? Bir componentin return kismi 3 farkli yöntem ile yeniden render edilir.
+    //? 1- Herhangi bir state degisirse
+    //? 2- Props degisirse
+    //? 3- Refresh force edilirse (tercih edilen bir durum olmaz)
 
-  return (
-    //! jsx(react) alani
+    return (
+        //! jsx(react) alani
 
-    <div className="container text-center mt-4">
-      <h1>INFO:{baslik}</h1>
+        <div className="container text-center mt-4">
+            <h1>INFO:{baslik}</h1>
 
-      <h2>
-        COUNT: <span className="text-danger">{sayac}</span>
-      </h2>
+            <h2>
+                COUNT: <span className="text-danger">{sayac}</span>
+            </h2>
 
-      <button onClick={arttir} className="btn btn-primary">
-        ARTTIR
-      </button>
-      <button onClick={() => changeBaslik("HALLO")} className="btn btn-info">
-        BASLIK DEGISTIR
-      </button>
-      <button onClick={click} className="btn btn-danger">
-        TIKLA
-      </button>
-    </div>
-  );
+            <button onClick={arttir} className="btn btn-primary">
+                ARTTIR
+            </button>
+            <button onClick={() => changeBaslik("HALLO")} className="btn btn-info">
+                BASLIK DEGISTIR
+            </button>
+            <button onClick={click} className="btn btn-danger">
+                TIKLA
+            </button>
+        </div>
+    );
 };
 
 export default Events;

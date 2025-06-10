@@ -10,7 +10,8 @@ const Clock = () => {
     const [zaman, setZaman] = useState(moment());
     const [count, setCount] = useState(0);
 
-    //! Component Did Mount işlemi
+    /* ------------------------------------------------------- */
+    // Component Did Mount işlemi
     // Yeni Hook useEffect hook'u
 
     useEffect(() => {
@@ -18,15 +19,15 @@ const Clock = () => {
             console.log("artiş var");
             setZaman(moment());
         }, 1000);
-
-        //! ComponentWillUnmount
-        //Componenti öldürdük
+        /* ------------------------------------------------------- */
+        // ComponentWillUnmount
+        // Componenti öldürdük
         return () => {
             clearInterval(timer);
         };
     }, []);
     // Köşeli parantez kullanımı bir defa render ediyor demektir.
-
+    /* ------------------------------------------------------- */
     //! Component Did Update karsiligi olarak useEffect kullaniyoruz.
     useEffect(() => {
         console.log("DidUpdate calisti");

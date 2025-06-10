@@ -7,20 +7,20 @@ import Sizing from "./components/Sizing";
 import Typography from "./components/Typography";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-  return (
-    <div>
-      {/* <Typography /> */}
+    const [darkMode, setDarkMode] = useState(false);
+    return (
+        <div>
+            {/* <Typography /> */}
 
-      {/* <Sizing /> */}
+            {/* <Sizing /> */}
 
-      {/* <HoverFocus /> */}
+            {/* <HoverFocus /> */}
 
-      {/* <Responsive /> */}
+            {/* <Responsive /> */}
 
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-    </div>
-  );
+            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+        </div>
+    );
 }
 
 export default App;

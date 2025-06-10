@@ -9,76 +9,76 @@ import React, { useState } from "react";
 //! Ayrıca JSX'de JavaScript ifadeleri {} içinde çalıştırılabilir. Buna map, && gibi yapılar da dahil.
 
 const Form = () => {
-  const [isim, setIsim] = useState("");
-  const [pass, setPass] = useState("");
-  const [country, setCountry] = useState("");
+    const [isim, setIsim] = useState("");
+    const [pass, setPass] = useState("");
+    const [country, setCountry] = useState("");
 
-  const gonderDatabase = (e) => {
-    e.preventDefault();
-    //? ileride bir submit islemin neticesinde verilerin nasıl post edilebileceğini göstermek adina eklenmistir.
-    //? const res = axios.post("url", { isim, pass, country })
+    const gonderDatabase = (e) => {
+        e.preventDefault();
+        //? ileride bir submit islemin neticesinde verilerin nasıl post edilebileceğini göstermek adina eklenmistir.
+        //? const res = axios.post("url", { isim, pass, country })
 
-    alert(`name:${isim}  password: ${pass} country : ${country}`);
+        alert(`name:${isim}  password: ${pass} country : ${country}`);
 
-    //!database'e yollandıktan sonra değişkenlerin içini temizledik, bunu ekranda da temiz görmek için inputlarda value değişkenleri tanımladık.
+        //!database'e yollandıktan sonra değişkenlerin içini temizledik, bunu ekranda da temiz görmek için inputlarda value değişkenleri tanımladık.
 
-    setIsim("");
-    setPass("");
-    setCountry("");
-  };
+        setIsim("");
+        setPass("");
+        setCountry("");
+    };
 
-  return (
-    <div className="container text-center mt-4">
-      <h1>*********************************************</h1>
+    return (
+        <div className="container text-center mt-4">
+            <h1>*********************************************</h1>
 
-      <h1>FORM(EVENTS)</h1>
+            <h1>FORM(EVENTS)</h1>
 
-      <form onSubmit={gonderDatabase}>
-        <div className="mb-3">
-          <label className="form-label" htmlFor="isim">
-            NAME: <span className="text-danger">{isim}</span>
-          </label>
-          <input
-            className="form-control"
-            id="isim"
-            type="text"
-            value={isim}
-            onInput={(e) => setIsim(e.target.value)}
-          />
+            <form onSubmit={gonderDatabase}>
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="isim">
+                        NAME: <span className="text-danger">{isim}</span>
+                    </label>
+                    <input
+                        className="form-control"
+                        id="isim"
+                        type="text"
+                        value={isim}
+                        onInput={(e) => setIsim(e.target.value)}
+                    />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="password">
+                        PASSWORD : {pass}
+                    </label>
+                    <input
+                        className="form-control"
+                        id="password"
+                        type="password"
+                        value={pass}
+                        onChange={(p) => setPass(p.target.value)}
+                    />
+                </div>
+
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="country">
+                        COUNTRY: <span className="text-danger">{country}</span>
+                    </label>
+                    <select
+                        className="form-select"
+                        onChange={(c) => setCountry(c.target.value)}
+                    >
+                        <option selected>COUNTRIES</option>
+                        <option value="Türkiye">TURKEY</option>
+                        <option value="Almanya">GERMANY</option>
+                        <option value="Amerika">USA</option>
+                    </select>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                    GÖNDER (submit)
+                </button>
+            </form>
         </div>
-        <div className="mb-3">
-          <label className="form-label" htmlFor="password">
-            PASSWORD : {pass}
-          </label>
-          <input
-            className="form-control"
-            id="password"
-            type="password"
-            value={pass}
-            onChange={(p) => setPass(p.target.value)}
-          />
-        </div>
-
-        <div className="mb-3">
-          <label className="form-label" htmlFor="country">
-            COUNTRY: <span className="text-danger">{country}</span>
-          </label>
-          <select
-            className="form-select"
-            onChange={(c) => setCountry(c.target.value)}
-          >
-            <option selected>COUNTRIES</option>
-            <option value="Türkiye">TURKEY</option>
-            <option value="Almanya">GERMANY</option>
-            <option value="Amerika">USA</option>
-          </select>
-        </div>
-        <button type="submit" className="btn btn-primary">
-          GÖNDER (submit)
-        </button>
-      </form>
-    </div>
-  );
+    );
 };
 
 export default Form;
