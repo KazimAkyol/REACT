@@ -14,99 +14,95 @@ import useAuthCall from "../hook/useAuthCall";
 import RegisterForm from "../components/RegisterForm";
 
 const Register = () => {
-  const { register } = useAuthCall();
+    const { register } = useAuthCall()
 
-  const SignupSchema = Yup.object().shape({
-    username: Yup.string()
-      .min(5, "Kullanici adi 5 karakterden az olamaz")
-      .max(50, "Kullanici adi 50 karakterden fazla olamaz")
-      .required("Kullanici adi zorunludur"),
-    firstName: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
-    lastName: Yup.string()
-      .min(2, "Too Short!")
-      .max(50, "Too Long!")
-      .required("Required"),
-    email: Yup.string()
-      .email("Email adresinde @ isareti olmalidir")
-      .required("Bu alan zorunludur"),
-    password: Yup.string()
-      .min(8, "Password 8 karakterden fazla olmalidir")
-      .matches(/[a-z]/, "Password kucuk harf icermelidir")
-      .matches(/[A-Z]/, "Password büyük harf icermelidir")
-      .matches(/\d+/, "Password sayisal karakter icermelidir")
-      .matches(/[@$?!%&*]+/, "Özel karakter içermelidir(@$?!%&*)"),
-  });
+    // Yup ile istediğimiz alanlara istediğimiz validasyon koşullarını oluşturuyoruz.Sonra oluşturduğumuz bu şemayı formike tanımlayarak kullanıyoruz.Böylelikle formik hem formumuzu yönetiyor hem de verdiğimiz validationSchema'yı uyguluyor. Dikkat edilmesi gereken husus; formikte tanımladığımız initialValues daki keylerle, Yupta tanımladığımız keylerin aynı olması.Eğer bir harf bile farklı olsa o alanla ilgili yazdığınız validation çalışmaz.
 
-  return (
-    <Container maxWidth="lg">
-      <Grid
-        container
-        justifyContent="center"
-        direction="row-reverse"
-        rowSpacing={{ sm: 3 }}
-        sx={{
-          height: "100vh",
-          p: 2,
-        }}
-      >
-        <AuthHeader />
+    const SignupSchema = Yup.object().shape({
+        username: Yup.string()
+            .required("Bu alan zorunludur!")
+            .min(3, "Username en az 3 karakter olmalıdır!"),
+        firstName: Yup.string()
+            .min(2, "Too Short!")
+            .max(50, "Too Long!")
+            .required("Required"),
+        lastName: Yup.string()
+            .min(2, "Too Short!")
+            .max(50, "Too Long!")
+            .required("Required"),
+        email: Yup.string().email("Invalid email").required("Required"),
+        password: Yup.string()
+            .required()
+            .min(8)
+            .matches(/\d+/, "Digit karakter içermelidir!")
+            .matches(/[a-z]/, "Küçük harf içermelidir!")
+            .matches(/[A-Z]/, "Büyük harf içermelidir!")
+            .matches(/[@$?!%&*]+/, "Özel karakter içermelidir(@$?!%&*)")
+    });
 
-        <Grid item xs={12} sm={10} md={6}>
-          <Avatar
-            sx={{
-              backgroundColor: "secondary.light",
-              m: "auto",
-              width: 40,
-              height: 40,
-            }}
-          >
-            <LockIcon size="30" />
-          </Avatar>
-          <Typography
-            variant="h4"
-            align="center"
-            mb={2}
-            color="secondary.light"
-          >
-            Register
-          </Typography>
+    return (
+        <Container maxWidth="lg">
+            <Grid
+                container
+                justifyContent="center"
+                direction="row-reverse"
+                rowSpacing={{ sm: 3 }}
+                sx={{
+                    height: "100vh",
+                    p: 2,
+                }}
+            >
+                <AuthHeader />
 
-          {/* /* -------------------------------------------------------------------------- */}
-          {/* {{FORMIK YAPISI}} */}
+                <Grid item xs={12} sm={10} md={6}>
+                    <Avatar
+                        sx={{
+                            backgroundColor: "secondary.light",
+                            m: "auto",
+                            width: 40,
+                            height: 40,
+                        }}
+                    >
+                        <LockIcon size="30" />
+                    </Avatar>
+                    <Typography
+                        variant="h4"
+                        align="center"
+                        mb={2}
+                        color="secondary.light"
+                    >
+                        Register
+                    </Typography>
+                    {/* /* -------------------------------------------------------------------------- */}
+                    {/* FORMİK YAPISI */}
 
-          <Formik
-            initialValues={{
-              username: "",
-              firstName: "",
-              lastName: "",
-              email: "",
-              password: "",
-            }}
-            validationSchema={SignupSchema}
-            onSubmit={(values, actions) => {
-              console.log(values);
-              register(values);
-              // actions değeri formikden gelen metodları içerir , resetForm, setSubmitting,...
-              // formun text alanlarının temizlenmesi için resetForm
-              // submit işlemi bittiği için setSubmitting(false) yapıyoruz.
-              actions.resetForm();
-              actions.setSubmitting(false);
-            }}
-            component={(props) => <RegisterForm {...props} />}
-          />
+                    <Formik
+                        initialValues={{
+                            username: "",
+                            firstName: "",
+                            lastName: "",
+                            email: "",
+                            password: "",
+                        }}
+                        validationSchema={SignupSchema}
+                        onSubmit={(values, actions) => {
+                            register(values);
+                            // action degeri formik'ten gelen metodlari icerir, resetForm ve setSubmitting gibi.
+                            actions.resetForm();// formu temizleme yapar.
+                            actions.setSubmitting(false);// isSubmitting değerini tekrar false a çeker
+                        }}
+                        component={(props) => <RegisterForm {...props} />} //* formikin bize verdiğim metotlar,değişkenler props içersinde geliyor biz de onları RegisterForm componentine göndermiş olduk.
+                    />
+                    {/* /* -------------------------------------------------------------------------- */}
+                    <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
+                        <Link to="/">Already have an account? Sign in</Link>
+                    </Box>
+                </Grid>
 
-          <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
-            <Link to="/">Already have an account? Sign in</Link>
-          </Box>
-        </Grid>
-
-        <AuthImage image={image} />
-      </Grid>
-    </Container>
-  );
+                <AuthImage image={image} />
+            </Grid>
+        </Container>
+    );
 };
 
 export default Register;

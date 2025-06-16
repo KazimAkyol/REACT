@@ -85,6 +85,8 @@ const SignUpForm = ({
             <Button
                 type="submit"
                 variant="contained"
+                fullWidth
+                margin="normal"
                 disabled={isSubmitting}
             >
                 {isSubmitting ? "Loading..." : "Sign Up"}
