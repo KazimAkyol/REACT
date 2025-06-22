@@ -1,25 +1,23 @@
-import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Main from "../pages/Main";
-import About from "../pages/About";
-import NewProduct from "../pages/NewProduct";
-import ProductList from "../pages/ProductList";
-import UpdateProduct from "../pages/UpdateProduct";
+import React from 'react'
+import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import Navbar from '../components/Navbar'
+import Main from '../pages/Main'
+import NewProduct from '../pages/NewProduct'
+import ProductList from '../pages/ProductList'
+import About from '../pages/About'
 
 const AppRouter = () => {
     return (
-        <Router>
+        <BrowserRouter>
             <Navbar />
             <Routes>
-                <Route exact path="/" element={<Main />} />
-                <Route path="/newProduct" element={<NewProduct />} />
-                <Route path="/productList" element={<ProductList />} />
-                <Route path="/about" element={<About />} />
+                <Route exact path='/' element={<Main />} />
+                <Route path='/new-product' element={<NewProduct />} />
+                <Route path='/products' element={<ProductList />} />
+                <Route path='/about' element={<About />} />
             </Routes>
-            <UpdateProduct />
-        </Router>
-    );
-};
+        </BrowserRouter>
+    )
+}
 
-export default AppRouter;
+export default AppRouter

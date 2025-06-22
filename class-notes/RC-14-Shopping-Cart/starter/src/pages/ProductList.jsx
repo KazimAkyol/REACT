@@ -40,8 +40,6 @@ const ProductList = () => {
                         </article>
                     </>
                 )}
-
-
             </div>
         </div>
     );
