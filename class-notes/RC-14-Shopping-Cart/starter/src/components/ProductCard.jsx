@@ -74,7 +74,7 @@ const ProductCard = ({ ürün, getUrunler }) => {
                         <div className="mt-2">
                             Product Total: $
                             <span className="product-line-price">
-                                {ürün.price * ürün.dampingRate * ürün.amount}{" "}
+                                {ürün.price * ürün.dampingRate * ürün.amount}
                             </span>
                         </div>
                     </div>
