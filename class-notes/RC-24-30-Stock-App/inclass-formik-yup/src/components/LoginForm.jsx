@@ -5,12 +5,12 @@ import { Form } from "formik"
 import { useSelector } from "react-redux"
 import { object, string } from "yup"; //! bu şekilde de direk olarak metodları alıp yine validasyon şemamızı oluşturabiliriz. 
 
-export const loginScheme = object({
+export const loginSchema = object({
     email: string()
-        .email("Lutfen valid bir email giriniz")
+        .email("Lütfen gecerli bir email giriniz")
         .required("Email zorunludur"),
     password: string()
-        .required("password zorunludur")
+        .required("Password zorunludur")
 })
 
 const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
