@@ -7,6 +7,7 @@ const SignUpForm = ({
     errors,
     touched,
     handleBlur,
+    handleSubmit,
     isSubmitting,
 }) => {
     return (
