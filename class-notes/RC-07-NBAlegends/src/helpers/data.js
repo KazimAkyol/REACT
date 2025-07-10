@@ -1,7 +1,7 @@
 export const data = [
     {
         name: "Kareem Abdul-Jabbar",
-        img: "https://s22928.pcdn.co/wp-content/uploads/2018/03/Kareem-Abdul-Jabbar.jpg",
+        img: "https://imageio.forbes.com/specials-images/imageserve/63c7004d26facf85b7766ebe/Milwaukee-Bucks-v-Los-Angeles-Lakers/960x0.jpg?format=jpg&width=960",
         statistics: [
             "38,387 points",
             "17,440 rebaunds",
