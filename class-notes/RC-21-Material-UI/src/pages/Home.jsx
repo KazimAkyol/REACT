@@ -5,14 +5,14 @@ import Navbar from "../components/Navbar";
 import TextFieldComp from "../components/TextFieldComp";
 
 const Home = () => {
-  return (
-    <>
-      {/* <Navbar /> */}
-      {/* <TypoButtons /> */}
-      {/* <TextFieldComp /> */}
-      <CardGrid />
-    </>
-  );
+    return (
+        <>
+            {/* <Navbar /> */}
+            {/* <TypoButtons /> */}
+            {/* <TextFieldComp /> */}
+            <CardGrid />
+        </>
+    );
 };
 
 export default Home;
